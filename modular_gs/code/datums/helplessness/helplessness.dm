@@ -135,7 +135,7 @@
 		return should_be_active
 	
 	var/obj/item/clothing/under/jumpsuit = fatty.w_uniform
-	if(istype(jumpsuit) && jumpsuit.modular_icon_location == null)
+	if(istype(jumpsuit))
 		to_chat(fatty, span_warning("[jumpsuit] can no longer contain your weight!"))
 		fatty.dropItemToGround(jumpsuit)
 	
