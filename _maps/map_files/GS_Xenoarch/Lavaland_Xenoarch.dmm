@@ -8283,7 +8283,7 @@
 "ggw" = (
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/tile/neutral/full,
-/turf/open/floor/iron/large,
+/turf/open/floor/iron/dark/textured_large,
 /area/xenoarch/lavaland/med)
 "ggG" = (
 /obj/structure/barricade/wooden,
@@ -13484,11 +13484,6 @@
 /obj/machinery/door/window/left/directional/south,
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/bot)
-"kam" = (
-/obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/underground)
 "kav" = (
 /obj/structure/cable,
 /turf/open/floor/iron/smooth_edge{
@@ -24105,7 +24100,8 @@
 /area/lavaland/underground/xenoarch/donut_factory)
 "rzH" = (
 /obj/machinery/smartfridge/organ,
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/neutral/full,
+/turf/open/floor/iron/dark/textured_large,
 /area/xenoarch/lavaland/med)
 "rzS" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -141728,7 +141724,7 @@ xoW
 kHZ
 qNm
 kHZ
-kam
+jzg
 kHZ
 kHZ
 kHZ

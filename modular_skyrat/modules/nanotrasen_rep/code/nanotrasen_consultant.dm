@@ -1,7 +1,7 @@
 /datum/job/nanotrasen_consultant
 	title = JOB_NT_REP
 	rpg_title = "Guild Adviser"
-	description = "Represent Nanotrasen on the station, argue with the HoS about why he can't just field execute people for petty theft, get drunk in your office."
+	description = "Represent GATO (or NT) on the station, argue with the HoS about why he can't just field execute people for petty theft, get drunk in your office." //GS13 EDIT
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
