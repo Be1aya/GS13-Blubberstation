@@ -12,6 +12,17 @@
 - modular_skyrat\modules\lorecaster\code\story_manager.dm - GATOified newscasters
 - modular_skyrat\modules\lorecaster\code\subsystem.dm - GATOified newscasters
 - tgui\packages\tgui\interfaces\NtosNewsArchive.jsx - GATOified newscasters
+- code/game/objects/items/mail.dm - GATOified mail crates
+- code/game/objects/structures/crates_lockers/crates/secure.dm - GATOified centcom locked crates
+- code/game/objects/structures/crates_lockers/crates.dm - GATOified centcom crates
+- code/modules/clothing/spacesuits/plasmamen.dm - GATOified plasmamen CC helmets
+- code/modules/clothing/under/jobs/Plasmaman/centcom.dm - GATOified plasmamen CC uniforms
+- code/modules/vending/wardrobes.dm - GATOified centdrobe
+- code/modules/clothing/head/hat.dm - GATOified centcom hats
+- code/modules/clothing/spacesuits/_spacesuits.dm - replaced N on the back of a spacesuit with G
+- code/modules/clothing/under/jobs/centcom.dm - GATOified centcom uniforms
+- modular_zubbers/code/modules/clothing/clothing_overrides/centcom.dm - GATOified centcom uniforms
+- modular_zubbers/code/modules/clothing/clothing_overrides/centcom.dm - GATOified centcom hats
 
 commented or changed out item pathing in following folders (removing donator items or plushie cameos from other codebases):
 - modular_skyrat\modules\modular_items\lewd_items\code\lewd_items\fleshlight.dm

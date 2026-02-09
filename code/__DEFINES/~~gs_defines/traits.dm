@@ -12,6 +12,7 @@
 #define HELPLESSNESS_TRAIT "helplessness"
 #define TRAIT_NO_HELPLESSNESS "no_helplessness"
 #define TRAIT_NO_NECK "no_neck"
+#define TRAIT_WEAK_LUNGS	"fat_lungs"
 #define TRAIT_LOW_FOV "fat_blocking_view"
 #define TRAIT_VERY_LOW_FOV "fat_blocking_view_HARD"
 
@@ -49,6 +50,8 @@
 #define TRAIT_BIOFUEL			"biofuel_processor"
 #define TRAIT_LARGE_SURFACE_AREA	"too_fat_to_slip"
 
+#define TRAIT_DEMONIC	"demonic"
+
 //GS13 helplessness quirks
 #define TRAIT_HELPLESS_IMMOBILITY		"immobile_helpless"
 #define TRAIT_HELPLESS_CLUMSY			"clumsy_helpless"
@@ -62,6 +65,7 @@
 #define TRAIT_HELPLESS_CHAIR_DESTROYER	"chair_breaking_helpless"
 #define TRAIT_HELPLESS_STUCKAGE			"stuckage_helpless"
 #define TRAIT_HELPLESS_THICK_NECK		"thick_neck"
+#define TRAIT_HELPLESS_WEAK_LUNGS		"weak_lungs"
 
 // GS13 positive quirks
 #define TRAIT_BLOB_BED					"blob_bed"

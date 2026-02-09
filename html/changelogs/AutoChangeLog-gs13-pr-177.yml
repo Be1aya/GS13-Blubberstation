@@ -1,5 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - rscadd: "lipoplasty surgery now removes BFI"
-  - rscadd: "the fat sucker machine now removes BFI"

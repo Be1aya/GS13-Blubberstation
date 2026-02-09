@@ -1,6 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - rscadd: "security can now order a special large donut box crate: it's 10% cheaper (per box) than the one available to everyone, requires sec access to open, and can be ordered from the security cargo console."
-  - bugfix: "Mealdor donuts are finally fixed. It's an end of an era, really"
-  - bugfix: "fixes munchies weed turning invisible when modified in the DNA manipulator"

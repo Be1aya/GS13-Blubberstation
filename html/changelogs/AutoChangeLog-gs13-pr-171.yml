@@ -1,9 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - balance: "adipoelectric generators now use more BFI to generate the same amount of power, and the amount of BFI they take ignores WG/L rates."
-  - balance: "adipoelectric transformers now turn power into fat about 4 times faster"
-  - bugfix: "fixes adipoelectric generator not being unwrenchable after being used"
-  - bugfix: "fixes adipoelectric transformer not being unwrenchable"
-  - code_imp: "adjust_fatness now properly reports on weight changed when the change would bring the fatness value to 0"
-  - refactor: "refactors adipoelectric machines code. They should now have a more reliable behavior and be easier to bugfix, at least a bit."

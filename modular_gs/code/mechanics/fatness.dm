@@ -363,7 +363,7 @@
 
 	if(max_weight && !HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
 		fatness_perma = min(fatness_perma, (max_weight - 1))
-	
+
 	return amount_to_change
 
 /mob/living/carbon/human/handle_breathing(times_fired)
@@ -427,7 +427,7 @@
 
 /mob/living/carbon/proc/applyFatnessDamage(amount)
 	if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons)) // If we can't fatten them through weapons, apply stamina damage
-		adjustStaminaLoss(amount)
+		adjust_stamina_loss(amount)
 		return TRUE
 
 	var/fat_to_add = ((amount * CONFIG_GET(number/damage_multiplier)) * FAT_DAMAGE_TO_FATNESS)
