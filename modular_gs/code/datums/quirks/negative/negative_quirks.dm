@@ -155,6 +155,7 @@
 	erp_quirk = 0
 	mob_trait = TRAIT_HELPLESS_THICK_NECK
 
+/*
 /datum/quirk/helplessness/weak_lungs
 	name = "Weak lungs"
 	desc = "Having this much mass naturally means you require more oxygen to breathe. Starting at 840 BFI, you will progressively require more air to breathe safely. WARNING! PICKING THIS QUIRK WILL MAKE YOU STRUGGLE TO BREATHE REGARDLESS OF YOUR WEAK LUNGS PREFERENCE! THIS MAY KILL YOU!"
@@ -165,6 +166,7 @@
 	quirk_flags = 0
 	erp_quirk = 0
 	mob_trait = TRAIT_HELPLESS_WEAK_LUNGS
+*/
 
 /datum/quirk/permaberry
 	name = "Permaberry"
