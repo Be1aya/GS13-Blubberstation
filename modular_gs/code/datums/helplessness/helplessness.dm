@@ -258,7 +258,7 @@
 	return should_be_active
 
 #define MAX_PRESSURE_DEBUFF 0.5
-
+/*
 /datum/helplessness/weak_lungs
 	helplessness_trait = TRAIT_WEAK_LUNGS
 	default_trigger_weight = FATNESS_LEVEL_MORBIDLY_OBESE	// It's called MORBIDLY obese for a reason
@@ -283,4 +283,5 @@
 	pressure_debuff = max(1 - pressure_debuff, MAX_PRESSURE_DEBUFF)		// and in result, we reach this cap when fatness = 3x trigger weight
 	holder_lungs.set_received_pressure_mult(pressure_debuff)
 
+*/
 #undef MAX_PRESSURE_DEBUFF
