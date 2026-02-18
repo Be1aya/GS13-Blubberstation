@@ -6964,6 +6964,7 @@
 #include "modular_gs\code\clothing\supermatter_pendant.dm"
 #include "modular_gs\code\datums\_helplessness.dm"
 #include "modular_gs\code\datums\interaction_datum.dm"
+#include "modular_gs\code\datums\lavaland_ruins.dm"
 #include "modular_gs\code\datums\pod_style.dm"
 #include "modular_gs\code\datums\components\fattening.dm"
 #include "modular_gs\code\datums\components\fattening_door.dm"
