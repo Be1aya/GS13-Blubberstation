@@ -33,3 +33,12 @@
 	suffix = "Lavaland_Ruin_FeederDenRuin.dmm"
 	cost = 3
 	allow_duplicates = FALSE //wouldn't make sense lore wise
+
+/datum/map_template/ruin/lavaland/cowbarn
+	name = "Cow Barn"
+	id = "cowbarn"
+	description = "An ordinary looking barn for cattle... Or is it?"
+	prefix = "_maps/RandomRuins/LavaRuins/GS13/"
+	suffix = "Lavaland_Ruin_CowBarn.dmm"
+	cost = 2
+	allow_duplicates = TRUE
