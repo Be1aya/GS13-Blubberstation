@@ -2570,6 +2570,7 @@
 "bMJ" = (
 /obj/machinery/light/directional/south,
 /obj/structure/rack/shelf,
+/obj/item/trash/fatoray_scrap1,
 /turf/open/floor/iron/smooth,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "bML" = (
@@ -8562,6 +8563,19 @@
 /obj/structure/trash_pile,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/underground/xenoarch/donut_factory)
+"gmB" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 1
+	},
+/obj/item/paper/fluff/ruins/calorite_facility/berry_note,
+/turf/open/floor/engine,
+/area/lavaland/underground/xenoarch/caloriteresearch)
 "gnF" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -17780,7 +17794,6 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 8
 	},
-/obj/item/stack/sheet/mineral/calorite/ten,
 /turf/open/floor/engine,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "mTz" = (
@@ -18823,10 +18836,10 @@
 	dir = 4
 	},
 /obj/structure/rack/shelf,
-/obj/item/trash/fatoray_scrap1,
 /obj/effect/turf_decal/siding/wideplating_new/dark/corner{
 	dir = 1
 	},
+/obj/item/stack/sheet/mineral/calorite/ten,
 /turf/open/floor/engine,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "nDA" = (
@@ -21374,6 +21387,7 @@
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "pqT" = (
 /obj/structure/table/reinforced,
+/obj/item/paper/fluff/ruins/calorite_facility/fatty_note,
 /turf/open/floor/iron/smooth,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "prd" = (
@@ -26781,6 +26795,7 @@
 	dir = 5
 	},
 /obj/structure/filingcabinet,
+/obj/item/paper/fluff/ruins/calorite_facility/fatty_note,
 /turf/open/floor/iron/smooth,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "tqx" = (
@@ -32690,6 +32705,8 @@
 	dir = 1
 	},
 /obj/structure/filingcabinet,
+/obj/item/paper/fluff/ruins/calorite_facility/micro_calorite_note,
+/obj/item/paper/fluff/ruins/calorite_facility/lactation_note,
 /turf/open/floor/iron/smooth,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "xwX" = (
@@ -88613,7 +88630,7 @@ tXW
 uAi
 whD
 scK
-bip
+gmB
 adA
 ees
 bip

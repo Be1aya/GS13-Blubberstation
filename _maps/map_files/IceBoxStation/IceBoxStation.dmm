@@ -20134,13 +20134,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/aft)
-"ftY" = (
-/obj/structure/sign/nanotrasen{
-	pixel_y = 32
-	},
-/obj/structure/flora/grass/both/style_random,
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "fuc" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -60062,7 +60055,6 @@
 	name = "Research Lab Shutters"
 	},
 /obj/machinery/autolathe,
-/obj/structure/window/spawner/directional/south,
 /obj/machinery/door/window/right/directional/south{
 	name = "Research and Development Desk";
 	req_access = list("science")
@@ -68092,6 +68084,7 @@
 	dir = 8;
 	pixel_y = 0
 	},
+/obj/structure/sign/gato,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors/nospawn)
 "sAt" = (
@@ -72561,12 +72554,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter)
-"tMa" = (
-/obj/structure/sign/nanotrasen{
-	pixel_y = 32
-	},
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "tMc" = (
 /obj/structure/sign/warning/secure_area/directional/north,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -259412,7 +259399,7 @@ txl
 txl
 txl
 sAd
-tMa
+bln
 uei
 tmR
 uei
@@ -260694,7 +260681,7 @@ txl
 txl
 txl
 sAd
-ftY
+mQb
 cnx
 tmR
 tmR
@@ -261982,7 +261969,7 @@ txl
 txl
 utC
 sAd
-tMa
+bln
 uei
 tmR
 uei

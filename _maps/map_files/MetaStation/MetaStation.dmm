@@ -34232,6 +34232,10 @@
 /area/station/cargo/sorting)
 "lzJ" = (
 /obj/structure/cable,
+/obj/machinery/power/solar{
+	id = "starboardsolar";
+	name = "Starboard Solar Array"
+	},
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/aft)
 "lzL" = (
@@ -40267,6 +40271,10 @@
 /area/station/commons/dorms)
 "nBa" = (
 /obj/structure/cable,
+/obj/machinery/power/solar{
+	id = "aftport";
+	name = "Aft-Port Solar Array"
+	},
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/aft)
 "nBf" = (
