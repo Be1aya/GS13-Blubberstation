@@ -460,7 +460,7 @@ Used by the AI doomsday and the self-destruct nuke.
 		"}, list("map_name" = current_map.map_name, "round_id" = GLOB.round_id))
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
-	
+
 #ifndef LOWMEMORYMODE
 
 	if(current_map.minetype == MINETYPE_LAVALAND)
