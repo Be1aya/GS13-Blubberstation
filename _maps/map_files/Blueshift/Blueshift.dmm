@@ -1864,6 +1864,11 @@
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/medical)
 "asL" = (
+/obj/structure/cable,
+/obj/machinery/power/solar{
+	id = "forestarboard";
+	name = "Fore-Starboard Solar Array"
+	},
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/fore)
 "asP" = (
@@ -7446,6 +7451,11 @@
 /turf/open/floor/iron/dark,
 /area/station/science/robotics)
 "bwc" = (
+/obj/structure/cable,
+/obj/machinery/power/solar{
+	id = "forestarboard";
+	name = "Fore-Starboard Solar Array"
+	},
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/fore)
 "bwg" = (
@@ -215449,7 +215459,7 @@ fDB
 rpt
 bwc
 bwc
-rpt
+bwc
 rpt
 bwc
 bwc
@@ -215704,11 +215714,11 @@ soz
 ohj
 gLc
 bwc
-rpt
+tbb
 bwc
-rpt
+tbb
 bwc
-rpt
+tbb
 rpt
 gLc
 gTp
@@ -216216,15 +216226,15 @@ oGA
 soz
 ohj
 rpt
-rpt
+tbb
 bwc
-rpt
+tbb
 rpt
 dAD
 bwc
+tbb
 bwc
-bwc
-rpt
+tbb
 rpt
 gTp
 soz
@@ -216473,16 +216483,16 @@ oGA
 oGA
 fDB
 bwc
+tbb
 rpt
-rpt
-bwc
+tbb
 bwc
 dAD
-rpt
 bwc
+tbb
 bwc
+tbb
 bwc
-rpt
 gTp
 soz
 xQw
@@ -216987,15 +216997,15 @@ oGA
 oGA
 vVt
 rpt
-bwc
+tbb
 bwc
 tbb
 rpt
 dAD
 bwc
-rpt
-rpt
+tbb
 bwc
+tbb
 bwc
 gTp
 soz
@@ -217244,15 +217254,15 @@ oGA
 soz
 ohj
 bwc
-rpt
+tbb
 rpt
 tbb
 rpt
 dAD
-tbb
 bwc
+tbb
 rpt
-rpt
+tbb
 bwc
 gTp
 soz
@@ -217759,13 +217769,13 @@ rKN
 soz
 ohj
 gLc
-tbb
-rpt
-rpt
+bwc
 tbb
 bwc
-rpt
-rpt
+tbb
+bwc
+tbb
+bwc
 gLc
 gTp
 soz
@@ -218019,9 +218029,9 @@ vVt
 rpt
 bwc
 bwc
+bwc
 rpt
-rpt
-rpt
+bwc
 bwc
 vKW
 aSB
@@ -232925,7 +232935,7 @@ soz
 eXk
 asL
 asL
-eXk
+asL
 eXk
 asL
 asL
@@ -233180,11 +233190,11 @@ soz
 soz
 gLc
 asL
-eXk
+uig
 asL
-eXk
+uig
 asL
-eXk
+uig
 eXk
 gLc
 soz
@@ -233692,15 +233702,15 @@ xqo
 soz
 soz
 eXk
-eXk
+uig
 asL
-eXk
+uig
 eXk
 jGm
 asL
+uig
 asL
-asL
-eXk
+uig
 eXk
 soz
 soz
@@ -233949,15 +233959,15 @@ nPZ
 xqo
 soz
 asL
+uig
 eXk
-eXk
-asL
+uig
 asL
 jGm
 eXk
+uig
 asL
-asL
-asL
+uig
 eXk
 soz
 soz
@@ -234463,15 +234473,15 @@ xqo
 xqo
 soz
 eXk
-asL
+uig
 asL
 uig
 eXk
 jGm
 asL
+uig
 eXk
-eXk
-asL
+uig
 asL
 soz
 soz
@@ -234720,15 +234730,15 @@ xqo
 soz
 soz
 asL
-eXk
+uig
 eXk
 uig
 eXk
 jGm
-uig
 asL
+uig
 eXk
-eXk
+uig
 asL
 soz
 soz
@@ -235235,12 +235245,12 @@ jfV
 soz
 soz
 gLc
+asL
 uig
-eXk
 eXk
 uig
 asL
-eXk
+uig
 eXk
 gLc
 soz
@@ -235495,9 +235505,9 @@ soz
 eXk
 asL
 asL
+asL
 eXk
-eXk
-eXk
+asL
 asL
 soz
 soz

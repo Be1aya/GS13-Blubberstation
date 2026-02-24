@@ -1410,9 +1410,6 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bubbers/persistance/controltower)
 "we" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
 	},
@@ -1614,9 +1611,6 @@
 	},
 /area/ruin/space/has_grav/bubbers/persistance/roof)
 "zh" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
 /turf/open/floor/engine/hull/icebox,
 /area/ruin/space/has_grav/bubbers/persistance/roof)
 "zj" = (
@@ -3550,11 +3544,11 @@ dI
 dI
 dI
 dI
-dI
-dI
-dI
-dI
-dI
+xl
+xl
+xl
+xl
+xl
 xl
 xl
 xl
@@ -3620,13 +3614,13 @@ dI
 dI
 dI
 dI
-dI
-dI
-dI
-dI
-dI
 xl
 SF
+kH
+kH
+kH
+kH
+kH
 kH
 kH
 kH
@@ -3690,13 +3684,13 @@ dI
 dI
 dI
 dI
-dI
-xl
-xl
-xl
-xl
 xl
 ZU
+zh
+zh
+zh
+zh
+zh
 sZ
 sZ
 NO
@@ -3760,12 +3754,12 @@ dI
 dI
 dI
 dI
-dI
 xl
-SF
-kH
-kH
-kH
+ZU
+zh
+zh
+zh
+zh
 zh
 sZ
 sE
@@ -3830,9 +3824,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 NO
 Ui
 px
@@ -3900,9 +3894,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 zg
 gP
 gP
@@ -3970,9 +3964,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 VX
 gP
 SU
@@ -4040,9 +4034,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 VX
 gP
 SU
@@ -4110,9 +4104,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 VX
 gP
 SU
@@ -4180,9 +4174,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 VX
 gP
 SU
@@ -4250,9 +4244,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 fy
 gP
 SU
@@ -4321,7 +4315,7 @@ dI
 dI
 dI
 xl
-SF
+ZU
 zh
 sZ
 qn
@@ -4741,7 +4735,7 @@ dI
 dI
 dI
 xl
-VQ
+ZU
 we
 ug
 Mu
@@ -4810,9 +4804,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 wX
 CM
 eT
@@ -4880,9 +4874,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 bm
 ug
 Wx
@@ -4950,9 +4944,9 @@ dI
 dI
 dI
 dI
-dI
 xl
 ZU
+zh
 sE
 DH
 iB
@@ -5021,7 +5015,7 @@ dI
 dI
 dI
 xl
-SF
+ZU
 zh
 gq
 sE
@@ -5370,7 +5364,7 @@ dI
 dI
 dI
 dI
-qc
+xl
 ZU
 sZ
 VX

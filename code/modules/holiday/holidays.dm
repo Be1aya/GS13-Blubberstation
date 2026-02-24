@@ -966,7 +966,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	end_day = 3
 
 /datum/holiday/islamic/ramadan/getStationPrefix()
-	return pick("Haram","Halaal","Jihad","Muslim", "Al", "Mohammad", "Rashidun", "Umayyad", "Abbasid", "Abdul", "Fatimid", "Ayyubid", "Almohad", "Abu")
+	return pick("Halaal", "Al", "Mohammad", "Rashidun", "Umayyad", "Abbasid", "Abdul", "Fatimid", "Ayyubid", "Almohad", "Abu") //GS13 edit - removed positions like "Haram", "Jihad", "Muslim" (they paired really poorly with some station names)
 
 /datum/holiday/islamic/ramadan/end
 	name = "End of Ramadan"

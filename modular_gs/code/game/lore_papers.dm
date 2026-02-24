@@ -74,6 +74,26 @@
 	name = "Charred note"
 	default_raw_text = "They've g-- -all, -- s--en. Cloak-d fig----, ---...(the rest of the note seems unreadable)"
 
+
+/obj/item/paper/fluff/ruins/calorite_facility/calorite_note
+	name = "Report #383 C28 - Prolonged Exposure to Calorite and Calorite-Derived Products"
+	default_raw_text = "(the entire paper is covered in some sort of grease, smudging all the ink and making it unreadable...)"
+
+/obj/item/paper/fluff/ruins/calorite_facility/berry_note
+	name = "Report #91 BV-02 - Berry Virus"
+	default_raw_text = "Subject 2 - Male, Anthropomorphic Fox: blue fur. Name: Sam S (redacted for privacy). Subject was infected with a sample of 'Blueberry Virus' - their body has been observed to swell out of control with blueberry juice. Insufficient test chamber security and test mishandling resulted in 3 personnel members being infected. Personnel and the subject were relocated to properly secured facilities. More information in the system."
+
+/obj/item/paper/fluff/ruins/calorite_facility/lactation_note
+	name = "Report #4 MS-04 - Mootant Serum"
+	default_raw_text = "Subject 4 - Female, Anthropomorphic Raccoon: gray fur, black hair. Subject's initials: K.F (redacted for privacy).  Subject deemed to be a perfect candidate for the 'Mootant Serum' testing. Only 3 dosages assured near-complete transformation into an anthropomorphic bovine, with minimal retention of raccoon features. Subject is impossible to interview, only responds by mooing. Excessive lactation noted. Relocated to a larger room with a proper breast draining apparatus. Continue serum administration."
+
+/obj/item/paper/fluff/ruins/calorite_facility/fatty_note
+	name = "Report #17 LG-08 - Lipoifium"
+	default_raw_text = "Subject 8 - Female, Anthropomorphic Goat: black fur, pink hair with a blue bottom fade. Subject's initials: M. L. (redacted for privacy). At the beginning of the testing, subject was recorded to have weight of 160lbs. After a day of exposure, their weight went into quadruple digits. Testing had to be concluded due to insufficient size of the test chamber. Subject's appetite and caloric intake quadrupled (possibly unrelated to lipoifium exposure). More detailed report found in the system."
+
+/obj/item/paper/fluff/ruins/calorite_facility/micro_calorite_note
+	name = "Report #21 MC-07 - Micro-Calorite"
+	default_raw_text = "Subject 7 - Female, Anthropomorphic Fox: orange fur, pink hair. Subject's initials: V.V. (redacted for privacy). Over the course of the week, subject has been continously exposed to micro-calorite. Although the build-up was slow, gradual changes in metabolism and appetite were quickly noted. After a week of testing, the subject appears incapable of losing any weight, as well as having an insatiable appetite. Continue exposure and note any further effects."
 //GS13 starting_contentapads and Books
 /obj/item/book/manual/blubbery_bartender
 	name = "The Blubbery Bartender"
@@ -699,10 +719,6 @@
 	name = "STOP STEALING MY FUCKING LUNCH"
 	default_raw_text = "Tell that cunt Jerry from requisitions that if he ever steals my lunch again, I'm gonna lock him in a room with 10 of those creepy floating orange hands."
 
-/obj/item/paper/fluff/ruins/gateway_fats/facility_report7
-	name = "Report #383 C28 - Prolonged Exposure to Calorite and Calorite-Derived Products"
-	default_raw_text = "(the entire paper is covered in some sort of grease, smudging all the ink and making it unreadable...)"
-
-/obj/item/paper/fluff/ruins/gateway_fats/facility_report8
-	name = "Report #192 A38 - Lipoifium"
-	default_raw_text = "Subject 2 - Male, Anthropomorphic Fox, blue fur. Name: Sam S. At the beginning of the testing, subject was recorded to have weight of 160lbs. After a day of exposure, their weight went into quadruple digits. Testing had to be concluded due to insufficient build of the test chamber. More detailed report found in the system."
+/obj/item/paper/fluff/ruins/calorite_facility/shrine_note
+	name = "BEWARE"
+	default_raw_text = "To any miners: I've boarded up the shrine, it's FULL of these hellish disembodied floating orange hands. Barely managed to squeeze my fat ass out of there. Be cautious!"

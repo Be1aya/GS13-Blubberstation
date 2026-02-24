@@ -28,6 +28,7 @@
 	name = "Xenoarch Caves"
 	icon = 'modular_gs/icons/turf/areas.dmi'
 	icon_state = "xenogen"
+	always_unpowered = FALSE
 
 /area/xenoarch/lavaland
 	icon = 'modular_gs/icons/turf/areas.dmi'
