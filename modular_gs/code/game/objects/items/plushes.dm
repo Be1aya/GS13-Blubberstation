@@ -233,7 +233,7 @@
 	var/activate_sound = "sparks"
 	*/
 	/// shocker to handle the SHOCKING behavior
-	var/obj/item/kinky_shocker/shocker = /obj/item/kinky_shocker
+	var/obj/item/kinky_shocker/shocker
 
 /obj/item/toy/plush/gs13/voltz/examine(mob/user)
 	. = ..()
@@ -250,17 +250,26 @@
 
 /obj/item/toy/plush/gs13/voltz/attackby(obj/item/item, mob/living/user, list/modifiers, list/attack_modifiers)
 	. = ..()
-	shocker.attackby(item, user, modifiers, attack_modifiers)
+	. = shocker.attackby(item, user, modifiers, attack_modifiers)
 
 /obj/item/toy/plush/gs13/voltz/click_alt(mob/user)
-	shocker.click_alt(user)
+	var/obj/item/stock_parts/power_store/cell/cell = shocker.cell
+	if(!(cell))
+		return
+	cell.update_appearance()
+	cell.forceMove(get_turf(src))
+	shocker.cell = null
+	to_chat(user, span_notice("You remove the cell from [src]."))
+	shocker.shocker_on = FALSE
+	// update_appearance()
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/toy/plush/gs13/voltz/attack_self(mob/user)
-	shocker.attack_self(user)
+	. = shocker.attack_self(user)
 
 /obj/item/toy/plush/gs13/voltz/attack(mob/living/target_mob, mob/living/user, list/modifiers, list/attack_modifiers)
 	. = ..()
-	shocker.attack(target_mob, user, modifiers, attack_modifiers)
+	. = shocker.attack(target_mob, user, modifiers, attack_modifiers)
 
 /obj/item/toy/plush/gs13/blake
 	name = "Friendly Lizard"
