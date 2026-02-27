@@ -214,7 +214,9 @@
 	var/mob/living/carbon/human/patient = occupant
 	var/original_name = patient.dna.real_name
 
+	var/patient_fatness = patient.fatness_real	// GS13 EDIT: prevents the SAD from adding weight on pref read
 	patient.client?.prefs?.safe_transfer_prefs_to_with_damage(patient, visuals_only = TRUE)
+	patient.fatness_real = patient_fatness	// GS13 EDIT: prevents the SAD from adding weight on pref read. Yes, this is a filthy touch to the actual var, but I have to here. (also technically I am not changing it, but rather making sure it DOESN'T change)
 	patient.dna.update_dna_identity()
 	patient.updateappearance()
 	patient.wash(CLEAN_SCRUB)
