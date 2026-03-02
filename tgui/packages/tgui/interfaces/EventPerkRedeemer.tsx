@@ -1,5 +1,5 @@
 // THIS IS A GS13 UI FILE
-import { Section, Table, Stack, Tooltip, Box, Button } from 'tgui-core/components';
+import { Section, Table, Stack, Tooltip, Box, Button, } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -12,7 +12,7 @@ type Perk = {
     name: string;
     description: string;
     items: string;
-    expiry_date: Date;
+    expiry_date: string;
     available: boolean;
 };
 
@@ -27,22 +27,14 @@ const PerkNameAndDesc = (props: PerkProps) => {
         <Tooltip content={description} position="bottom-start">
         <Box
             inline
-            style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}
+            // style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}
             >
-            {name}
+            {"<span style = \"border-Bottom: 2px dotted rgba(255, 255, 255, 0.8)\">" + name + "</span>"}
         </Box>
         </Tooltip>
     ) : (
     <Box>{name}</Box>
     )
-};
-
-const PerkExpiryDate = (props:PerkProps) => {
-    const { expiry_date } = props.perk;
-
-    return(
-        <Box></Box>
-    );
 };
 
 const PerkRow = (props: PerkProps) => {
@@ -66,7 +58,10 @@ const PerkRow = (props: PerkProps) => {
             </Stack>
         </Table.Cell>
         <Table.Cell>
-            <Button 
+            {perk.expiry_date}
+        </Table.Cell>
+        <Table.Cell>
+            <Button
             disabled = {!perk.available}
             onClick={() => act("redeem_perk", {name: perk.name})}
             >
@@ -90,7 +85,7 @@ export const EventPerkRedeemer = (props) => {
             <Table.Row header>
                 <Table.Cell>Name</Table.Cell>
                 <Table.Cell>Items</Table.Cell>
-                <Table.Cell>Expiry date</Table.Cell>
+                <Table.Cell width = "100px">Expiry date</Table.Cell>
             </Table.Row>
             {available_perks.map((current_perk) => (
                 <PerkRow perk={current_perk} />
