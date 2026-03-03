@@ -92,7 +92,7 @@ export const EventPerkRedeemer = (props) => {
                 <Table.Cell width = "100px">Expiry date</Table.Cell>
             </Table.Row>
             {available_perks.map((current_perk) => (
-                <PerkRow perk={current_perk} />
+                <PerkRow key = {current_perk.name} perk={current_perk} />
             ))}
         </Table>
         </Section>

@@ -171,31 +171,3 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 	set desc = "Redeem an event perk for an event you participated in."
 
 	GLOB.event_perk_tgui_holder.ui_interact(src)
-
-/datum/event_perk/testing_perk
-	name = "RED team Construction Relief Package"
-	description = "A construction supplies perk granted to the RED team of the 07.02.2026 \"Build your own colony\" contest."
-	items = list(
-		/obj/item/construction/rcd/improved = 1,
-		/obj/item/storage/box/rcd_ammo = 1,
-		/obj/item/flatpacked_machine = 1,
-		/obj/item/storage/box/engitank = 1,
-		/obj/item/stack/sheet/iron = 50,
-		/obj/item/stack/sheet/glass = 50,
-		)
-	ckeys = list("absolutelyfree" = TRUE)
-	expiry_date = "01052026"
-
-/datum/event_perk/expired_perk
-	name = "expired"
-	description = "A construction supplies perk granted to the RED team of the 07.02.2026 \"Build your own colony\" contest"
-	items = list(
-		/obj/item/construction/rcd/improved = 1,
-		/obj/item/storage/box/rcd_ammo = 1,
-		/obj/item/flatpacked_machine = 1,
-		/obj/item/storage/box/engitank = 1,
-		/obj/item/stack/sheet/iron = 50,
-		/obj/item/stack/sheet/glass = 50,
-		)
-	ckeys = list("absolutelyfree" = TRUE)
-	expiry_date = "01032026"
