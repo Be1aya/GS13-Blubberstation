@@ -1,4 +1,4 @@
-## Bubberstation (TG Downstream)
+## Gain Station 13 (Bubberstation Downstream)
 
 [![CI Suite](https://github.com/Bubberstation/Bubberstation/actions/workflows/ci_suite.yml/badge.svg)](https://github.com/Bubberstation/Bubberstation/actions/workflows/ci_suite.yml)
 
@@ -8,14 +8,19 @@
 | ----------------------- | ----------------------------------------------------------------- |
 | Git / GitHub cheatsheet | https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833 |
 | Guide to Modularization | [./modular_zubbers/readme.md](./modular_zubbers/readme.md)        |
-| Website                 | https://wiki.bubberstation.org/index.php?title=Main_Page          |
-| Code                    | https://github.com/Bubberstation/Bubberstation                    |
-| Wiki                    | https://tgstation13.org/wiki/Main_Page                            |
-| Codedocs                | https://bubberstation.github.io/Bubberstation                     |
+| TGStation Wiki					| https://tgstation13.org/wiki/Main_Page                            |
+| Bubberstation Website		| https://wiki.bubberstation.org/index.php?title=Main_Page          |
+| Bubberstation Codedocs	| https://bubberstation.github.io/Bubberstation                     |
+| Bubberstation Code			| https://github.com/Bubberstation/Bubberstation										|
 | Bubberstation Discord   | https://discord.gg/AvjrTqnqEx                                     |
+| Gain Station 13 Code		| https://github.com/sheepishgoat/GS13-Blubberstation								|
+| Gain Station 13 Discord | https://discord.gg/7zRr6NFWX2																		  |
 | Coderbus Discord        | https://discord.gg/Vh8TJp9                                        |
 
-This is Bubberstation's fork of TG. Originally forked from Skyrat.
+
+This is Gain Station 13's fork of Bubberstation.
+
+Bubberstation is originally forked from Skyrat as a downstream of TG.
 
 **Please note that this repository contains sexually explicit content and is not suitable for those under the age of 18.**
 

@@ -57,7 +57,6 @@
 	if(!target_mob || !istype(target_mob) || !tf_mode_enabled)
 		return
 
-	var/obj/item/parent_item = parent
 	if(!istype(parent))
 		return // what
 
