@@ -50,9 +50,11 @@
 	if(!istype(target_mob))
 		return FALSE
 
+	/* Find a better way to do this.
 	if(!target_item.Adjacent(target_mob))
 		to_chat(user, span_warning("The [target_item] isn't close enough to [target_mob]"))
 		return FALSE
+	*/
 
 	if(target_item in target_mob.get_contents())
 		return FALSE // Don't TF someone into something they are holding.
