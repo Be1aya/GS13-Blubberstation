@@ -171,3 +171,25 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 	set desc = "Redeem an event perk for an event you participated in."
 
 	GLOB.event_perk_tgui_holder.ui_interact(src)
+
+
+// -----------------------ADMIN SHIT--------------------------------
+
+/datum/event_perk_maker/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "EventPerkMaker")
+		ui.open()
+
+/* for merge, let's make sure we ain't breaking shit
+/datum/admins
+	var/datum/event_perk_maker/event_perk_maker
+
+ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Perk (TGUI).", ADMIN_CATEGORY_EVENTS)
+	var/datum/event_perk_maker/panel = user.holder.event_perk_maker
+	if(!panel)
+		panel = new()
+		user.holder.event_perk_maker = panel
+	panel.ui_interact(user.mob)
+	BLACKBOX_LOG_ADMIN_VERB("Event Perk Maker")
+*/
