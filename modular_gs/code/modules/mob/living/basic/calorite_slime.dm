@@ -17,6 +17,7 @@
 	slime_type = /datum/slime_type/calorite
 	melee_damage_lower = 0
 	melee_damage_upper = 0
+	digestion_fat_yield = 2000
 
 /mob/living/basic/slime/calorite/Initialize(mapload, new_type, new_life_stage)
 	. = ..()
