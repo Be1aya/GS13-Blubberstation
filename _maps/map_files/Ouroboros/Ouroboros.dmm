@@ -7969,6 +7969,10 @@
 	dir = 1
 	},
 /area/station/common/wrestling/arena)
+"coZ" = (
+/obj/structure/window/reinforced/spawner/directional/south,
+/turf/open/floor/plating,
+/area/station/science/xenobiology)
 "cpm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -11488,6 +11492,17 @@
 /obj/structure/sign/poster/random/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/greater)
+"dsN" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow/fourcorners,
+/obj/effect/turf_decal/tile/blue/opposingcorners,
+/obj/machinery/atmospherics/components/binary/valve/digital{
+	name = "Waste release"
+	},
+/turf/open/floor/iron,
+/area/station/engineering/atmos)
 "dsU" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -22111,6 +22126,11 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/command)
+"gwU" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/turf/open/space/basic,
+/area/space/nearstation)
 "gxc" = (
 /obj/effect/mapping_helpers/airlock/access/all/medical/morgue,
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
@@ -46923,6 +46943,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/item/clothing/mask/breath/muzzle,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/augments)
 "nsb" = (
@@ -49167,7 +49188,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/computer/rdconsole,
+/obj/machinery/computer/rdconsole/unlocked,
 /turf/open/floor/glass/reinforced,
 /area/station/science/research)
 "ocj" = (
@@ -67183,6 +67204,13 @@
 /obj/structure/cable,
 /turf/open/floor/engine,
 /area/station/engineering/main)
+"tuf" = (
+/obj/effect/spawner/structure/window/reinforced/plasma,
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/station/engineering/atmos)
 "tur" = (
 /obj/effect/turf_decal/tile/green,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -78450,9 +78478,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
 "wBk" = (
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -99080,7 +99106,7 @@ jNA
 hrW
 hrW
 hrW
-xMC
+hrW
 hrW
 hrW
 hrW
@@ -99332,13 +99358,13 @@ oCF
 xMC
 hrW
 hrW
-xMC
+hrW
 hrW
 hrW
 iTV
 hrW
 xMC
-xMC
+coZ
 pHM
 yas
 wVa
@@ -112688,9 +112714,9 @@ vmE
 vmE
 vmE
 wmi
-wmi
-oZn
-fHz
+gwU
+tuf
+dsN
 wBk
 fHz
 tYa

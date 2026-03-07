@@ -1,5 +1,4 @@
-//GS13: Shadow Wood
-
+/*
 GLOBAL_LIST_INIT(shadoww_recipes, list ( \
 		new/datum/stack_recipe("Shadow wood floor tile", /obj/item/stack/tile/shadoww, 1, 4, 20, category = CAT_TILES), \
 		new/datum/stack_recipe("Shadow wood table frame", /obj/structure/table_frame/shadoww, 2, time = 10, category = CAT_STRUCTURE), \
@@ -41,7 +40,6 @@ GLOBAL_LIST_INIT(shadoww_recipes, list ( \
 /obj/item/stack/sheet/mineral/shadoww/five
 	amount = 5
 
-//GS13: Giant mushroom
 
 GLOBAL_LIST_INIT(gmushroom_recipes, list ( \
 		new/datum/stack_recipe("Mushroom floor tile", /obj/item/stack/tile/gmushroom, 1, 4, 20, category=CAT_TILES), \
@@ -82,7 +80,6 @@ GLOBAL_LIST_INIT(gmushroom_recipes, list ( \
 /obj/item/stack/sheet/mineral/gmushroom/five
 	amount = 5
 
-//GS13: Plaswood
 
 GLOBAL_LIST_INIT(plaswood_recipes, list ( \
 		new/datum/stack_recipe("Plaswood floor tile", /obj/item/stack/tile/plaswood, 1, 4, 20, category=CAT_TILES), \
@@ -123,7 +120,7 @@ GLOBAL_LIST_INIT(plaswood_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/plaswood/five
 	amount = 5
-
+*/
 /obj/item/stack/sheet/mineral/gold/five
 	amount = 5
 
