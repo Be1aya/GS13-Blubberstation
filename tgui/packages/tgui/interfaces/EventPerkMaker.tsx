@@ -1,5 +1,5 @@
 // THIS IS A GS13 UI FILE
-import { Section, Stack, Input, Button, TextArea } from 'tgui-core/components';
+import { Section, Stack, Input, Button, TextArea, Tooltip } from 'tgui-core/components';
 import { useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -30,9 +30,35 @@ export const EventPerkMaker = (props) => {
     const [itemAmount, setItemAmount] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
 
+    const submit_perk = () => {
+        act("create_perk", {
+            name: name,
+            description: description,
+            expiry_date: expiryDate
+        });
+        setName("");
+        setDescription("");
+        setItem("");
+        setItemAmount("");
+        setCkey("");
+        setItem("");
+        setExpiryDate("");
+    };
+
+    const submit_item = () => {
+        act("add_item", {item: item, item_amount: itemAmount})
+        setItem("");
+        setItemAmount("");
+    };
+
+    const submit_ckey = () => {
+        act("add_ckey", {ckey: ckey})
+        setCkey("");
+    };
+
     return(
-        <Window title={'Create a new perk'} width={300} height={380}>
-        <Window.Content>
+        <Window title={'Create a new perk'} width={300} height={500}>
+        <Window.Content scrollable>
         <Section>
         <Stack vertical fill>
             <Stack.Item>
@@ -56,7 +82,16 @@ export const EventPerkMaker = (props) => {
                 />
             </Stack.Item>
             <Stack.Item>
-                Items:<br/>
+                <Tooltip content = {
+                    "Input the path to an item (for example, \
+                    \"/obj/item/screwdriver\") in the first box, and then \
+                    the amount of said item in the second box."
+                }>
+                <span style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}>
+                Items:
+                </span>
+                </Tooltip>
+                <br/>
                 <ul>
                     {items.map((current_item) => (<li>{current_item}</li>))}
                 </ul>
@@ -74,44 +109,61 @@ export const EventPerkMaker = (props) => {
                 />
                 <Button
                 disabled = {item.trim().length == 0 || itemAmount.trim().length == 0}
-                onClick={() => act("add_item", {item: item,
-                                                item_amount: itemAmount})}
+                // onClick={() => (act("add_item", {item: item, item_amount: itemAmount}))}
+                onClick={submit_item}
                 >
                     Add
                 </Button>
             </Stack.Item>
             <Stack.Item>
-                Ckeys:<br/>
+                <Tooltip content = {
+                    "Input a ckey of a single player, and then press the add \
+                    button. You can also input their username, and it will \
+                    auto-convert it to a proper ckey."
+                }>
+                <span style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}>
+                Ckeys:
+                </span>
+                </Tooltip>
+                <br/>
                 <ul>
                     {ckeys.map((current_ckey) => (<li>{current_ckey}</li>))}
                 </ul>
                 <Input 
                 value = {ckey}
-                placeholder="Ckey..."
+                placeholder="Ckey"
                 onChange={setCkey}
                 width = {15}
                 />
                 <Button 
                 disabled = {ckey.trim().length == 0}
-                onClick={() => act("add_ckey", {ckey: ckey})}>
+                // onClick={() => act("add_ckey", {ckey: ckey})}
+                onClick={submit_ckey}
+                >
                     Add
                 </Button>
             </Stack.Item>
             <Stack.Item>
-                Expiry date:<br/>
+                <Tooltip content = {
+                    "The date on which the perk stops being \
+                    redeemable, in DDMMYYYY format."
+                    }>
+                <span style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}>
+                Expiry date:
+                </span>
+                </Tooltip>
+                <br/>
                 <Input 
                 value = {expiryDate}
                 maxLength={8}
-                placeholder="Expiry date..."
+                placeholder="DDMMYYYY"
                 onChange={setExpiryDate}
                 width = {15}
                 />
             </Stack.Item>
             <Stack.Item>
             <Button
-            onClick={() => act("create_perk", {name: name, 
-                                            description: description,
-                                            expiry_date: expiryDate})}
+            onClick={submit_perk}
             >
                 Submit
             </Button>
