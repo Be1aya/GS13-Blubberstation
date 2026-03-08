@@ -6,8 +6,8 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 type Data = {
-    items: String[];
-    ckeys: String[];
+    items: string[];
+    ckeys: string[];
 };
 
 type NewPerkData = {
@@ -93,7 +93,7 @@ export const EventPerkMaker = (props) => {
                 </Tooltip>
                 <br/>
                 <ul>
-                    {items.map((current_item) => (<li>{current_item}</li>))}
+                    {items.map((current_item) => (<li key={current_item}>{current_item}</li>))}
                 </ul>
                 <Input 
                 value = {item}
@@ -108,8 +108,7 @@ export const EventPerkMaker = (props) => {
                 width = {4}
                 />
                 <Button
-                disabled = {item.trim().length == 0 || itemAmount.trim().length == 0}
-                // onClick={() => (act("add_item", {item: item, item_amount: itemAmount}))}
+                disabled = {item.trim().length === 0 || itemAmount.trim().length === 0}
                 onClick={submit_item}
                 >
                     Add
@@ -127,7 +126,7 @@ export const EventPerkMaker = (props) => {
                 </Tooltip>
                 <br/>
                 <ul>
-                    {ckeys.map((current_ckey) => (<li>{current_ckey}</li>))}
+                    {ckeys.map((current_ckey) => (<li key={current_ckey}>{current_ckey}</li>))}
                 </ul>
                 <Input 
                 value = {ckey}
@@ -136,8 +135,7 @@ export const EventPerkMaker = (props) => {
                 width = {15}
                 />
                 <Button 
-                disabled = {ckey.trim().length == 0}
-                // onClick={() => act("add_ckey", {ckey: ckey})}
+                disabled = {ckey.trim().length === 0}
                 onClick={submit_ckey}
                 >
                     Add
