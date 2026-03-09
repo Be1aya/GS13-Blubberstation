@@ -16,5 +16,5 @@
 	return round(((muscle*MUSCLE_TO_WEIGHT_RATIO)) * (dna.current_body_size ** 2))
 
 /mob/living/carbon/proc/calculate_weight_in_pounds()
-	return calculate_total_fatness_weight_in_pounds() + calculate_total_muscle_weight_in_pounds() + (BASE_WEIGHT_VALUE * (dna.current_body_size ** 2))
+	return (calculate_total_fatness_weight_in_pounds() + calculate_total_muscle_weight_in_pounds() + (BASE_WEIGHT_VALUE * (dna.current_body_size ** 2))) *((dna.mutant_bodyparts[FEATURE_TAUR] && dna.mutant_bodyparts[FEATURE_TAUR][MUTANT_INDEX_NAME] != "None") ? 2.5 : 1)
 
