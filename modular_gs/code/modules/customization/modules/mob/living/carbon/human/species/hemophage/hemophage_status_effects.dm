@@ -14,33 +14,37 @@
 	if(!ishuman(owner))
 		return
 
-	var/mob/living/carbon/human/h = owner
-	h.adjust_fatness(sqrt(times_fed) * (sqrt(blood_fatness) / (100 / seconds_between_ticks)), FATTENING_TYPE_FOOD)
-	h.adjust_perma(sqrt(perma_blood_fatness) / (100 / seconds_between_ticks), FATTENING_TYPE_ITEM)
+	var/mob/living/carbon/human/human = owner
+	var/fatness_gain_modifier = sqrt(times_fed) / (100 * seconds_between_ticks)
+	human.adjust_fatness(sqrt(blood_fatness) * fatness_gain_modifier, FATTENING_TYPE_FOOD)
+	human.adjust_perma(sqrt(perma_blood_fatness) * fatness_gain_modifier, FATTENING_TYPE_FOOD)
 
-/datum/action/cooldown/hemophage/drain_victim/proc/fatness_drain(mob/living/carbon/hemophage, mob/living/carbon/human/victim)
+/mob/living/carbon/proc/fatness_drain(mob/living/carbon/victim)
 	if(!ishuman(victim))
 		return
 
-	for(var/datum/status_effect/status in hemophage.status_effects)
+	// for(var/datum/status_effect/status in src.status_effects)
+	var/datum/status_effect/blood_thirst_satiated/blood_thirst_satiated = locate() in src.status_effects
+	if (isnull(blood_thirst_satiated))
+		return
+		// if(istype(status, /datum/status_effect/blood_thirst_satiated))
 
-		if(istype(status, /datum/status_effect/blood_thirst_satiated))
+			// var/datum/status_effect/blood_thirst_satiated/blood_thirst_satiated = status
+	blood_thirst_satiated.times_fed += 1
 
-			var/datum/status_effect/blood_thirst_satiated/bts = status
-			bts.times_fed += 1
+	var/client_mult = BLOOD_DRAIN_MULTIPLIER_CKEY_GS
+	if(!victim.client)
+		client_mult = 1.0
 
-			var/client_mult = BLOOD_DRAIN_MULTIPLIER_CKEY_GS
-			if(!victim.client)
-				client_mult = 1.0
+	if(victim.fatness_real * client_mult > blood_thirst_satiated.blood_fatness)
+		blood_thirst_satiated.blood_fatness = victim.fatness_real * client_mult
+	victim.adjust_fatness(-sqrt(victim.fatness_real) * 9, FATTENING_TYPE_WEIGHT_LOSS)
 
-			if(victim.fatness_real * client_mult > bts.blood_fatness)
-				bts.blood_fatness = victim.fatness_real * client_mult
-			victim.adjust_fatness(-sqrt(victim.fatness_real) * 9, FATTENING_TYPE_WEIGHT_LOSS)
+	if(victim.fatness_perma * client_mult > blood_thirst_satiated.perma_blood_fatness)
+		blood_thirst_satiated.perma_blood_fatness = victim.fatness_perma  * client_mult
+	victim.adjust_perma(-sqrt(victim.fatness_perma) * 9, FATTENING_TYPE_WEIGHT_LOSS)
 
-			if(victim.fatness_perma * client_mult > bts.perma_blood_fatness)
-				bts.perma_blood_fatness = victim.fatness_perma  * client_mult
-			victim.adjust_perma(-sqrt(victim.fatness_perma) * 9, FATTENING_TYPE_WEIGHT_LOSS)
-
+/* in case I fucking break it
 // GS13 - It doesn't return anything so I can't ever know if the drain was successful if I override and call the parent.
 // Gotta just duplicate it and add in our stuff.
 /datum/action/cooldown/hemophage/drain_victim/drain_victim(mob/living/carbon/hemophage, mob/living/carbon/victim)
@@ -118,3 +122,4 @@
 		to_chat(hemophage, span_boldwarning("A final sputter of blood trickles from [victim]'s collapsing veins as your terrible hunger drains them almost completely dry."))
 	else if ((victim.blood_volume + HEMOPHAGE_DRAIN_AMOUNT_GS) <= BLOOD_VOLUME_SURVIVE)
 		to_chat(hemophage, span_warning("A sense of hesitation gnaws: you know for certain that taking much more blood from [victim] WILL kill them. <b>...but another part of you sees only opportunity.</b>"))
+*/

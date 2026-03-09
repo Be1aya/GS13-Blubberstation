@@ -37,6 +37,7 @@
 	else if(ishuman(victim) && victim.mind)
 		drinker.apply_status_effect(/datum/status_effect/blood_thirst_satiated)
 		drinker.disgust *= 0.3 //also clears a little bit of disgust too
+		drinker.fatness_drain(victim)	// GS13 EDIT added fatness_drain
 
 	drinker.blood_volume = min(drinker.blood_volume + blood_eatable, maximum_gained)
 	return FEED_CANCEL_BLOOD_TRANSFER
