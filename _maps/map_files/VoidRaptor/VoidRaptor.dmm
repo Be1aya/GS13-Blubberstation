@@ -741,7 +741,7 @@
 /area/station/science/genetics)
 "akv" = (
 /obj/structure/bodycontainer/morgue,
-/obj/effect/turf_decal/bot_blue,
+/obj/effect/turf_decal/bot_red,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "akR" = (
@@ -3470,7 +3470,7 @@
 /area/station/science/research)
 "aXO" = (
 /obj/machinery/newscaster/directional/north,
-/obj/effect/turf_decal/stripes/blue/corner{
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
 	},
 /turf/open/floor/iron/dark/smooth_large,
@@ -4042,10 +4042,10 @@
 /area/station/service/chapel/office)
 "bfF" = (
 /obj/machinery/requests_console/auto_name/directional/south,
-/obj/machinery/light/cold/directional/south,
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
+/obj/machinery/light/cold/directional/south,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "bgo" = (
@@ -5690,7 +5690,10 @@
 /area/station/engineering/atmos)
 "bIx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
 /turf/open/floor/iron/dark/smooth_large,
@@ -6523,7 +6526,6 @@
 	req_access = list("kitchen")
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/landmark/firealarm_sanity,
 /turf/open/floor/iron/large,
 /area/station/service/janitor)
 "bUS" = (
@@ -41347,10 +41349,10 @@
 "lGZ" = (
 /obj/machinery/airalarm/directional/east,
 /obj/effect/mapping_helpers/dead_body_placer,
-/obj/machinery/light/cold/directional/east,
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
+/obj/machinery/light/cold/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "lHf" = (
@@ -42674,7 +42676,7 @@
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
 "lXh" = (
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
 /turf/open/floor/iron/dark/smooth_large,
@@ -46816,7 +46818,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/stripes/blue,
+/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "nfC" = (
@@ -46903,10 +46905,10 @@
 "nho" = (
 /obj/effect/landmark/event_spawn,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/stripes/blue/corner{
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "nhx" = (
@@ -49341,7 +49343,6 @@
 	name = "Hydroponics Deliveries";
 	req_access = list("hydroponics")
 	},
-/obj/effect/landmark/firealarm_sanity,
 /turf/open/floor/iron/large,
 /area/station/service/hydroponics)
 "nQs" = (
@@ -50014,7 +50015,7 @@
 /turf/open/floor/grass,
 /area/station/medical/medbay/central)
 "nYs" = (
-/obj/effect/turf_decal/stripes/blue/corner,
+/obj/effect/turf_decal/stripes/red/corner,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "nYt" = (
@@ -52304,10 +52305,10 @@
 	},
 /area/station/command/eva)
 "oGw" = (
+/obj/effect/turf_decal/bot_red,
 /obj/structure/bodycontainer/morgue/beeper_off{
 	dir = 2
 	},
-/obj/effect/turf_decal/bot_blue,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "oGz" = (
@@ -58926,7 +58927,7 @@
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/medical)
 "qta" = (
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
@@ -64922,7 +64923,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/effect/turf_decal/stripes/blue,
+/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "sga" = (
@@ -75669,10 +75670,10 @@
 /turf/open/floor/iron/smooth_edge,
 /area/station/hallway/primary/aft)
 "uXa" = (
-/obj/structure/mannequin/skeleton,
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
+/obj/structure/mannequin/skeleton,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "uXb" = (
@@ -79202,7 +79203,7 @@
 /obj/structure/bodycontainer/morgue{
 	dir = 8
 	},
-/obj/effect/turf_decal/bot_blue,
+/obj/effect/turf_decal/bot_red,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
 "vXr" = (
@@ -81634,7 +81635,7 @@
 "wEj" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/effect/turf_decal/stripes/blue{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,

@@ -13053,11 +13053,11 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Permabrig Visitation"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark/side{
 	dir = 8
 	},
@@ -20186,7 +20186,7 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/caution/stand_clear/blue{
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
@@ -37110,6 +37110,7 @@
 	name = "Prison Blast Door"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/turf_decal/delivery/blue,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -37117,7 +37118,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/prison)
 "gZk" = (
@@ -37945,6 +37945,7 @@
 /obj/effect/decal/cleanable/dirt{
 	icon_state = "dirt-flat-1"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigfront";
 	name = "Brig Blast Door"
@@ -37953,7 +37954,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/all/security/entrance,
 /obj/machinery/scanner_gate/preset_guns,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "hhy" = (
@@ -38333,12 +38333,12 @@
 /obj/effect/turf_decal/trimline/red/filled/corner{
 	dir = 1
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigfront";
 	name = "Brig Blast Door"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/entrance,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "hlr" = (
@@ -41924,9 +41924,8 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Equipment Room"
 	},
-/obj/effect/mapping_helpers/airlock/red_alert_access,
-/obj/effect/mapping_helpers/airlock/access/all/security/armory,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/delivery/blue,
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "hVk" = (
@@ -42818,7 +42817,7 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/caution/stand_clear/blue{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -45743,10 +45742,10 @@
 /obj/machinery/door/airlock/security{
 	name = "Interrogation"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/interrogation)
 "iHq" = (
@@ -51858,6 +51857,8 @@
 /turf/open/floor/iron/smooth,
 /area/station/cargo/miningdock)
 "jPv" = (
+/obj/effect/turf_decal/caution/stand_clear/blue,
+/obj/effect/turf_decal/bot_blue,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -60761,9 +60762,10 @@
 /turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/ce)
 "lze" = (
+/obj/effect/turf_decal/caution/stand_clear/blue,
+/obj/effect/turf_decal/bot_blue,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "lzq" = (
@@ -62777,10 +62779,10 @@
 /obj/machinery/door/window/brigdoor/security/holding/right{
 	name = "Holding Cell"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "lSb" = (
@@ -72148,11 +72150,11 @@
 	name = "Security Desk"
 	},
 /obj/structure/cable,
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "nJT" = (
@@ -74135,11 +74137,12 @@
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/fore)
 "ocS" = (
+/obj/effect/turf_decal/tile/dark_blue/half/contrasted{
+	dir = 8;
+	use_holiday_colors = 0
+	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/effect/turf_decal/tile/red/half/contrasted{
-	dir = 8
 	},
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
@@ -78864,6 +78867,7 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Warden's Office"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -78872,7 +78876,6 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/armory,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "oVd" = (
@@ -79363,6 +79366,7 @@
 	name = "Prison Wing"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/turf_decal/delivery/blue,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
@@ -79370,7 +79374,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/prison)
 "paj" = (
@@ -91974,6 +91977,7 @@
 	id_tag = "innerbrig";
 	name = "Brig"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigfront";
 	name = "Brig Blast Door"
@@ -91981,7 +91985,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/all/security/entrance,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "rsZ" = (
@@ -92941,6 +92944,7 @@
 /obj/effect/decal/cleanable/dirt{
 	icon_state = "dirt-flat-1"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigfront";
 	name = "Brig Blast Door"
@@ -92949,7 +92953,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/entrance,
 /obj/machinery/scanner_gate/preset_guns,
 /obj/effect/landmark/navigate_destination/sec,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "rCH" = (
@@ -94551,13 +94554,13 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Equipment Requisition"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment,
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "rTs" = (
@@ -94715,7 +94718,7 @@
 "rVq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/caution/stand_clear/blue{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -96867,6 +96870,12 @@
 /obj/effect/spawner/random/structure/steam_vent,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science/xenobiology)
+"sqV" = (
+/obj/effect/turf_decal/caution/stand_clear/blue,
+/obj/effect/turf_decal/bot_blue,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/station/security/brig)
 "srd" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -98184,10 +98193,10 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Gear Room"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "sCX" = (
@@ -104680,7 +104689,7 @@
 "tNE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/caution/stand_clear/blue{
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
@@ -105417,13 +105426,13 @@
 /obj/machinery/door/airlock/security{
 	name = "Interrogation Monitoring"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment,
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/machinery/door/firedoor,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/interrogation)
 "tUj" = (
@@ -106367,11 +106376,11 @@
 	},
 /area/station/hallway/primary/port)
 "ueB" = (
+/obj/effect/turf_decal/delivery/blue,
 /obj/machinery/door/airlock/security/glass{
 	name = "Gear Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "ueE" = (
@@ -110855,7 +110864,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/delivery/blue,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/engineering/atmos_aux_port)
 "uXj" = (
@@ -113564,8 +113573,9 @@
 /turf/open/floor/wood/parquet,
 /area/station/common/gaskiosk)
 "vxA" = (
+/obj/effect/turf_decal/caution/stand_clear/blue,
+/obj/effect/turf_decal/bot_blue,
 /obj/effect/landmark/firealarm_sanity,
-/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "vxB" = (
@@ -114964,8 +114974,8 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Secure Gear Storage"
 	},
+/obj/effect/turf_decal/delivery/blue,
 /obj/effect/mapping_helpers/airlock/access/all/security/armory,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "vJJ" = (
@@ -158676,7 +158686,7 @@ pvr
 msQ
 hlp
 vxA
-rvL
+sqV
 rCE
 sjH
 tOv
