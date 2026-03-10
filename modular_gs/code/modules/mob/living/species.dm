@@ -56,6 +56,7 @@
 	for (var/helplessness_mechanic in subtypesof(/datum/helplessness))
 		var/datum/helplessness/helplessness_datum = new helplessness_mechanic
 		helplessness_datum.handle_helplessness(src)
+		qdel(helplessness_datum)
 
 /datum/movespeed_modifier/fatness
 	id = "fat"
