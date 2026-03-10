@@ -267,7 +267,7 @@
 /obj/item/clothing/under/color/grey/security
 	name = "security grey jumpsuit (Modular)"
 	desc = "Grey only in name"
-	greyscale_colors = "#3f6e9e"
+	greyscale_colors = "#F4080C"
 	armor_type = /datum/armor/clothing_under/rank_security
 	flags_1 = 0		// make it non-recolorable
 
