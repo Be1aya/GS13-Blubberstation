@@ -40,7 +40,8 @@ export const weight_gain_persistent: FeatureToggle = {
 
 export const weight_gain_permanent: FeatureToggle = {
   name: 'Permanent weight',
-  description: 'Toggle whether you want to be affected by permanent weight; a special type of fatness that is persistent and impossible to remove using normal means.',
+  description:
+    'Toggle whether you want to be affected by permanent weight; a special type of fatness that is persistent and impossible to remove using normal means.',
   component: CheckboxInput,
 };
 
@@ -61,5 +62,12 @@ export const safe_bursting: FeatureToggle = {
 export const see_bursting: FeatureToggle = {
   name: 'See bursting',
   description: 'Toggle if you want to see people bursting by inflation.',
+  component: CheckboxInput,
+};
+
+export const bursting_leave_gibs: FeatureToggle = {
+  name: 'Leave gibs on Bursting',
+  description:
+    'Toggle if you want to leave gibs on bursting. If you do not have this enabled, you will leave nothing behind for revival.',
   component: CheckboxInput,
 };

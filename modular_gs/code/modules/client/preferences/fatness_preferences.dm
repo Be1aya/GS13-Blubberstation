@@ -97,3 +97,12 @@
 
 /datum/preference/toggle/see_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
+
+/datum/preference/toggle/bursting_leave_gibs
+	category = BLUEBERRY_PREFERENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "bursting_leave_gibs"
+	default_value = TRUE // True by default because it makes revival possible.
+
+/datum/preference/toggle/bursting_leave_gibs/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return

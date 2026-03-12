@@ -7,7 +7,6 @@
 #define BURST_DELAY "Delay"
 #define BURST_CONFIRM "Yes, Kaboom!"
 #define BURST_ABORT "Abort bursting"
-#define ABOUT_TO_BURST_TRAIT "about_to_burst"
 #define BURST_DELAY_SECONDS 300
 
 #define BLUEBERRY_SPILL_BELLY "<span class='warning'>You feel a wetness spread on your belly as juice leaks out of your belly button!</span>"
@@ -154,7 +153,7 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 			if (SPT_PROB(5, seconds_per_tick))
 				splatter_juice(berry, TRUE)
 
-	if (HAS_TRAIT(berry, ABOUT_TO_BURST_TRAIT)) // Skip burst stuff if it already triggered
+	if(HAS_TRAIT(berry, TRAIT_ABOUT_TO_BURST) || HAS_TRAIT(berry, TRAIT_NO_BURST)) // Skip burst stuff if it already triggered or if the berry can't burst
 		return
 	var/relative_fullness = berry.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/berry?.client?.prefs?.read_preference(/datum/preference/numeric/helplessness/blueberry_max_before_burst)
 	if(relative_fullness > 1)
@@ -227,8 +226,8 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
  * Initiates the burst popup. Giving the player the choice between bursting or delaying.
  */
 /mob/living/carbon/proc/trigger_burst()
-	ADD_TRAIT(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT)
-	addtimer(TRAIT_CALLBACK_REMOVE(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT), BURST_DELAY_SECONDS SECONDS)
+	ADD_TRAIT(src, TRAIT_ABOUT_TO_BURST, TRAUMA_TRAIT)
+	addtimer(TRAIT_CALLBACK_REMOVE(src, TRAIT_ABOUT_TO_BURST, TRAUMA_TRAIT), BURST_DELAY_SECONDS SECONDS)
 	var/list/buttons = list(BURST_DELAY, BURST_IMMEDIATELY)
 	var/burst_choice = tgui_alert(src, "Choose if you want to burst now, or if you want to delay. If you click on the burst now option, you will have 7 seconds before you burst. If you click on the delay option, nothing will happen and you will get the option to burst again in 5 minutes if you're still at your limit.", "You feel ready to pop!", buttons)
 	visible_message("<span class='warning'>[src]'s body wobbles violently, they look ready to burst!</span>", pick(GLOB.blueberry_about_to_blow_flavour))
@@ -269,8 +268,13 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 	playsound(loc, BLUEBBERY_BURST_SOUND, BLUEBERRY_INFLATION_VOLUME * 1.5, 1, 1, 1.2, ignore_walls = TRUE)
 	qdel(smoke)
 
+
 	if(!safe_popping)
-		gib(DROP_ALL_REMAINS)
+		var/leave_gibs = client?.prefs?.read_preference(/datum/preference/toggle/bursting_leave_gibs)
+		if(leave_gibs)
+			gib(DROP_ALL_REMAINS)
+		else
+			gib(DROP_ITEMS)
 
 /**
  * Spawn a streak or puddle of juice on the floor of a carbon.
