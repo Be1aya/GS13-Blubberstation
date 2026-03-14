@@ -101,6 +101,15 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 	json_file.save()
 	qdel(json_file)
 
+/datum/event_perk/proc/remove_json(directory_path = EVENT_PERK_JSON_FOLDER)
+	var/file_name = name
+	var/file_path = directory_path + file_name + ".json"
+
+	if(!fexists(file_path))
+		return
+	
+	fdel(file_path)
+
 /datum/event_perk/proc/copy(var/datum/event_perk/perk)
 	src.name = perk.name
 	src.description = perk.description
@@ -120,8 +129,8 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 /datum/event_perk/ui_static_data(mob/user)
 	var/list/data = list()
 	data["available_perks"] = list()
+	data["admin_mode"] = FALSE
 	var/ckey = user.ckey
-
 
 	for (var/i = 1, i <= GLOB.event_perk_instances.len, i++)
 		var/datum/event_perk/selected_perk = GLOB.event_perk_instances[i]
@@ -132,15 +141,23 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 			var/list/perk_data = list(
 				"name" = selected_perk.name,
 				"description" = selected_perk.description,
-				"items" = "",
+				"items" = list(),
 				"expiry_date" = selected_perk.expiry_date_string,
 				"available" = selected_perk.ckeys[ckey],
 				)
 			
 			for (var/item in selected_perk.items)
-				var/obj/item/current_item = new item
-				perk_data["items"] += "[current_item.name] x[selected_perk.items[item]], "	// this is, understandably, a dogshit horrible way of doing this. but tgui is forcing my hand
-				qdel(current_item)
+				// var/obj/item/current_item = item
+				// perk_data["items"] += "[current_item::name] x[selected_perk.items[item]], "	// this is, understandably, a dogshit horrible way of doing this. but tgui is forcing my hand
+				
+				var/obj/item/current_item = item
+				var/item_name = current_item::name
+				var/item_amount = items[item]
+				var/list/list_entry = list(
+					"name" = item_name, 
+					"amount" = item_amount
+					)
+				UNTYPED_LIST_ADD(perk_data["items"], list_entry)
 
 			perk_data["items"] = copytext(perk_data["items"], 1, length(perk_data["items"]) - 1)
 			UNTYPED_LIST_ADD(data["available_perks"], perk_data)
@@ -201,26 +218,27 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 
 /datum/admins
 	var/datum/event_perk_maker/event_perk_maker
+	var/datum/event_perk_manager/event_perk_manager
 
 ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Perk (TGUI).", ADMIN_CATEGORY_EVENTS)
 	var/datum/event_perk_maker/panel = user.holder.event_perk_maker
 	if(!panel)
 		panel = new()
 		user.holder.event_perk_maker = panel
+		panel.perk_data = new()
 	panel.ui_interact(user.mob)
 	BLACKBOX_LOG_ADMIN_VERB("Event Perk Maker")
 
 /datum/event_perk_maker
-	var/list/items = list()
-	var/list/ckeys = list()
+	var/datum/event_perk/perk_data
 
 /datum/event_perk_maker/proc/create_perk(name, description, expiry_date)
 	var/datum/event_perk/new_perk = new()
 
 	new_perk.name = name
 	new_perk.description = description
-	new_perk.items = src.items.Copy()
-	new_perk.ckeys = src.ckeys.Copy(src.ckeys)
+	new_perk.items = perk_data.items.Copy()
+	new_perk.ckeys = perk_data.ckeys.Copy()
 	new_perk.expiry_date = expiry_date
 
 	var/overriden_perk = FALSE
@@ -242,21 +260,16 @@ ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Pe
 		"ckeys" = new_perk.ckeys,
 		"expiry_date" = new_perk.expiry_date,
 	)
-	log_admin("[key_name(usr)] has [overriden_perk ? "overriden" : "created"] perk [new_perk.name].", logging_data)
 
-	src.items.RemoveAll(items)
-	src.ckeys.RemoveAll(ckeys)
+	var/action = overriden_perk ? "overriden" : "created"
+	log_admin("[key_name(usr)] has [action] perk [new_perk.name].", logging_data)
+	message_admins("[key_name_admin(usr)] has [action] perk [new_perk.name].")
+
+	perk_data.items.RemoveAll(perk_data.items)
+	perk_data.ckeys.RemoveAll(perk_data.ckeys)
 
 	if (overriden_perk)
 		qdel(new_perk)
-
-/datum/event_perk_maker/proc/format_item_list(items)
-	var/list/items_list = list()
-	return items_list
-
-/datum/event_perk_maker/proc/format_ckey_list(ckeys)
-	var/list/ckeys_list = list()
-	return ckeys_list
 
 /datum/event_perk_maker/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -271,29 +284,34 @@ ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Pe
 	. = ..()
 
 	var/list/data = list()
+	data["Name"] = perk_data.name
+	data["Description"] = perk_data.description
+	data["Expiry_date"] = perk_data.expiry_date
 	data["items"] = list()
 	data["ckeys"] = list()
 
-	for (var/item in items)
-		var/obj/item/current_item = new item
-		var/item_name = current_item.name
-		var/item_amount = items[item]
+	for (var/item in perk_data.items)
+		var/obj/item/current_item = item
+		var/item_name = current_item::name
+		var/item_amount = perk_data.items[item]
 		var/list/list_entry = list(
 			"name" = item_name, 
 			"amount" = item_amount
 			)
 		UNTYPED_LIST_ADD(data["items"], list_entry)
-		qdel(current_item)
 
-	for (var/ckey in ckeys)
+	for (var/ckey in perk_data.ckeys)
 		UNTYPED_LIST_ADD(data["ckeys"], ckey)
 
 	return data
 
 /datum/event_perk_maker/ui_close(mob/user)
 	. = ..()
-	items.RemoveAll(items)
-	ckeys.RemoveAll(ckeys)
+	perk_data.name = ""
+	perk_data.description = ""
+	perk_data.expiry_date = ""
+	perk_data.items.RemoveAll(perk_data.items)
+	perk_data.ckeys.RemoveAll(perk_data.ckeys)
 
 /datum/event_perk_maker/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -316,24 +334,119 @@ ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Pe
 			if (isnull(amount))
 				amount = 1
 
-			items[item] = amount
+			perk_data.items[item] = amount
 		if ("add_ckey")
 			var/ckey = ckey(params["ckey"])
 
 			if (isnull(ckey))
 				return
 
-			ckeys[ckey] = CAN_REDEEM
+			perk_data.ckeys[ckey] = CAN_REDEEM
 		if ("remove_item")
 			var/item_name = params["item"]
-			for (var/item in items)
+			for (var/item in perk_data.items)
 				var/atom/current_item = item
 				if (current_item::name == item_name)
-					items.Remove(item)
+					perk_data.items.Remove(item)
 					break
 		if ("remove_ckey")
 			var/ckey = params["ckey"]
-			ckeys.Remove(ckey)
+			perk_data.ckeys.Remove(ckey)
+
+	update_static_data(usr)
+
+/datum/event_perk_manager
+	var/datum/event_perk_maker/event_perk_maker
+
+ADMIN_VERB(event_perk_manager, R_ADMIN, "Event Perk Manager", "Create a new Event Perk (TGUI).", ADMIN_CATEGORY_EVENTS)
+	var/datum/event_perk_manager/panel = user.holder.event_perk_manager
+	if(!panel)
+		panel = new()
+		if (!user.holder.event_perk_maker)
+			user.holder.event_perk_maker = new()
+			user.holder.event_perk_maker.perk_data = new()
+		panel.event_perk_maker = user.holder.event_perk_maker
+		user.holder.event_perk_manager = panel
+	panel.ui_interact(user.mob)
+	BLACKBOX_LOG_ADMIN_VERB("Event Perk Manager")
+
+/datum/event_perk_manager/Del()
+	. = ..()
+	event_perk_maker = null
+
+/datum/event_perk_manager/ui_state(mob/user)
+	return GLOB.always_state
+
+/datum/event_perk_manager/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "EventPerkRedeemer")
+		ui.open()
+
+/datum/event_perk_manager/ui_static_data(mob/user)
+	var/list/data = list()
+	data["available_perks"] = list()
+	data["admin_mode"] = TRUE
+
+	for (var/i = 1, i <= GLOB.event_perk_instances.len, i++)
+		var/datum/event_perk/selected_perk = GLOB.event_perk_instances[i]
+		
+		var/list/perk_data = list(
+			"name" = selected_perk.name,
+			"description" = selected_perk.description,
+			"items" = list(),
+			"ckeys" = list(),
+			"expiry_date" = selected_perk.expiry_date_string,
+			"available" = CAN_REDEEM,
+			)
+		
+		for (var/item in selected_perk.items)
+			var/obj/item/current_item = item
+			var/item_name = current_item::name
+			var/item_amount = selected_perk.items[item]
+			var/list/list_entry = list(
+				"name" = item_name, 
+				"amount" = item_amount
+				)
+			UNTYPED_LIST_ADD(perk_data["items"], list_entry)
+
+		for (var/ckey in selected_perk.ckeys)
+			UNTYPED_LIST_ADD(perk_data["ckeys"], ckey)
+
+		// perk_data["items"] = copytext(perk_data["items"], 1, length(perk_data["items"]) - 1)
+		UNTYPED_LIST_ADD(data["available_perks"], perk_data)
+
+	return data
+
+/datum/event_perk_manager/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if (.)
+		return .
+
+	var/name = params["name"]
+
+	switch(action)
+		if ("redeem_perk")
+			for (var/i = 1, i <= GLOB.event_perk_instances.len, i++)
+				var/datum/event_perk/perk = GLOB.event_perk_instances[i]
+				if (perk.name == name)
+					perk.redeem()
+					break
+		if ("delete_perk")
+			for (var/i = 1, i <= GLOB.event_perk_instances.len, i++)
+				var/datum/event_perk/perk = GLOB.event_perk_instances[i]
+				if (perk.name == name)
+					perk.remove_json()
+					GLOB.event_perk_instances.Cut(i, i+1)
+					qdel(perk)
+					break
+		if ("edit_perk")
+			for (var/i = 1, i <= GLOB.event_perk_instances.len, i++)
+				var/datum/event_perk/perk = GLOB.event_perk_instances[i]
+				if (perk.name == name)
+					event_perk_maker.perk_data.copy(perk)
+					event_perk_maker.ui_interact(usr, null)
+					break
 
 	update_static_data(usr)
 

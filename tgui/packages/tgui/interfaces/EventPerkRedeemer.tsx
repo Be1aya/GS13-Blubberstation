@@ -3,21 +3,46 @@ import { Section, Table, Stack, Tooltip, Box, Button, } from 'tgui-core/componen
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
+import type {JSX} from 'react'
 
 type Data = {
     available_perks: Perk[];
+    admin_mode: boolean;
+};
+
+type item = {
+    name: string;
+    amount: number;
 };
 
 type Perk = {
     name: string;
     description: string;
-    items: string;
+    items: item[];
+    ckeys: string[];
     expiry_date: string;
     available: boolean;
 };
 
 type PerkProps = {
     perk: Perk;
+};
+
+type ckeyProp = {
+    ckey: string;
+};
+
+const ItemEntry = (item: item) => {
+    return(
+        item.name + ", x" + item.amount + ", "
+    );
+};
+
+const CkeyList = (ckeyProp: ckeyProp) => {
+    const { ckey } = ckeyProp;
+    return(
+        ckey + ", "
+    );
 };
 
 const PerkNameAndDesc = (props: PerkProps) => {
@@ -41,6 +66,40 @@ const PerkNameAndDesc = (props: PerkProps) => {
 const PerkRow = (props: PerkProps) => {
     const { perk } = props;
     const { act } = useBackend<Data>();
+    const { data } = useBackend<Data>();
+    const { admin_mode } = data
+
+    const CreateButton = () => {
+        return(
+            admin_mode ? (
+                <Stack>
+                <Button
+                onClick={() => act("redeem_perk", {name: perk.name})}
+                >
+                    Redeem
+                </Button>
+                <Button
+                onClick={() => act("edit_perk", {name: perk.name})}
+                >
+                    Edit
+                </Button>
+                <Button
+                color="red"
+                onClick={() => act("delete_perk", {name: perk.name})}
+                >
+                    Delete
+                </Button>
+                </Stack>
+            ) : (
+                <Button
+                disabled = {!perk.available}
+                onClick={() => act("redeem_perk", {name: perk.name})}
+                >
+                    Redeem
+                </Button>
+            )
+        );
+    };
 
     return (
     <Table.Row className="candystripe" >
@@ -54,20 +113,24 @@ const PerkRow = (props: PerkProps) => {
         <Table.Cell>
             <Stack>
                 <Stack.Item>
-                {perk.items}
+                    {perk.items.map((current_item) => (
+                    <ItemEntry key = {current_item.name} {...current_item} />
+                    ))}
                 </Stack.Item>
             </Stack>
         </Table.Cell>
+        {admin_mode ? (<Table.Cell>{perk.ckeys.map((current_ckey) => (<CkeyList key = {current_ckey} ckey = {current_ckey}/>))}</Table.Cell>) : ''}
         <Table.Cell>
             {perk.expiry_date}
         </Table.Cell>
         <Table.Cell>
-            <Button
+            <CreateButton />
+            {/* <Button
             disabled = {!perk.available}
             onClick={() => act("redeem_perk", {name: perk.name})}
             >
                 Redeem
-            </Button>
+            </Button> */}
         </Table.Cell>
     </Table.Row>
     );
@@ -89,6 +152,7 @@ export const EventPerkRedeemer = (props) => {
             <Table.Row header>
                 <Table.Cell>Name</Table.Cell>
                 <Table.Cell>Items</Table.Cell>
+                {data.admin_mode ? (<Table.Cell>Ckeys</Table.Cell>) : ''}
                 <Table.Cell width = "100px">Expiry date</Table.Cell>
             </Table.Row>
             {available_perks.map((current_perk) => (

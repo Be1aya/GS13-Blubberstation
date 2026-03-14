@@ -7,8 +7,11 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 type Data = {
+    Name: string;
+    Description: string;
     items: item[];
     ckeys: string[];
+    Expiry_date: string;
 };
 
 type item = {
@@ -25,18 +28,11 @@ type ckeyProp = {
     ckey: string;
 };
 
-type NewPerkData = {
-    name: string;
-    description: string;
-    items: string;
-    ckeys: string;
-    expiry_date: string;
-};
-
 export const EventPerkMaker = (props) => {
-    const { act } = useBackend<NewPerkData>();
+    const { act } = useBackend();
     const { data } = useBackend<Data>();
     const {items, ckeys} = data;
+    const { Name, Description, Expiry_date } = data
 
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -44,6 +40,10 @@ export const EventPerkMaker = (props) => {
     const [item, setItem] = useState('');
     const [itemAmount, setItemAmount] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
+
+    // setName(data.name)
+    // setDescription(data.description)
+    // setExpiryDate(data.expiry_date)
 
     const submit_perk = () => {
         act("create_perk", {
@@ -109,9 +109,11 @@ export const EventPerkMaker = (props) => {
         <Stack vertical fill>
             <Stack.Item>
                 Name:<br/>
+                {Description}
+                test
                 <Input 
                 maxLength={100}
-                value = {name}
+                value = {Name}
                 placeholder="Name of the event perk"
                 onChange={setName}
                 width = {15}
@@ -121,7 +123,7 @@ export const EventPerkMaker = (props) => {
                 Description:<br/>
                 <TextArea
                     fluid
-                    value = {description}
+                    value = {Description}
                     placeholder="Description of the event perk"
                     onChange={setDescription}
                     height = {10}
@@ -197,12 +199,12 @@ export const EventPerkMaker = (props) => {
                     redeemable, in DDMMYYYY format."
                     }>
                 <span style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}>
-                Expiry date:
+                Expiry date:dasdaw
                 </span>
                 </Tooltip>
                 <br/>
                 <Input 
-                value = {expiryDate}
+                value = {Expiry_date}
                 maxLength={8}
                 placeholder="DDMMYYYY"
                 onChange={setExpiryDate}
