@@ -17,8 +17,11 @@
 	var/mob/living/carbon/carbon_pred = pred
 	if(istype(carbon_pred))
 		// We don't need to worry about checking prefs here because the procs already do it
-		carbon_pred.adjust_perma(permafat_from_prey)
-		carbon_pred.adjust_calorite_poisoning(calorite_poisioning_from_prey)
+		if(permafat_from_prey && carbon_pred.adjust_perma(permafat_from_prey, FATTENING_TYPE_FOOD, TRUE))
+			carbon_prey.adjust_perma(-permafat_from_prey, FATTENING_TYPE_ALMIGHTY, TRUE)
+
+		if(calorite_poisioning_from_prey && carbon_pred.adjust_calorite_poisoning(calorite_poisioning_from_prey))
+			carbon_prey.adjust_calorite_poisoning(-calorite_poisioning_from_prey)
 
 	if(prey_weight_value < 1) // Too low calorie.
 		return FALSE
