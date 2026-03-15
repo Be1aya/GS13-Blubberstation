@@ -28,7 +28,7 @@
 	if(use_flat_fat_hiders)
 		return total_prey_value_fatness
 
-	total_prey_value_adjusted = (total_prey_value_adjusted * carbon_pred.calculate_adjusted_weight_ratio()) // Combine the total adjusted fatness with the pred's weight ratio.
+	total_prey_value_adjusted = (total_prey_value_adjusted * carbon_pred.calculate_weight_scale()) // Combine the total adjusted fatness with the pred's weight ratio.
 
 	return total_prey_value_adjusted
 
