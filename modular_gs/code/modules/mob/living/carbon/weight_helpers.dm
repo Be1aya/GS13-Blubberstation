@@ -29,11 +29,11 @@
 /mob/living/carbon/proc/calculate_total_weight_in_bfi()
 	return (muscle * MUSCLE_TO_FATNESS_RATIO) + fatness
 
-
-/// Return how much fatness 1 fatness would be worth on the parent's body. For example, on someone with 200% sprite size this would return 0.5
-/mob/living/carbon/proc/calculate_adjusted_weight_ratio()
-	return 1 / (dna.current_body_size ** 2)
+/// Returns how much weight is scaled on the parent mob. Used for weight calculations. For example, a mob with 200% sprite size will return 4.
+/mob/living/carbon/proc/calculate_weight_scale()
+	// Add taur support here later so that we can further reduce code.
+	return (dna.current_body_size ** 2)
 
 /// Get a mob's total weight in fatness adjusted for their body size
 /mob/living/carbon/proc/calculate_adjusted_total_weight_in_bfi()
-	return (calculate_total_weight_in_bfi() * calculate_adjusted_weight_ratio())
+	return (calculate_total_weight_in_bfi() * calculate_weight_scale())
