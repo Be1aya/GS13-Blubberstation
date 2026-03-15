@@ -1,6 +1,6 @@
 // THIS IS A GS13 UI FILE
 import { Section, Stack, Input, Button, TextArea, Tooltip } from 'tgui-core/components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type {JSX} from 'react'
 
 import { useBackend } from '../backend';
@@ -34,16 +34,21 @@ export const EventPerkMaker = (props) => {
     const {items, ckeys} = data;
     const { Name, Description, Expiry_date } = data
 
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
+    const [name, setName] = useState(Name);
+    const [description, setDescription] = useState(Description);
     const [ckey, setCkey] = useState('');
     const [item, setItem] = useState('');
     const [itemAmount, setItemAmount] = useState('');
-    const [expiryDate, setExpiryDate] = useState('');
+    const [expiryDate, setExpiryDate] = useState(Expiry_date);
 
-    // setName(data.name)
-    // setDescription(data.description)
-    // setExpiryDate(data.expiry_date)
+    // useEffect(() => {
+    // setName(Name);
+    // setDescription(Description);
+    // setExpiryDate(Expiry_date);
+    // });   
+    // setName(Name)
+    // setDescription(Description)
+    // setExpiryDate(Expiry_date)
 
     const submit_perk = () => {
         act("create_perk", {
@@ -109,8 +114,6 @@ export const EventPerkMaker = (props) => {
         <Stack vertical fill>
             <Stack.Item>
                 Name:<br/>
-                {Description}
-                test
                 <Input 
                 maxLength={100}
                 value = {Name}
@@ -199,7 +202,7 @@ export const EventPerkMaker = (props) => {
                     redeemable, in DDMMYYYY format."
                     }>
                 <span style={{borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',}}>
-                Expiry date:dasdaw
+                Expiry date:
                 </span>
                 </Tooltip>
                 <br/>
@@ -214,6 +217,12 @@ export const EventPerkMaker = (props) => {
             <Stack.Item>
             <Button
             onClick={submit_perk}
+            disabled={name.trim().length === 0
+                || description.trim().length === 0
+                || expiryDate.trim().length === 0
+                || ckeys.length === 0
+                || items.length ===0
+            }
             >
                 Submit
             </Button>

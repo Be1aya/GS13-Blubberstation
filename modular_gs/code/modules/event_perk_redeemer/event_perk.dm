@@ -117,6 +117,11 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 	src.items = perk.items.Copy()
 	src.ckeys = perk.ckeys.Copy()
 
+	var/perk_day = text2num(copytext(expiry_date, 1, 3))
+	var/perk_month = text2num(copytext(expiry_date, 3, 5))
+	var/perk_year = text2num(copytext(expiry_date, 5, 9))
+	expiry_date_string = "[perk_day].[perk_month].[perk_year]"
+
 /datum/event_perk/ui_state(mob/user)
 	return GLOB.always_state
 
@@ -142,14 +147,12 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 				"name" = selected_perk.name,
 				"description" = selected_perk.description,
 				"items" = list(),
+				"ckeys" = list(),
 				"expiry_date" = selected_perk.expiry_date_string,
 				"available" = selected_perk.ckeys[ckey],
 				)
 			
 			for (var/item in selected_perk.items)
-				// var/obj/item/current_item = item
-				// perk_data["items"] += "[current_item::name] x[selected_perk.items[item]], "	// this is, understandably, a dogshit horrible way of doing this. but tgui is forcing my hand
-				
 				var/obj/item/current_item = item
 				var/item_name = current_item::name
 				var/item_amount = items[item]
@@ -159,7 +162,7 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 					)
 				UNTYPED_LIST_ADD(perk_data["items"], list_entry)
 
-			perk_data["items"] = copytext(perk_data["items"], 1, length(perk_data["items"]) - 1)
+			// perk_data["items"] = copytext(perk_data["items"], 1, length(perk_data["items"]) - 1)
 			UNTYPED_LIST_ADD(data["available_perks"], perk_data)
 
 	return data
@@ -265,6 +268,9 @@ ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Pe
 	log_admin("[key_name(usr)] has [action] perk [new_perk.name].", logging_data)
 	message_admins("[key_name_admin(usr)] has [action] perk [new_perk.name].")
 
+	perk_data.name = ""
+	perk_data.description = ""
+	perk_data.expiry_date = ""
 	perk_data.items.RemoveAll(perk_data.items)
 	perk_data.ckeys.RemoveAll(perk_data.ckeys)
 
@@ -281,8 +287,6 @@ ADMIN_VERB(event_perk_maker, R_ADMIN, "Event Perk Maker", "Create a new Event Pe
 	return GLOB.always_state
 
 /datum/event_perk_maker/ui_static_data(mob/user)
-	. = ..()
-
 	var/list/data = list()
 	data["Name"] = perk_data.name
 	data["Description"] = perk_data.description
