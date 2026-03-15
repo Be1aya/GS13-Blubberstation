@@ -41,8 +41,18 @@
 	START_PROCESSING(SSvore, src)
 	// Do our best not to get dropped
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
+	// GS13 EDIT - Fat Hiders
+	var/mob/living/carbon/carbon_owner = owner
+	if(istype(carbon_owner))
+		carbon_owner.hider_add(src)
+	// GS13 EDIT - End
 
 /obj/vore_belly/Destroy(force)
+	// GS13 EDIT - Fat Hiders
+	var/mob/living/carbon/carbon_owner = owner
+	if(istype(carbon_owner))
+		carbon_owner.hider_remove(src)
+	// GS13 EDIT - End
 	STOP_PROCESSING(SSvore, src)
 	if(owner)
 		LAZYREMOVE(owner.vore_bellies, src)
@@ -127,6 +137,10 @@
 		"escape_fail_messages_owner" = escape_fail_messages_owner || GLOB.escape_fail_messages_owner,
 		"escape_fail_messages_prey" = escape_fail_messages_prey || GLOB.escape_fail_messages_prey,
 	)
+	//GS13 EDIT START
+	data["use_fat_hiders"] = use_fat_hiders
+	data["use_flat_fat_hiders"] = use_flat_fat_hiders
+	//GS13 EDIT END
 
 	return data
 
@@ -238,6 +252,13 @@
 			set_messages("escape_fail_messages_owner", value)
 		if("escape_fail_messages_prey")
 			set_messages("escape_fail_messages_prey", value)
+
+		// GS13 EDIT START
+		if("use_fat_hiders")
+			use_fat_hiders = !use_fat_hiders
+		if("use_flat_fat_hiders")
+			use_flat_fat_hiders = !use_flat_fat_hiders
+		// GS13 EDIT END
 
 // Disables assume_air
 /obj/vore_belly/assume_air(datum/gas_mixture/giver)

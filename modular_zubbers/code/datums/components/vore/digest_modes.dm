@@ -152,9 +152,20 @@ GLOBAL_DATUM_INIT(vore_cryopod, /obj/machinery/cryopod/quiet/vore, new /obj/mach
 			continue
 		if(HAS_TRAIT_FROM(L, TRAIT_RESTRAINED, TRAIT_SOURCE_VORE))
 			continue
-		if(L.nutrition < ABSORB_NUTRITION_BARRIER)
+		// GS13 EDIT START - Absorb fatness
+		var/mob/living/carbon/carbon_prey = L
+		var/current_fatness = 0
+		if(istype(carbon_prey))
+			current_fatness = carbon_prey.fatness_real
+
+		if(L.nutrition < ABSORB_NUTRITION_BARRIER && !current_fatness)// Original: if(L.nutrition < ABSORB_NUTRITION_BARRIER)
+		//GS13 EDIT END
 			vore_belly.absorb(L)
 			continue
+		// GS13 EDIT START
+		if(vore_belly.absorb_fatness(living_parent, L)) // Take fatness from the prey before we take nutrition
+			continue
+		// GS13 EDIT END
 		// Times 2 because we assume a baseline of 2 "damage" in absorb mode
 		var/nutrition_transfer = NUTRITION_PER_DAMAGE * 2 * seconds_per_tick
 		L.adjust_nutrition(-nutrition_transfer)

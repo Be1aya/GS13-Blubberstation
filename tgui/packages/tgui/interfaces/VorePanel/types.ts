@@ -37,6 +37,10 @@ export type Belly = {
   is_wet: BooleanLike;
   wet_loop: BooleanLike;
   messages: { [key: string]: string[] };
+  /*GS13 EDIT START */
+  use_fat_hiders: BooleanLike;
+  use_flat_fat_hiders: BooleanLike;
+  /*GS13 EDIT END*/
 };
 
 export type PreyBellyView = Omit<Belly, 'index' | 'ref'> & {

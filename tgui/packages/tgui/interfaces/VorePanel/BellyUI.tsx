@@ -567,6 +567,45 @@ export const BellyUI = (props: {
               <Icon name="volume-up" />
             </Button>
           </LabeledList.Item>
+          {/*GS13 Edit Start*/}
+          <LabeledList.Item label="Add prey weight">
+            {editing ? (
+              <Button
+                icon={belly.use_fat_hiders ? 'toggle-on' : 'toggle-off'}
+                selected={belly.use_fat_hiders}
+                onClick={() =>
+                  act('edit_belly', { ref: belly.ref, var: 'use_fat_hiders' })
+                }
+              >
+                {belly.use_fat_hiders ? 'Yes' : 'No'}
+              </Button>
+            ) : belly.use_fat_hiders ? (
+              'Yes'
+            ) : (
+              'No'
+            )}
+          </LabeledList.Item>
+          <LabeledList.Item label="prey weight flat scaling">
+            {editing ? (
+              <Button
+                icon={belly.use_flat_fat_hiders ? 'toggle-on' : 'toggle-off'}
+                selected={belly.use_flat_fat_hiders}
+                onClick={() =>
+                  act('edit_belly', {
+                    ref: belly.ref,
+                    var: 'use_flat_fat_hiders',
+                  })
+                }
+              >
+                {belly.use_flat_fat_hiders ? 'Yes' : 'No'}
+              </Button>
+            ) : belly.use_flat_fat_hiders ? (
+              'Yes'
+            ) : (
+              'No'
+            )}
+          </LabeledList.Item>
+          {/*GS13 EDIT END*/}
         </LabeledList>
       )}
       {selectedTab === 3 && <BellyVisuals belly={belly} />}

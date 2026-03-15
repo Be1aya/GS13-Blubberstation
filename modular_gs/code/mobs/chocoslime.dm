@@ -97,6 +97,7 @@
 	// lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	lighting_cutoff = LIGHTING_CUTOFF_LOW
 	initial_language_holder = /datum/language_holder/slime
+	digestion_fat_yield = 1500
 	// vore_flags = DEVOURABLE | DIGESTABLE | FEEDING
 
 //Creambeast - basically a bit tougher mob that has feeding ranged attacks
@@ -123,6 +124,7 @@
 	aggro_vision_range = 9
 	turns_per_move = 5
 	blood_volume = 0
+	digestion_fat_yield = 1500
 	gold_core_spawnable = HOSTILE_SPAWN
 	butcher_results = list(/obj/item/food/icecreamsandwich = 4)
 

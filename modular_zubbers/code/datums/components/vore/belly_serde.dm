@@ -37,6 +37,10 @@
 		"escape_messages_outside" = escape_messages_outside,
 		"escape_fail_messages_owner" = escape_fail_messages_owner,
 		"escape_fail_messages_prey" = escape_fail_messages_prey,
+		//GS13 EDIT START
+		"use_fat_hiders" = use_fat_hiders,
+		"use_flat_fat_hiders" = use_flat_fat_hiders,
+		//GS13 EDIT END
 	)
 
 // Called when a savefile passed to us does not match our expected version
@@ -95,6 +99,10 @@
 			if(!fancy_sounds && (new_release_sound in GLOB.vore_sounds_release_classic))
 				release_sound = new_release_sound
 
+	//GS13 EDIT START
+	use_fat_hiders = isnum(data["use_fat_hiders"]) ? !!data["use_fat_hiders"] : TRUE // make false by default
+	use_flat_fat_hiders = isnum(data["use_flat_fat_hiders"]) ? !!data["use_flat_fat_hiders"] : TRUE // make false by default
+	//GS13 EDIT END
 	deserialize_messages(data)
 
 /// Special handler that tries to deserialize as much of a VRDB save as it can
