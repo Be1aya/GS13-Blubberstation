@@ -12,7 +12,7 @@
 		prey_weight_value = carbon_prey.fatness_real //Use actual fatness if it's present
 		prey_weight_value += carbon_prey.muscle_real * MUSCLE_TO_FATNESS_RATIO_VORE // Muscle can be broken down into a lot of calories because it's hot.
 		permafat_from_prey = carbon_prey.fatness_perma * VORE_TRANSFER_PERMAFAT
-		calorite_poisoning_from_prey = carbon_prey.micro_calorite_poisoning * VORE_TRANSFER_CALORITE_poisoning
+		calorite_poisoning_from_prey = carbon_prey.micro_calorite_poisoning * VORE_TRANSFER_CALORITE_POISONING
 
 	var/mob/living/carbon/carbon_pred = pred
 	if(istype(carbon_pred))
