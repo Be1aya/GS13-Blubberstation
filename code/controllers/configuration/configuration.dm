@@ -122,6 +122,7 @@
 	populate_interaction_instances()
 	remove_erp_things()
 	// SKYRAT EDIT ADDITION END
+	gs13_configuration() // GS13 EDIT - put the stuff that needs to be run once on server initialization here
 
 	loaded = TRUE
 
