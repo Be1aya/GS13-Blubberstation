@@ -1,4 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - rscadd: "Adds the event perk redeemer, allowing players to redeem their event rewards without the need for admin intervention"

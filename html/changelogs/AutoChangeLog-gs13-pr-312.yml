@@ -1,5 +1,0 @@
-author: "Phantastic-Swan"
-delete-after: True
-changes:
-  - qol: "pacifists can now fire fatorays and AL-T-rays"
-  - balance: "the starter material cargo crate price has been increased to prevent being able to print infinite money with it. It also now starts without plasma. Yes, the removal of plasma was taken into account when setting the new price."

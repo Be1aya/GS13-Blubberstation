@@ -1,0 +1,25 @@
+2026-03-15:
+  SeepingVisage:
+  - balance: Taurs now get a weight multiplier to account for extra body mass.
+  - bugfix: fixed tauric weight multiplier
+  Swan:
+  - rscadd: adds the cold blooded quirk
+  - rscadd: brings back the hemophage fat drain
+  - rscadd: Adds the event perk redeemer, allowing players to redeem their event rewards
+      without the need for admin intervention
+  - qol: pacifists can now fire fatorays and AL-T-rays
+  - balance: the starter material cargo crate price has been increased to prevent
+      being able to print infinite money with it. It also now starts without plasma.
+      Yes, the removal of plasma was taken into account when setting the new price.
+  sheepishgoat:
+  - rscadd: The absorb mode for Vore now gradually saps fat from prey and adds it
+      to the predator.
+  - rscadd: The option to the weight of current prey to show up on a pred has been
+      added back in.
+  - rscadd: Upon digestion, vore will now transfer a small amount of permafat and
+      calorite poisoning from the prey to the pred. (Assuming the proper preferences
+      are enabled.)
+  - rscadd: Simplemobs with the proper variable can now yield fatness when digested.
+  - rscadd: Muscle will now be digested and added to predators as fat.
+  - code_imp: Added in a few helper procs.
+  - code_imp: Refactored the code for adding weight gain from digesting prey.
