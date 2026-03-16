@@ -4,6 +4,8 @@
 	fatty.handle_helplessness()
 	fatty.handle_modular_items()
 	fatty.handle_calorite_poisoning()
+	if (fatty.handle_bursting()) //We want to skip the rest if we exploded
+		return
 
 	switch(fatty.get_fullness())
 		if(0 to FULLNESS_LEVEL_BLOATED)
