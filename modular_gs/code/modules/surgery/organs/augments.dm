@@ -4,7 +4,6 @@
 /obj/item/organ/cyberimp/chest/nutriment/turbo
 	name = "Nutriment pump implant TURBO"
 	desc = "This implant was meant to prevent people from going hungry, but due to a flaw in its designs, it permanently produces a small amount of nutriment overtime."
-	icon_state = "chest_implant"
 	hunger_threshold = NUTRITION_LEVEL_FULL
 	poison_amount = 10
 	send_messages = FALSE
@@ -12,7 +11,7 @@
 /obj/item/organ/cyberimp/chest/mobility
 	name = "Mobility Nanite Core"
 	desc = "This implant contains nanites that reinforce leg muscles, allowing for unimpeded movement at extreme weights."
-	icon_state = "chest_implant"
+	icon_state = "reviver_implant"
 	slot = ORGAN_SLOT_MOBILITY
 
 /obj/item/organ/cyberimp/chest/mobility/on_mob_insert(mob/living/carbon/human/insertee, special = FALSE, movement_flags)
