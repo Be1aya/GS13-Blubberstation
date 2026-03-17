@@ -15,11 +15,10 @@
 	icon_state = "chest_implant"
 	slot = ORGAN_SLOT_MOBILITY
 
-/obj/item/organ/cyberimp/chest/mobility/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/cyberimp/chest/mobility/on_mob_insert(mob/living/carbon/human/insertee, special = FALSE, movement_flags)
 	..()
-	ADD_TRAIT(M, TRAIT_NO_FAT_SLOWDOWN, REF(src))
+	ADD_TRAIT(insertee, TRAIT_NO_FAT_SLOWDOWN, REF(src))
 
-/obj/item/organ/cyberimp/chest/mobility/Remove(special = FALSE)
-	var/mob/living/carbon/human/M = owner
-	REMOVE_TRAIT(M, TRAIT_NO_FAT_SLOWDOWN, REF(src))
+/obj/item/organ/cyberimp/chest/mobility/on_mob_remove(mob/living/carbon/human/removee, special, movement_flags)
+	REMOVE_TRAIT(removee, TRAIT_NO_FAT_SLOWDOWN, REF(src))
 	..()
