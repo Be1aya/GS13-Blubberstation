@@ -161,20 +161,7 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 	if(HAS_TRAIT(berry, TRAIT_ABOUT_TO_BURST) || HAS_TRAIT(berry, TRAIT_NO_BURST)) // Skip burst stuff if it already triggered or if the berry can't burst
 		return
 
-	var/juice_amount_before_burst = berry?.client?.prefs?.read_preference(/datum/preference/numeric/helplessness/blueberry_max_before_burst)
-	if(!juice_amount_before_burst)
-		return
-
-	var/relative_fullness = berry.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/juice_amount_before_burst
-	if((relative_fullness > 0.8) && !HAS_TRAIT(berry, TRAIT_WARNED_ABOUT_BURSTING))
-		ADD_TRAIT(berry, TRAIT_WARNED_ABOUT_BURSTING, TRAUMA_TRAIT)
-		to_chat(span_warning("The pressure is growing too intense, you might burst soon."), berry) // Warn them.
-		return
-
-	if(HAS_TRAIT(berry, TRAIT_WARNED_ABOUT_BURSTING) && (relative_fullness < 0.5))
-		REMOVE_TRAIT(berry, TRAIT_WARNED_ABOUT_BURSTING, TRAUMA_TRAIT)
-		return
-
+	var/relative_fullness = berry.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/max_before_burst
 	if(relative_fullness > 1)
 		if (SPT_PROB(relative_fullness * 15, seconds_per_tick)) // When you're at your limit, you have a chance of bursting every second, increading with how far over capacity you are.
 			if (!berry.check_prefs_in_view(/datum/preference/toggle/see_bursting, berry.loc))
