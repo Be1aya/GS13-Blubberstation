@@ -7103,6 +7103,7 @@
 #include "modular_gs\code\modules\mob\living\carbon\weight_helpers.dm"
 #include "modular_gs\code\modules\mob\living\carbon\human\species_types\mootant.dm"
 #include "modular_gs\code\modules\mod\mod_clothes.dm"
+#include "modular_gs\code\modules\mod\mod_exoskeleton.dm"
 #include "modular_gs\code\modules\mod\modules\modules_fat.dm"
 #include "modular_gs\code\modules\nifs\nifs.dm"
 #include "modular_gs\code\modules\nifs\nifsofts.dm"
