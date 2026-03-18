@@ -88,10 +88,16 @@
 		var/hot_air_heat_capacity = hot_air.heat_capacity()
 		var/delta_temperature = hot_air.temperature - cold_air.temperature
 		if(delta_temperature > 0 && cold_air_heat_capacity > 0 && hot_air_heat_capacity > 0)
-			var/efficiency = TEG_EFFICIENCY
+			// GS13 EDIT - makes the TEG great again
+			var/efficiency = LOGISTIC_FUNCTION(TEG_EFFICIENCY, 0.0009, delta_temperature, 10000)
+			// var/efficiency = TEG_EFFICIENCY
+			// GS13 END EDIT
 			var/energy_transfer = delta_temperature*hot_air_heat_capacity*cold_air_heat_capacity/(hot_air_heat_capacity+cold_air_heat_capacity)
 			var/heat = energy_transfer*(1-efficiency)
-			lastgen += (1000000 * (LOGISTIC_FUNCTION(2,0.5,(delta_temperature/10000),0)-1))
+			// GS13 EDIT - makes the TEG great again
+			// lastgen += (1000000 * (LOGISTIC_FUNCTION(2,0.5,(delta_temperature/10000),0)-1))
+			lastgen += energy_transfer * efficiency
+			// GS13 END EDIT
 			hot_air.temperature = hot_air.temperature - energy_transfer/hot_air_heat_capacity
 			cold_air.temperature = cold_air.temperature + heat/cold_air_heat_capacity
 
