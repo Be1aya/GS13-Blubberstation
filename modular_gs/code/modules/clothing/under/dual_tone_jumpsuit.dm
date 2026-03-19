@@ -1,4 +1,4 @@
-/obj/item/clothing/under/color/dual_tone
+/obj/item/clothing/under/dual_tone
 	name = "White dual tone jumpsuit"
 	desc = "A dual tone colored jumpsuit. Check those stripes out baby!"
 
@@ -36,7 +36,7 @@
 	name = "Dual Tone Suit (Worn)(Taur)(Snake)"
 	icon_file = 'modular_gs/icons/mob/modclothes/dual_tone_suit_taur_snake.dmi'
 
-/obj/item/clothing/under/color/dual_tone/add_modular_overlay(mob/living/carbon/U, modular_icon, modular_layer, sprite_color)
+/obj/item/clothing/under/dual_tone/add_modular_overlay(mob/living/carbon/U, modular_icon, modular_layer, sprite_color, organ_slot)
 	var/list/suit_colors = SSgreyscale.ParseColorString(greyscale_colors)
 	var/mutable_appearance/mod_overlay = mutable_appearance(modular_icon_location, modular_icon, -(modular_layer))
 	mod_overlays += mod_overlay
@@ -49,10 +49,10 @@
 		U.overlays_standing[modular_layer] =  mod_overlay
 		U.apply_overlay(modular_layer)
 
-/obj/item/clothing/under/color/dual_tone/get_butt_alt()
+/obj/item/clothing/under/dual_tone/get_butt_alt()
 	return ""
 
-/obj/item/clothing/under/color/dual_tone/get_belly_size(obj/item/organ/genital/G)
+/obj/item/clothing/under/dual_tone/get_belly_size(obj/item/organ/genital/G)
 	var/size = G.genital_size
 	var/shape = "soft"
 	var/stuffed_modifier = 0
