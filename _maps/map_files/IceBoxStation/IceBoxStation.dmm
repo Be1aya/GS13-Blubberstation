@@ -60063,11 +60063,11 @@
 	},
 /obj/machinery/autolathe,
 /obj/structure/window/spawner/directional/south,
+/obj/machinery/door/firedoor,
 /obj/machinery/door/window/right/directional/south{
 	name = "Research and Development Desk";
 	req_access = list("science")
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/station/hallway/primary/starboard)
 "qqv" = (

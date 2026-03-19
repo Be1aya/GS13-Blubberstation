@@ -702,7 +702,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/station/maintenance/aft/lesser)
 "Sn" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/gato,
 /turf/closed/wall,
 /area/station/commons/dock/aux)
 "Sy" = (

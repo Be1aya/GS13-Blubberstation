@@ -7,7 +7,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "b" = (
 /obj/structure/sign/calendar/directional/south,
@@ -26,10 +26,10 @@
 	id = "nt_rep_priv";
 	name = "Privacy Shutters"
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "f" = (
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "g" = (
 /turf/closed/wall,
@@ -37,7 +37,7 @@
 "h" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "i" = (
 /obj/item/kirbyplants/random,
@@ -48,7 +48,7 @@
 "j" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "k" = (
 /obj/effect/turf_decal/siding/wood{
@@ -56,7 +56,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "l" = (
 /obj/structure/cable,
@@ -72,7 +72,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "o" = (
 /obj/machinery/door/poddoor/preopen{
@@ -98,7 +98,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/turf/open/floor/carpet/green,
+/obj/item/book/lorebooks/welcome_to_gato,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "r" = (
 /obj/machinery/status_display/evac/directional/west,
@@ -146,7 +147,7 @@
 /obj/item/stamp/centcom{
 	pixel_y = 10
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "y" = (
 /turf/template_noop,
@@ -178,7 +179,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "D" = (
 /turf/closed/wall/r_wall,
@@ -201,7 +202,7 @@
 	pixel_x = 10
 	},
 /obj/machinery/light_switch/directional/west,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "G" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -212,7 +213,8 @@
 /area/station/command/heads_quarters/nt_rep)
 "I" = (
 /obj/structure/table/wood,
-/turf/open/floor/carpet/green,
+/obj/item/toy/plush/gs13/gatito,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "J" = (
 /obj/structure/chair/comfy/beige{
@@ -245,17 +247,17 @@
 /area/station/command/heads_quarters/nt_rep)
 "O" = (
 /obj/structure/bed/double,
-/obj/item/bedsheet/centcom/double,
+/obj/item/bedsheet/double_gato,
 /obj/machinery/light/small/blacklight/directional/east{
 	desc = "A small lighting fixture. Why is this here?"
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "P" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/newscaster/directional/west,
 /obj/machinery/light/small/blacklight/directional/north,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "Q" = (
 /obj/structure/table/wood,
@@ -263,7 +265,7 @@
 	fax_name = "GATO Consultant's Office";
 	name = "GATO Consultant's Fax Machine"
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "S" = (
 /turf/template_noop,
@@ -276,11 +278,11 @@
 /obj/item/table_clock{
 	pixel_y = 1
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "U" = (
 /obj/machinery/light_switch/directional/north,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "V" = (
 /turf/open/floor/wood,
@@ -293,7 +295,7 @@
 /area/station/command/heads_quarters/nt_rep)
 "X" = (
 /obj/structure/closet/secure_closet/nanotrasen_consultant,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "Y" = (
 /obj/machinery/door/airlock/corporate{
@@ -306,7 +308,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/nt_rep)
 "Z" = (
 /obj/machinery/light/warm/directional/north,
