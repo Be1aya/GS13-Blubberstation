@@ -1,12 +1,5 @@
-
-//Some temporary placeholder values to be replaced later with individually checked prefs!
-#define PLACEHOLDER_THRESHOLD_FULLNESS FULLNESS_LEVEL_NOMOREPLZ
-#define PLACEHOLDER_THRESHOLD_FATNESS FATNESS_LEVEL_EXTREMELY_OBESE
-#define PLACEHOLDER_BURST_FULLNESS TRUE
-#define PLACEHOLDER_BURST_FATNESS TRUE
-
 #define BURSTING_FULLNESS_MIN_THRESHOLD FULLNESS_LEVEL_BLOATED //Minimum fullness threshold for doing any fullness related messages or code
-#define BURSTING_FATNESS_MIN_THRESHOLD 0.5 //Percentage of the total fatness capacity needed before doing messages or code
+#define BURSTING_FATNESS_MIN_THRESHOLD 0.4 //Percentage of the total fatness capacity needed before doing messages or code
 #define BURSTING_FLAVOR_PROB_MAX 0.2 //Maximum message frequency at 100% capacity
 #define BURSTING_FLAVOR_PROB_MIN 0.05 //Minimum message frequency at 0% capacity
 
@@ -96,111 +89,126 @@
 	"You feel your body creak and rumble as your fat body swells",\
 	"Your rolls squeeze together and creak as growing fat swells them tight"\
 )
-//Handles bursting for either eating too much or too high of a BFI
+///Handles bursting for either eating too much or too high of a BFI, returns a bool for whether or not the character burst or is in the process of doing so
 /mob/living/carbon/human/proc/handle_bursting()
 
-	//Adjust the thresholds to be relative to our minimum values so that the code doesn't run below a certain point
-	var/relativeFullnessThreshold = max(PLACEHOLDER_THRESHOLD_FULLNESS - BURSTING_FULLNESS_MIN_THRESHOLD, BURSTING_FULLNESS_MIN_THRESHOLD)
-	var/relativeFatnessThreshold = PLACEHOLDER_THRESHOLD_FATNESS * BURSTING_FATNESS_MIN_THRESHOLD
-	var/relativeFullness = max(src.get_fullness() - BURSTING_FULLNESS_MIN_THRESHOLD, 0)
-	var/relativeFatness = max(src.fatness - relativeFatnessThreshold, 0)
+	//Get prefs
+	var/fullness_bursting_pref = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/glutton_fullness_before_burst)
+	var/fatness_bursting_pref = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/glutton_fatness_before_burst)
+	var/safe_bursting_disabled = !client?.prefs?.read_preference(/datum/preference/toggle/glutton_safe_bursting)
+	var/bursting_disabled = client?.prefs?.read_preference(/datum/preference/toggle/glutton_disable_bursting)
 
-	var/capacityFullness = PLACEHOLDER_BURST_FULLNESS ? relativeFullness / relativeFullnessThreshold  : -1 //Our glutton's fullness percentage, -1 flag if disabled
-	var/capacityFatness = PLACEHOLDER_BURST_FATNESS ? relativeFatness / relativeFatnessThreshold : -1 //Our glutton's fatness percentage, -1 flag if disabled
-	var/capacityPercentage = max(capacityFullness, capacityFatness) //Use the greater percentage to determine if our glutton should burst, -1 if bursting types are disabled
-
-	var/burstTypeFullness = capacityFullness >= capacityFatness
-	var/safeBurstingDisabled = !client?.prefs?.read_preference(/datum/preference/toggle/safe_bursting)
-
-	usr << capacityPercentage
-
-	if (capacityPercentage <= 0)
+	if (!client?.prefs?.read_preference(/datum/preference/toggle/glutton_see_bursting)) //Check if the person can even see bursting, no sense in running any of this if that's the case
 		return FALSE
 
-	var/flavorMessageChance = (BURSTING_FLAVOR_PROB_MAX - BURSTING_FLAVOR_PROB_MIN) * capacityPercentage + BURSTING_FLAVOR_PROB_MIN
-	if (flavorMessageChance > rand())
+	//Adjust the thresholds to be relative to our minimum values so that the code doesn't run below a certain point
+	var/relative_fullness_threshold = max(fullness_bursting_pref - BURSTING_FULLNESS_MIN_THRESHOLD, BURSTING_FULLNESS_MIN_THRESHOLD)
+	var/relative_fatness_threshold = fatness_bursting_pref * BURSTING_FATNESS_MIN_THRESHOLD
+	var/relative_fullness = max(get_fullness() - BURSTING_FULLNESS_MIN_THRESHOLD, 0)
+	var/relative_fatness = max(fatness - fatness_bursting_pref  * (1 - BURSTING_FATNESS_MIN_THRESHOLD), 0)
+
+	var/capacity_fullness = fullness_bursting_pref != 0 ? relative_fullness / relative_fullness_threshold  : -1 //Our glutton's fullness percentage, -1 flag if disabled
+	var/capacity_fatness = fatness_bursting_pref != 0 ? relative_fatness / relative_fatness_threshold : -1 //Our glutton's fatness percentage, -1 flag if disabled
+	var/capacity_percentage = max(capacity_fullness, capacity_fatness) //Use the greater percentage to determine if our glutton should burst, -1 if bursting types are disabled
+
+	var/burst_type_fullness = capacity_fullness >= capacity_fatness
 
 
-		//Handles the random messages
-		var/messageContent = ""
-		var/messageStage = clamp(round(capacityPercentage * 3.5 + 1), 1, 4)
+	if (capacity_percentage <= 0)
+		return FALSE
 
-		if (burstTypeFullness)
-			messageContent = pick(list(
+	var/flavor_message_chance = clamp((BURSTING_FLAVOR_PROB_MAX - BURSTING_FLAVOR_PROB_MIN) * capacity_percentage + BURSTING_FLAVOR_PROB_MIN, BURSTING_FLAVOR_PROB_MIN, BURSTING_FLAVOR_PROB_MAX)
+	if (prob(flavor_message_chance * 100))
+
+
+		//Handles the random messages, picking based on the stage of capacity we're at
+		var/message_content = ""
+		var/message_stage = clamp(round(capacity_percentage * 3.5 + 1), 1, 4) //Takes the capacity percentage and converts it into four equaly sized whole number 'stages' to be used as an index for selecting messages
+
+		if (burst_type_fullness)
+			message_content = pick(list(
 				BURSTING_FLAVOR_FULL,
 				BURSTING_FLAVOR_STUFFED,
 				BURSTING_FLAVOR_OVERSTUFFED,
 				BURSTING_FLAVOR_NEARBURST
-			)[messageStage])
+			)[message_stage])
 		else
-			messageContent = pick(list(
+			message_content = pick(list(
 				BURSTING_FLAVOR_VERYFAT,
 				BURSTING_FLAVOR_SUPEROBESE,
 				BURSTING_FLAVOR_EXTREMELYDOUGHY,
 				BURSTING_FLAVOR_OVERWHELMINGFATNESS
-			)[messageStage])
+			)[message_stage])
 
-		to_chat(src, "<span class='warning'>[messageContent]</span>")
+		to_chat(src, span_warning(message_content))
 
 	//Trigger the burst
-	if (capacityPercentage > 1 && !HAS_TRAIT(src, BURSTING_ABOUT_TO_BURST))
-		trigger_glutton_burst(burstTypeFullness, safeBurstingDisabled)
+	if (!bursting_disabled && capacity_percentage > 1 && !HAS_TRAIT(src, BURSTING_ABOUT_TO_BURST))
+		trigger_glutton_burst(burst_type_fullness, safe_bursting_disabled)
 		return TRUE
+
 	return FALSE
 
-/mob/living/carbon/human/proc/trigger_glutton_burst(burstType, safeBurstingDisabled)
-	//Add self removing trait so that bursting doesn't repeatedly trigger, dual purpose as our delay
+///Opens the tgui popup for deciding wether or not burst fullness or fattness
+/mob/living/carbon/human/proc/trigger_glutton_burst(burst_type, safe_bursting_disabled)
+	//Add self removing trait so that bursting doesn't repeatedly trigger, dual purpose as our delay if the delay button is pressed and a cooldown to delay repeated bursting
 	ADD_TRAIT(src, BURSTING_ABOUT_TO_BURST, TRAUMA_TRAIT)
 	addtimer(TRAIT_CALLBACK_REMOVE(src, BURSTING_ABOUT_TO_BURST, TRAUMA_TRAIT), BURSTING_DELAY_BURST_SECONDS SECONDS)
 
 	//TGUI popup to confirm bursting
-	var/burstChoice = tgui_alert(
+	var/burst_choice = tgui_alert(
 		src,
-		"You've exceeded your capacity and gotten too [burstType ? "full" : "fat"]. You're now on the verge of bursting, but you might be able to hold together a bit longer...If you click [BURSTING_CONFIRM] if you wish to burst and you will explode after a short delay[safeBurstingDisabled ? ", which will kill you since you have safe bursting disabled." : "."]Otherwise, click [BURSTING_DENY] which will delay bursting for bit if you're still over capacity.",
+		"You've exceeded your capacity and gotten too [burst_type ? "full" : "fat"]. You're now on the verge of bursting, but you might be able to hold together a bit longer...If you click [BURSTING_CONFIRM] if you wish to burst and you will explode after a short delay[safe_bursting_disabled ? ", which will kill you since you have safe bursting disabled." : "."]Otherwise, click [BURSTING_DENY] which will delay bursting for bit if you're still over capacity.",
 		"You're about to burst!",
 		list(BURSTING_CONFIRM, BURSTING_DENY)
 	)
 
-	//Start the burst if confirm is clicked
-	if (burstChoice == BURSTING_CONFIRM)
-		visible_message("<span class='warning'>[src] begins to swell as they're overwhelmed by their [burstType ? "fullness" : "fatness"]!</span>", "<span class='warning'>Your body begins to swell as your [burstType ? "fullness" : "fatness"] overwhelms you!</span>")
-		addtimer(CALLBACK(src, PROC_REF(burst_glutton), safeBurstingDisabled, src.transform), BURSTING_ANIMATE_TIME SECONDS) //Bursts the
-		var/matrix/scaleTransform = matrix()
-		scaleTransform.Scale(1.8, 1.1)
-		animate(src, time = BURSTING_ANIMATE_TIME SECONDS, transform = src.transform * scaleTransform, easing = SINE_EASING)
+	//Start the burst if confirm is clicked, which will animate our character swelling and start a callback for our bursting function
+	if (burst_choice == BURSTING_CONFIRM)
+		visible_message(span_warning("[src] begins to swell as they're overwhelmed by their [burst_type ? "fullness" : "fatness"]!"), span_warning("Your body begins to swell as your [burst_type ? "fullness" : "fatness"] overwhelms you!"))
+		addtimer(CALLBACK(src, PROC_REF(burst_glutton), safe_bursting_disabled, transform), BURSTING_ANIMATE_TIME SECONDS) //Bursts the character
+		var/matrix/scale_transform = matrix()
+		scale_transform.Scale(1.8, 1.1)
+		animate(src, time = BURSTING_ANIMATE_TIME SECONDS, transform = transform * scale_transform, easing = SINE_EASING)
 
-//Makes our glutton explode
-/mob/living/carbon/human/proc/burst_glutton(safeBurstingDisabled, matrix/originalTransform)
-	if (safeBurstingDisabled)
+///Makes our glutton explode, using the character's original transform to restore their shape if there's safe bursting
+/mob/living/carbon/human/proc/burst_glutton(safe_bursting_disabled, matrix/original_transform)
+	if (!check_prefs_in_view(/datum/preference/toggle/glutton_see_bursting, src.loc)) //Check surrounding area if anyone will see them explode who would not want to
+		visible_message(span_warning(
+			"[src] makes a loud creak as the swelling stops on the verge of bursting, the seem to be holding together for now... (People with bursting prefs disabled are in view!)"),
+			"You make a loud creak as the swelling momentarily stops as you struggle to hold together... (Someone with bursting prefs disabled are in view!)"
+		)
+		addtimer(CALLBACK(src, PROC_REF(burst_glutton), safe_bursting_disabled, original_transform), 5 SECONDS) //Just delay for five seconds before trying again
+		return
+
+	visible_message(span_warning("[src]'s body lets out a final creak before bursting!"), span_warning("You feel your body let out a creak as the pressure becomes too much and burst!"))
+
+	if (safe_bursting_disabled) //Burst fataly and just return
 		gib(DROP_ALL_REMAINS)
-	else
-		//Make smoke if we safe burst
-		var/datum/effect_system/fluid_spread/smoke/burstSmoke/burstingSmoke = new
-		burstingSmoke.set_up(2, holder = src, location = src)
-		burstingSmoke.start()
+		return
 
-		//Animate and return our transform back to normal
-		animate(src, time = 0.1, transform = originalTransform, easing = SINE_EASING)
+	//Make smoke if we safe burst
+	var/datum/effect_system/fluid_spread/smoke/burst_smoke/bursting_smoke = new
+	bursting_smoke.set_up(2, holder = src, location = src)
+	bursting_smoke.start()
 
-		//Clear reagents and fatness
-		src?:organs_slot["stomach"]?:reagents?:reagent_list = list()
-		src.reagents.reagent_list = list()
-		src.fatness_real = 0
-		src.fatness_perma = 0
+	//Animate and return our transform back to normal
+	animate(src, time = 0.1, transform = original_transform, easing = SINE_EASING)
+
+	//Clear reagents and fatness
+	organs_slot["stomach"]?:reagents?:reagent_list = list()
+	reagents.reagent_list = list()
+	fatness_real = 0
+	fatness_perma = fatness_perma/2
 
 //Bursting smoke
-/obj/effect/particle_effect/fluid/smoke/burstSmoke
+/obj/effect/particle_effect/fluid/smoke/burst_smoke
 	name = "Bursting Smoke"
 	color = COLOR_LIGHT_GRAYISH_RED
 	lifetime = 1 SECONDS
 
-/datum/effect_system/fluid_spread/smoke/burstSmoke
-	effect_type = /obj/effect/particle_effect/fluid/smoke/burstSmoke
-
-#undef PLACEHOLDER_THRESHOLD_FULLNESS
-#undef PLACEHOLDER_THRESHOLD_FATNESS
-#undef PLACEHOLDER_BURST_FULLNESS
-#undef PLACEHOLDER_BURST_FATNESS
+/datum/effect_system/fluid_spread/smoke/burst_smoke
+	effect_type = /obj/effect/particle_effect/fluid/smoke/burst_smoke
 
 #undef BURSTING_FULLNESS_MIN_THRESHOLD
 #undef BURSTING_FATNESS_MIN_THRESHOLD

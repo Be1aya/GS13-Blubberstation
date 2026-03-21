@@ -63,3 +63,36 @@ export const see_bursting: FeatureToggle = {
   description: 'Toggle if you want to see people bursting by inflation.',
   component: CheckboxInput,
 };
+
+
+export const glutton_fullness_before_burst: Feature<number> = {
+  name: 'Bursting fullness',
+  description: 'How full past bloated do you want to be before you burst, 0 means you will not be affected by this. 400 is stuffed and 800 is overfilled',
+  component: FeatureNumberInput,
+};
+
+export const glutton_fatness_before_burst: Feature<number> = {
+  name: 'Bursting fatness',
+  description: 'How fat in BFI do you want to be before you burst, 0 means you will not be affected by this.',
+  component: FeatureNumberInput,
+};
+
+export const glutton_disable_bursting: FeatureToggle = {
+  name: 'Disable Bursting',
+  description:
+    'Toggle if you wish to disable bursting, you will still get the flavor messages and sounds, it will just prevent you from continuing to bursting stage',
+    component: CheckboxInput
+};
+
+export const  glutton_safe_bursting: FeatureToggle = {
+  name: 'Safe bursting',
+  description:
+    'Toggle if you want your character to be unharmed after bursting. Basically putting them back into a default state. If you disable this, bursting will kill you!',
+  component: CheckboxInput,
+};
+
+export const glutton_see_bursting: FeatureToggle = {
+  name: 'See bursting',
+  description: 'Toggle if you want to see people bursting by being too fat or full.',
+  component: CheckboxInput,
+};

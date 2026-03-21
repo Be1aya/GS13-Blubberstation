@@ -97,3 +97,30 @@
 
 /datum/preference/toggle/see_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
+
+/datum/preference/toggle/glutton_disable_bursting
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_disable_bursting"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_disable_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/glutton_safe_bursting
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_safe_bursting"
+	default_value = TRUE
+
+/datum/preference/toggle/glutton_safe_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/glutton_see_bursting
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_see_bursting"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_see_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return

@@ -535,6 +535,9 @@ export function MainPage(props: MainPageProps) {
   const BlueberryPreferences = {
     ...data.character_preferences.blueberry_prefs,
   };
+  const GluttonBurstingPreferences = {
+    ...data.character_preferences.glutton_bursting_contents,
+  };
   const GSExaminePreferences = {
     ...data.character_preferences.gs13_examine_prefs,
   };
@@ -554,6 +557,7 @@ export function MainPage(props: MainPageProps) {
   let BFI_stages; // GS13 EDIT
   let helplessness_contents; // GS13 EDIT
   let blueberry_contents; // GS13 EDIT
+  let glutton_bursting_contents //GS13 EDIT
   switch (currentPrefPage) {
     case PrefPage.Visual:
       prefPageContents = (
@@ -588,9 +592,9 @@ export function MainPage(props: MainPageProps) {
         <b>Weight gain preferences</b>
         <Divider />
         <BlockQuote>
-          These preferences will allow you to customize the ways in which you 
-          gain weight, as well as the speed at which you gain/lose it. Here 
-          you can also control whether you want to participate in more extreme 
+          These preferences will allow you to customize the ways in which you
+          gain weight, as well as the speed at which you gain/lose it. Here
+          you can also control whether you want to participate in more extreme
           aspects of gaining weight.
         </BlockQuote>
         <PreferenceList
@@ -650,7 +654,7 @@ export function MainPage(props: MainPageProps) {
         <b>Blueberry preferences</b>
         <Divider />
         <BlockQuote>
-          These preferences will allow you to customize whether and how 
+          These preferences will allow you to customize whether and how
           blueberry inflation mechanics will affect you.
         </BlockQuote>
         <PreferenceList
@@ -664,14 +668,33 @@ export function MainPage(props: MainPageProps) {
         />
         </Section>
       );
+      glutton_bursting_contents = (
+        <Section>
+        <b>Fullness and fatness bursting preferences</b>
+        <Divider />
+        <BlockQuote>
+          These preferences will allow you to customize whether and how
+          fatness and fullness bursting mechanics will affect you.
+        </BlockQuote>
+        <PreferenceList
+          randomizations={getRandomization(
+            GluttonBurstingPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={GluttonBurstingPreferences}
+          maxHeight="auto"
+        />
+        </Section>
+      );
       break;
     case PrefPage.GSExaminePrefs:
       prefPageContents = (
         <Section>
         <BlockQuote>
-          These preferences will allow you to customize the various flavor 
-          texts displayed upon examination depending on your weight/muscle 
-          stage. These can be at most 300 characters long. Leaving them blank 
+          These preferences will allow you to customize the various flavor
+          texts displayed upon examination depending on your weight/muscle
+          stage. These can be at most 300 characters long. Leaving them blank
           will make you use the default flavor texts.
         </BlockQuote>
         <PreferenceList
@@ -872,6 +895,7 @@ export function MainPage(props: MainPageProps) {
               <Stack.Item>{prefPageContents}</Stack.Item>
               <Stack.Item>{helplessness_contents}</Stack.Item>
               <Stack.Item>{blueberry_contents}</Stack.Item>
+              <Stack.Item>{glutton_bursting_contents}</Stack.Item>
               {/* GS13 END EDIT */}
             </Stack>
           </Stack>

@@ -93,6 +93,21 @@
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "no_neck"
 
+
+/datum/preference/numeric/helplessness/glutton_fullness_before_burst
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_fullness_before_burst"
+	minimum = 0
+	maximum = INFINITY
+
+/datum/preference/numeric/helplessness/glutton_fatness_before_burst
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_fatness_before_burst"
+	minimum = 0
+	maximum = INFINITY
+
 /*
 /datum/preference/numeric/helplessness/weak_lungs
 	category = HELPLESSNESS_PREFERENCES
