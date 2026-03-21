@@ -3,7 +3,6 @@
 	var/list/modular_folders = list(
 		"modular_skyrat",
 		"modular_zubbers",
-		"modular_gs",	// GS13 EDIT
 	)
 
 /datum/unit_test/modular_digitigrade_sprites/proc/get_folders_of_typepaths()
