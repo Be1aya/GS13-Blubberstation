@@ -20959,6 +20959,10 @@
 /obj/effect/landmark/latejoin,
 /turf/open/floor/iron/large,
 /area/centcom/interlink)
+"unR" = (
+/obj/machinery/cafe_condo_teleporter,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafe)
 "uos" = (
 /obj/machinery/chem_master/condimaster{
 	name = "CondiMaster Neo"
@@ -72266,7 +72270,7 @@ ajx
 aUo
 aUo
 aUo
-aUo
+unR
 aqf
 vTT
 pqy
