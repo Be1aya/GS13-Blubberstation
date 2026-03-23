@@ -7,7 +7,18 @@
 #define BURSTING_DELAY_BURST_SECONDS 160 //How long to delay if we delay bursting
 #define BURSTING_CONFIRM "Burst Now!" //Button text
 #define BURSTING_DENY "Delay" //Button text
-#define BURSTING_ANIMATE_TIME 10 //How long the animation for bursting should play
+#define BURSTING_ANIMATE_TIME 6 //How long in seconds the animation in seconds for bursting should play
+#define BURSTING_SOUND_VOLUME 45
+
+//Sounds
+#define BURSTING_CRESCENDO "modular_gs/sound/effects/inflation/pop/bursting_crescendo_vol.ogg"
+#define BURSTING_CRESCENDO_DELAY "modular_gs/sound/effects/inflation/berryloop.ogg"
+#define BURSTING_BURST "modular_gs/sound/effects/inflation/pop/burst_thump_vol.ogg"
+#define BURSTING_GROAN_SOUNDS list(\
+	'modular_gs/sound/voice/gurgle1.ogg',\
+	'modular_gs/sound/voice/gurgle2.ogg',\
+	'modular_gs/sound/voice/gurgle3.ogg'\
+)
 
 #define BURSTING_FLAVOR_FULL list(\
 	"Phew... I'm stuffed...",\
@@ -140,6 +151,7 @@
 				BURSTING_FLAVOR_OVERWHELMINGFATNESS
 			)[message_stage])
 
+		playsound(src.loc, pick(BURSTING_GROAN_SOUNDS), BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
 		to_chat(src, span_warning(message_content))
 
 	//Trigger the burst
@@ -151,6 +163,7 @@
 
 ///Opens the tgui popup for deciding wether or not burst fullness or fattness
 /mob/living/carbon/human/proc/trigger_glutton_burst(burst_type, safe_bursting_disabled)
+
 	//Add self removing trait so that bursting doesn't repeatedly trigger, dual purpose as our delay if the delay button is pressed and a cooldown to delay repeated bursting
 	ADD_TRAIT(src, BURSTING_ABOUT_TO_BURST, TRAUMA_TRAIT)
 	addtimer(TRAIT_CALLBACK_REMOVE(src, BURSTING_ABOUT_TO_BURST, TRAUMA_TRAIT), BURSTING_DELAY_BURST_SECONDS SECONDS)
@@ -169,21 +182,28 @@
 		addtimer(CALLBACK(src, PROC_REF(burst_glutton), safe_bursting_disabled, transform), BURSTING_ANIMATE_TIME SECONDS) //Bursts the character
 		var/matrix/scale_transform = matrix()
 		scale_transform.Scale(1.8, 1.1)
+		playsound(src.loc, BURSTING_CRESCENDO, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
 		animate(src, time = BURSTING_ANIMATE_TIME SECONDS, transform = transform * scale_transform, easing = SINE_EASING)
+
+
 
 ///Makes our glutton explode, using the character's original transform to restore their shape if there's safe bursting
 /mob/living/carbon/human/proc/burst_glutton(safe_bursting_disabled, matrix/original_transform)
 	if (!check_prefs_in_view(/datum/preference/toggle/glutton_see_bursting, src.loc)) //Check surrounding area if anyone will see them explode who would not want to
-		visible_message(span_warning(
-			"[src] makes a loud creak as the swelling stops on the verge of bursting, the seem to be holding together for now... (People with bursting prefs disabled are in view!)"),
-			"You make a loud creak as the swelling momentarily stops as you struggle to hold together... (Someone with bursting prefs disabled are in view!)"
+		visible_message(
+			span_warning("[src] makes a loud creak as the swelling stops on the verge of bursting, the seem to be holding together for now... (People with bursting prefs disabled are in view!)"),
+			span_warning("You make a loud creak as the swelling momentarily stops as you struggle to hold together... (Someone with bursting prefs disabled are in view!)")
 		)
-		addtimer(CALLBACK(src, PROC_REF(burst_glutton), safe_bursting_disabled, original_transform), 5 SECONDS) //Just delay for five seconds before trying again
+		playsound(src.loc, BURSTING_CRESCENDO_DELAY, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+		addtimer(CALLBACK(src, PROC_REF(burst_glutton), safe_bursting_disabled, original_transform), 8 SECONDS) //Delay for the duration of the sound
 		return
 
-	visible_message(span_warning("[src]'s body lets out a final creak before bursting!"), span_warning("You feel your body let out a creak as the pressure becomes too much and burst!"))
 
+	//Continue with the burst
+	playsound(src.loc, BURSTING_BURST, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+	visible_message(span_warning("[src]'s body lets out a final creak before bursting!"), span_warning("You feel your body let out a creak as the pressure becomes too much and then bursts!"))
 	if (safe_bursting_disabled) //Burst fataly and just return
+		//blueberry_gib(client?.prefs?.read_preference(/datum/preference/toggle/glutton_leave_gibs)) //Using blueberry gib function to better remove the player
 		gib(DROP_ALL_REMAINS)
 		return
 
@@ -220,6 +240,8 @@
 #undef BURSTING_CONFIRM
 #undef BURSTING_DENY
 #undef BURSTING_ANIMATE_TIME
+
+#undef BURSTING_GROAN_SOUNDS
 
 #undef BURSTING_FLAVOR_FULL
 #undef BURSTING_FLAVOR_STUFFED

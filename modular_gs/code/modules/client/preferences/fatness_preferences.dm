@@ -98,32 +98,6 @@
 /datum/preference/toggle/see_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
 
-/datum/preference/toggle/glutton_disable_bursting
-	category = GLUTTON_BURSTING_PREFRENCES
-	savefile_identifier = PREFERENCE_CHARACTER
-	savefile_key = "glutton_disable_bursting"
-	default_value = FALSE
-
-/datum/preference/toggle/glutton_disable_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
-	return
-
-/datum/preference/toggle/glutton_safe_bursting
-	category = GLUTTON_BURSTING_PREFRENCES
-	savefile_identifier = PREFERENCE_CHARACTER
-	savefile_key = "glutton_safe_bursting"
-	default_value = TRUE
-
-/datum/preference/toggle/glutton_safe_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
-	return
-
-/datum/preference/toggle/glutton_see_bursting
-	category = GLUTTON_BURSTING_PREFRENCES
-	savefile_identifier = PREFERENCE_CHARACTER
-	savefile_key = "glutton_see_bursting"
-	default_value = FALSE
-
-/datum/preference/toggle/glutton_see_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
-	return
 /datum/preference/toggle/bursting_leave_gibs
 	category = BLUEBERRY_PREFERENCES
 	savefile_identifier = PREFERENCE_CHARACTER
@@ -155,3 +129,53 @@
 	savefile_key = "blueberry_lives"
 	minimum = 0
 	maximum = INFINITY
+
+/datum/preference/numeric/helplessness/glutton_fullness_before_burst
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_fullness_before_burst"
+	minimum = 0
+	maximum = INFINITY
+
+/datum/preference/numeric/helplessness/glutton_fatness_before_burst
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_fatness_before_burst"
+	minimum = 0
+	maximum = INFINITY
+
+/datum/preference/toggle/glutton_disable_bursting
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_disable_bursting"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_disable_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/glutton_safe_bursting
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_safe_bursting"
+	default_value = TRUE
+
+/datum/preference/toggle/glutton_safe_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/glutton_see_bursting
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_see_bursting"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_see_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/glutton_leave_gibs
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_leave_gibs"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_leave_gibs/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return

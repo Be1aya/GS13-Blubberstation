@@ -65,6 +65,26 @@ export const see_bursting: FeatureToggle = {
   component: CheckboxInput,
 };
 
+export const bursting_leave_gibs: FeatureToggle = {
+  name: 'Leave gibs on Bursting',
+  description:
+    'Toggle if you want to leave gibs on bursting. You will still leave items and berry juice regardless',
+  component: CheckboxInput,
+};
+
+export const automatic_bursting: FeatureToggle = {
+  name: 'Uncontrollable Bursting',
+  description:
+    'Toggles your control over bursting. If safe bursting is disabled, this can lead to accidental premature ends for RPs. Use with caution.',
+  component: CheckboxInput,
+};
+
+export const blueberry_lives: Feature<number> = {
+  name: 'Bursts before becoming unsafe.',
+  description:
+    'How many times will you burst safely before bursting unsafely? This is only used if safe bursting is disabled.',
+  component: FeatureNumberInput,
+};
 
 export const glutton_fullness_before_burst: Feature<number> = {
   name: 'Bursting fullness',
@@ -97,23 +117,9 @@ export const glutton_see_bursting: FeatureToggle = {
   description: 'Toggle if you want to see people bursting by being too fat or full.',
   component: CheckboxInput,
 };
-export const bursting_leave_gibs: FeatureToggle = {
+
+export const glutton_leave_gibs: FeatureToggle = {
   name: 'Leave gibs on Bursting',
-  description:
-    'Toggle if you want to leave gibs on bursting. You will still leave items and berry juice regardless',
+  description: 'Toggle if you want to leave gibs on bursting. You will still leave items regardless',
   component: CheckboxInput,
-};
-
-export const automatic_bursting: FeatureToggle = {
-  name: 'Uncontrollable Bursting',
-  description:
-    'Toggles your control over bursting. If safe bursting is disabled, this can lead to accidental premature ends for RPs. Use with caution.',
-  component: CheckboxInput,
-};
-
-export const blueberry_lives: Feature<number> = {
-  name: 'Bursts before becoming unsafe.',
-  description:
-    'How many times will you burst safely before bursting unsafely? This is only used if safe bursting is disabled.',
-  component: FeatureNumberInput,
 };
