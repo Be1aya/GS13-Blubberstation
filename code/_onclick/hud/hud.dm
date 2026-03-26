@@ -15,7 +15,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	"Glass" = 'icons/hud/screen_glass.dmi',
 	"Trasen-Knox" = 'icons/hud/screen_trasenknox.dmi',
 	"Detective" = 'icons/hud/screen_detective.dmi',
-	"Blue - 98" = 'modular_zubbers/master_files/icons/hud/screen_blue98.dmi' // Bubber Addition
+	"Blue - 98" = 'modular_zubbers/master_files/icons/hud/screen_blue98.dmi', // Bubber Addition
+	//GS13 EDIT START
+	"GATO" = 'modular_gs/icons/hud/screen_gatonight.dmi',
+	//GS13 EDIT END
 ))
 
 //SKYRAT EDIT - ADDITION - ERP ICONS FIX
