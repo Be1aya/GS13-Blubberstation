@@ -19,9 +19,6 @@
 	greyscale_config_worn_digi = /datum/greyscale_config/button_up/worn/digi
 	greyscale_config_worn_taur_snake = /datum/greyscale_config/button_up/worn/taur/snake
 
-/obj/item/clothing/under/dual_tone/button_up/colored
-	greyscale_colors = "#FF0000#0000FF#00FF00"
-
 /datum/greyscale_config/button_up
 	name = "Button Up Suit"
 	icon_file = 'modular_gs/icons/obj/clothing/modclothes/button_up.dmi'
