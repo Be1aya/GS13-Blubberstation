@@ -562,6 +562,7 @@
 #include "code\__DEFINES\~~bubber_defines\traits\station_traits.dm"
 #include "code\__DEFINES\~~gs_defines\achievements.dm"
 #include "code\__DEFINES\~~gs_defines\atmospherics.dm"
+#include "code\__DEFINES\~~gs_defines\colors.dm"
 #include "code\__DEFINES\~~gs_defines\combat.dm"
 #include "code\__DEFINES\~~gs_defines\declarations.dm"
 #include "code\__DEFINES\~~gs_defines\DNA.dm"

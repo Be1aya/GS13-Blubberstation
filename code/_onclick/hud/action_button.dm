@@ -311,6 +311,12 @@
 	var/list/ui_paths = splittext(ui_segments[1], "/")
 	var/ui_name = ui_paths[length(ui_paths)]
 
+	//GS13 EDIT
+	if(ui_paths[1] == "modular_gs")
+		icon = 'modular_gs/icons/hud/64x16_actions.dmi'
+	else
+		icon = 'icons/hud/64x16_actions.dmi'
+	//GS13 EDIT END
 	icon_state = "[ui_name]_palette"
 
 /atom/movable/screen/button_palette/proc/activate_landing()
