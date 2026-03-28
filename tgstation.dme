@@ -6958,7 +6958,6 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
-#include "modular_gs\code\__DEFINES\colors.dm"
 #include "modular_gs\code\__HELPERS\fatness.dm"
 #include "modular_gs\code\clothing\accessory.dm"
 #include "modular_gs\code\clothing\bluespace_collar.dm"
