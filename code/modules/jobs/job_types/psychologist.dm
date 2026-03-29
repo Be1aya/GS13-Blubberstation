@@ -40,13 +40,20 @@
 	id = /obj/item/card/id/advanced
 	id_trim = /datum/id_trim/job/psychologist
 	uniform = /obj/item/clothing/under/costume/buttondown/slacks/service
-	backpack_contents = list(
+	//GS13 EDIT START (ADDING DIETICIAN ALT JOB FLAVOR)
+	/*  ORIGINAL:
+		backpack_contents = list(
 		/obj/item/storage/pill_bottle/happinesspsych,
 		/obj/item/storage/pill_bottle/lsdpsych,
 		/obj/item/storage/pill_bottle/mannitol,
 		/obj/item/storage/pill_bottle/paxpsych,
 		/obj/item/storage/pill_bottle/psicodine,
 		)
+	*/
+	backpack_contents = list(
+		/obj/item/choice_beacon/psychologist_or_dietician,
+		)
+	//GS13 EDIT END
 	belt = /obj/item/modular_computer/pda/psychologist
 	ears = /obj/item/radio/headset/headset_srvmed
 	shoes = /obj/item/clothing/shoes/laceup

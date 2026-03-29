@@ -1,6 +1,8 @@
 /////GS13 - miscellanous items. If it's a small item, a container or something
 /////then it should land here, instead of making a seperate .dm file
 
+//goodness gracious we should really split these up ;-;
+
 //fatoray research scraps (maintloot)
 
 /obj/item/trash/fatoray_scrap1
@@ -53,7 +55,7 @@
 	list_reagents = list(/datum/reagent/consumable/flatulose = 50)
 
 /obj/item/reagent_containers/cup/beaker/macarenic
-	name = "macarenic compound beaker"
+	name = "macerinic compound beaker"
 	list_reagents = list(/datum/reagent/fermi_slim = 50)
 
 /*
@@ -301,18 +303,110 @@
 	name = "Lipolicidic Mace"
 	desc = "Harmless. Beneficial, in fact: this mace might be able to slim people that it hits."
 	icon = 'modular_gs/icons/obj/weapons/fat_weapons.dmi'
-	// lefthand_file = 'modular_gs/icons/mob/inhands/melee_lefthand_64.dmi'	//files are in, but the sprites aren't aligned well at the time of writing this
-	// righthand_file = 'modular_gs/icons/mob/inhands/melee_righthand_64.dmi'
-	icon_state = "macarenic_mace"
+	icon_state = "lipolicide_mace"
 	damtype = FAT
 	throwforce = 0
 	force = 0
 
 /obj/item/gavelhammer/permaloss
-	name = "Macarenic Mace"
-	desc = "Get it? Mace-arenic? Haha."
+	name = "Macerinic Mace"
+	desc = "Get it? Mace-rinic? Haha."
 	icon = 'modular_gs/icons/obj/weapons/fat_weapons.dmi'
-	icon_state = "lipolicide_mace"
+	icon_state = "macarenic_mace"
 	damtype = PERMA_FAT
 	throwforce = 0
 	force = 0
+
+
+//pills & pill bottle prefabs
+//primarily used for the dietician role
+
+//macarenic compound
+/obj/item/storage/pill_bottle/macerinic
+	name = "bottle of macerinic compound pills"
+	desc = "Contains pills used to treat long-term fatness"
+	spawn_count = 6
+	spawn_type = /obj/item/reagent_containers/applicator/pill/macerinic
+
+/obj/item/reagent_containers/applicator/pill/macerinic
+	name = "macerinic compound pill"
+	desc = "Used to treat long-term fatness."
+	icon_state = "pill16"
+	list_reagents = list(/datum/reagent/fermi_slim = 2)
+	rename_with_volume = TRUE
+
+//lipolicide
+/obj/item/storage/pill_bottle/lipolicide
+	name = "bottle of lipolicide pills"
+	desc = "Contains pills used to treat fatness."
+	spawn_count = 7
+	spawn_type = /obj/item/reagent_containers/applicator/pill/lipolicide
+
+/obj/item/reagent_containers/applicator/pill/lipolicide
+	name = "lipolicide pill"
+	desc = "Used to treat fatness."
+	icon_state = "pill17"
+	list_reagents = list(/datum/reagent/toxin/lipolicide = 5)
+	rename_with_volume = TRUE
+
+//appetite stimulant
+/obj/item/storage/pill_bottle/appetite_stimulant
+	name = "bottle of appetite stimulant pills"
+	desc = "Contains pills used to treat lack of appetite."
+	spawn_count = 4
+	spawn_type = /obj/item/reagent_containers/applicator/pill/appetite_stimulant
+
+/obj/item/reagent_containers/applicator/pill/appetite_stimulant
+	name = "appetite stimulant pill"
+	desc = "Used to treat lack of appetite."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/drug/munchies = 5)
+	rename_with_volume = TRUE
+
+//lipoifier
+
+/obj/item/storage/pill_bottle/lipoifier
+	name = "bottle of lipoifier pills"
+	desc = "Contains pills used to treat underweight patients."
+	spawn_count = 6
+	spawn_type = /obj/item/reagent_containers/applicator/pill/lipoifier
+
+/obj/item/reagent_containers/applicator/pill/lipoifier
+	name = "lipoifier pill"
+	desc = "Used to treat underweight patients."
+	icon_state = "pill7"
+	list_reagents = list(/datum/reagent/consumable/lipoifier = 5)
+	rename_with_volume = TRUE
+
+//presets for the dietician/psychologist drop beacon
+
+/obj/item/storage/box/dietician_pills
+	name = "dietician's pill box"
+	desc = "Contains a set of pills pertaining to a dietician's line of work."
+	icon_state = "hugbox"
+	illustration = "heart"
+
+/obj/item/storage/box/dietician_pills/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/storage/pill_bottle/macerinic = 1,
+		/obj/item/storage/pill_bottle/lipolicide = 1,
+		/obj/item/storage/pill_bottle/appetite_stimulant = 1,
+		/obj/item/storage/pill_bottle/lipoifier = 1,
+		)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/psychologist_pills
+	name = "psychologist's pill box"
+	desc = "Contains a set of pills pertaining to a psychologist's line of work."
+	icon_state = "hugbox"
+	illustration = "heart"
+
+/obj/item/storage/box/psychologist_pills/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/storage/pill_bottle/mannitol = 1,
+		/obj/item/storage/pill_bottle/psicodine = 1,
+		/obj/item/storage/pill_bottle/paxpsych = 1,
+		/obj/item/storage/pill_bottle/happinesspsych = 1,
+		/obj/item/storage/pill_bottle/lsdpsych = 1,
+		)
+	generate_items_inside(items_inside,src)
