@@ -144,22 +144,23 @@
 	minimum = 0
 	maximum = INFINITY
 
-/datum/preference/toggle/glutton_disable_bursting
+/datum/preference/choiced/glutton_bursting_type
 	category = GLUTTON_BURSTING_PREFRENCES
 	savefile_identifier = PREFERENCE_CHARACTER
-	savefile_key = "glutton_disable_bursting"
-	default_value = FALSE
+	savefile_key = "glutton_bursting_type"
 
-/datum/preference/toggle/glutton_disable_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
-	return
+/datum/preference/choiced/glutton_bursting_type/init_possible_values()
+	return list(
+		"Disabled",
+		"Safe",
+		"Fatal",
+		"Permanent Fatal"
+	)
 
-/datum/preference/toggle/glutton_safe_bursting
-	category = GLUTTON_BURSTING_PREFRENCES
-	savefile_identifier = PREFERENCE_CHARACTER
-	savefile_key = "glutton_safe_bursting"
-	default_value = TRUE
+/datum/preference/choiced/glutton_bursting_type/create_default_value()
+	return "Disabled"
 
-/datum/preference/toggle/glutton_safe_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+/datum/preference/choiced/glutton_bursting_type/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
 
 /datum/preference/toggle/glutton_see_bursting

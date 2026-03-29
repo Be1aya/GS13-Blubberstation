@@ -4,7 +4,9 @@ import {
   FeatureNumberInput,
   type FeatureNumeric,
   type FeatureToggle,
+  type FeatureChoiced
 } from '../../base';
+import { FeatureDropdownInput } from '../../dropdowns';
 
 export const starting_fatness: Feature<number> = {
   name: 'Starting Fatness',
@@ -98,19 +100,11 @@ export const glutton_fatness_before_burst: Feature<number> = {
   component: FeatureNumberInput,
 };
 
-export const glutton_disable_bursting: FeatureToggle = {
-  name: 'Disable Bursting',
-  description:
-    'Toggle if you wish to disable bursting, you will still get the flavor messages and sounds, it will just prevent you from continuing to bursting stage',
-    component: CheckboxInput
-};
-
-export const  glutton_safe_bursting: FeatureToggle = {
-  name: 'Safe bursting',
-  description:
-    'Toggle if you want your character to be unharmed after bursting. Basically putting them back into a default state. If you disable this, bursting will kill you!',
-  component: CheckboxInput,
-};
+export const glutton_bursting_type: FeatureChoiced = {
+  name: 'Bursting Type',
+  description: 'Options for changing your bursting type, Disabled turns off the ability to burst, safe will reset your weight, fatal will kill you and you\'ll be able to respawn as the same character, permanent fatal will kill you and you\'ll need to be revived.',
+  component: FeatureDropdownInput
+}
 
 export const glutton_see_bursting: FeatureToggle = {
   name: 'See bursting',
@@ -120,6 +114,6 @@ export const glutton_see_bursting: FeatureToggle = {
 
 export const glutton_leave_gibs: FeatureToggle = {
   name: 'Leave gibs on Bursting',
-  description: 'Toggle if you want to leave gibs on bursting. You will still leave items regardless',
+  description: 'Toggle if you want to leave gibs on bursting, using perma-fatal bursting will still drop gibs. You will still leave items regardless',
   component: CheckboxInput,
 };

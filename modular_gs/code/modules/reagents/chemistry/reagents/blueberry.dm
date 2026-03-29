@@ -312,7 +312,7 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 	if(leave_remains)
 		spill_organs(DROP_ALL_REMAINS)
 		spawn_gibs(DROP_ALL_REMAINS)
-		spread_bodyparts(DROP_ALL_REMAINS)
+		spread_bodyparts(DROP_ALL_REMAINS & ~DROP_BRAIN)
 
 	// We are stuffing them in the fucking vore cryopod.
 	remove_player_from_round_safely(src)
