@@ -262,18 +262,14 @@
 			bursting_smoke.set_up(2, holder = src, location = src)
 			bursting_smoke.start()
 
-			//Return their transform back to normal with a short animation
-			var/matrix/original_transform = matrix(dna.current_body_size, 0, 0, 0, dna.current_body_size, 16 * dna.current_body_size - 16)
-			animate(src, time = 1 SECONDS, transform = original_transform, easing = SINE_EASING)
-
-
 			//Clear reagents from the stomach and blood
 			organs_slot["stomach"]?:reagents?:reagent_list = list()
 			reagents.reagent_list = list()
-			return
 
-		else
-			return
+	//Return their transform back to normal with a short animation
+	var/matrix/original_transform = matrix(dna.current_body_size, 0, 0, 0, dna.current_body_size, 16 * dna.current_body_size - 16)
+	animate(src, time = 1 SECONDS, transform = original_transform, easing = SINE_EASING)
+
 
 
 //The smoke used for bursting
