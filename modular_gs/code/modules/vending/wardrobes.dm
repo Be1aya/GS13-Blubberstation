@@ -1,3 +1,15 @@
+/obj/machinery/vending/clothing
+	gs_product_categories = list(
+		list(
+			"name" = "Under",
+			"icon" = "shirt",
+			"products" = list(
+				/obj/item/clothing/under/color/grey = 5,
+				/obj/item/clothing/under/dual_tone = 5,
+				/obj/item/clothing/under/dual_tone/button_up = 5,
+				),
+			),
+	)
 
 /obj/machinery/vending/wardrobe/sec_wardrobe
 	gs_product_categories = list(
