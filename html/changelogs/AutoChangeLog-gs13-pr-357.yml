@@ -1,0 +1,5 @@
+author: "Swan"
+delete-after: True
+changes:
+  - rscadd: "makes re-colorable modular clothing is now available in the clothesmate"
+  - bugfix: "fixes dual tone outfits not being recolorable in the loadout menu"
