@@ -143,7 +143,7 @@
 	var/fatness_bursting_pref = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/glutton_fatness_before_burst)
 	var/bursting_type_pref = get_bursting_pref()
 
-	if (!fullness_bursting_pref & !fatness_bursting_pref) //If both fatness and fullness bursting is disabled, then exit
+	if (!fullness_bursting_pref && !fatness_bursting_pref) //If both fatness and fullness bursting is disabled, then exit
 		return FALSE
 
 	//Adjust the thresholds to be relative to our minimum values so that the code doesn't run below a certain point
