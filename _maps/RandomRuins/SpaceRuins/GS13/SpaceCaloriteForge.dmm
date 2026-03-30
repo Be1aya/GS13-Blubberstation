@@ -54,7 +54,7 @@
 /area/ruin/space)
 "ob" = (
 /obj/structure/flora/rock/pile/style_2,
-/obj/structure/wall_torch/spawns_lit/directional/north,
+/obj/structure/wall_torch/directional/north,
 /turf/open/misc/asteroid,
 /area/ruin/space)
 "px" = (
@@ -109,9 +109,6 @@
 /area/ruin/space)
 "zI" = (
 /obj/effect/mob_spawn/corpse/human/scientist,
-/obj/effect/decal/cleanable/blood/trail_holder{
-	dir = 8
-	},
 /turf/open/misc/asteroid,
 /area/ruin/space)
 "zQ" = (
@@ -168,7 +165,7 @@
 /area/ruin/space)
 "Ku" = (
 /obj/structure/flora/rock/pile/style_3,
-/obj/structure/wall_torch/spawns_lit/directional/west,
+/obj/structure/wall_torch/directional/west,
 /turf/open/misc/asteroid,
 /area/ruin/space)
 "MN" = (
@@ -206,23 +203,12 @@
 /area/ruin/space)
 "QT" = (
 /obj/structure/grille/broken,
-/obj/effect/decal/cleanable/blood/trail{
-	dir = 8
-	},
 /turf/open/floor/mineral/titanium/tiled/blue/airless,
 /area/ruin/space)
 "Rn" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/trail{
-	dir = 8
-	},
-/turf/open/floor/mineral/titanium/tiled/blue/airless,
-/area/ruin/space)
-"Sg" = (
-/obj/structure/wall_torch/spawns_lit/directional/north,
-/turf/open/misc/asteroid,
+/obj/structure/flora/grass/jungle/a/style_2,
+/obj/structure/wall_torch/directional/south,
+/turf/open/floor/grass,
 /area/ruin/space)
 "TZ" = (
 /obj/structure/flora/tree/jungle/small/style_4,
@@ -236,13 +222,8 @@
 /turf/open/floor/grass,
 /area/ruin/space)
 "VP" = (
-/obj/structure/wall_torch/spawns_lit/directional/west,
+/obj/structure/wall_torch/directional/west,
 /turf/open/misc/asteroid,
-/area/ruin/space)
-"Ws" = (
-/obj/item/stack/sheet/mineral/titanium,
-/obj/structure/wall_torch/spawns_lit/directional/south,
-/turf/open/floor/grass,
 /area/ruin/space)
 "WO" = (
 /obj/structure/wall_torch/directional/north,
@@ -351,7 +332,7 @@ jg
 jg
 jg
 ZL
-Sg
+WO
 cU
 VP
 Nu
@@ -377,7 +358,7 @@ cU
 PC
 cU
 iy
-Rn
+OL
 Nu
 ZL
 jg
@@ -446,7 +427,7 @@ zQ
 cU
 cU
 FI
-Ws
+bb
 ud
 ud
 ud
@@ -468,7 +449,7 @@ cU
 cU
 JC
 TZ
-Ap
+Rn
 ZL
 jg
 jg
@@ -484,7 +465,7 @@ NN
 Uw
 px
 Nd
-WO
+cU
 AS
 cU
 JC
@@ -506,7 +487,7 @@ YS
 xI
 px
 bK
-Sg
+WO
 cU
 Qk
 vl
