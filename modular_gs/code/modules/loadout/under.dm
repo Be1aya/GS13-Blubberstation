@@ -164,3 +164,99 @@
 /datum/loadout_item/uniform/jumpsuit/gs13/button_up
 	name = "Button up shirt (Modular)"
 	item_path = /obj/item/clothing/under/dual_tone/button_up
+//eng
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/chief_engineer
+	name = "Chief Engineer's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/chief_engineer
+	restricted_roles = list(JOB_CHIEF_ENGINEER)
+
+//med
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/cmo
+	name = "Chief Medical Officer's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/chief_medical_officer
+	restricted_roles = list(JOB_CHIEF_MEDICAL_OFFICER)
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/psychologist
+	name = "Psychologist's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/psychologist
+
+//sci
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/science
+	name = "Sciencist's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/science
+	restricted_roles = list(ALL_JOBS_SCIENCE)
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/science/research_director
+	name = "Research Director's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/science/research_director
+	restricted_roles = list(JOB_RESEARCH_DIRECTOR)
+
+//cargo
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/cargo
+	name = "Cargo's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/cargo
+	restricted_roles = list(ALL_JOBS_CARGO)
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/quartermaster
+	name = "Quartermaster's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/cargo/quartermaster
+	restricted_roles = list(JOB_QUARTERMASTER)
+
+//security
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/security/head_of_security
+	name = "Head of Security's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/security/head_of_security
+	restricted_roles = list(JOB_HEAD_OF_SECURITY)
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/security/detective
+	name = "Detective's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/security/detective
+	restricted_roles = list(ALL_JOBS_SEC)
+
+//service
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/head_of_personnel
+	name = "Head of Personnel's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/head_of_personnel
+	restricted_roles = list(JOB_HEAD_OF_PERSONNEL)
+
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/bartender
+	name = "Bartender's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/bartender
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/chaplain
+	name = "Chaplain's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/chaplain
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/chef
+	name = "Chef's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/chef
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/lawyer
+	name = "Lawyer's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/lawyer
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/curator
+	name = "Curator's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/curator
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/service/barber
+	name = "Barber's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/service/barber
+
+//other
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/command/captain
+	name = "Captain's Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/command/captain
+	restricted_roles = list(JOB_CAPTAIN)
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up/centcom
+	name = "CentCom Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up/centcom
+	restricted_roles = list(ALL_JOBS_CENTRAL)
+
