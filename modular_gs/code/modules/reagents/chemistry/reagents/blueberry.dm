@@ -7,8 +7,8 @@
 #define BURST_DELAY "Delay"
 #define BURST_CONFIRM "Yes, Kaboom!"
 #define BURST_ABORT "Abort bursting"
-#define ABOUT_TO_BURST_TRAIT "about_to_burst"
 #define BURST_DELAY_SECONDS 300
+#define BURST_TIME_TO_BURST 7 SECONDS
 
 #define BLUEBERRY_SPILL_BELLY "<span class='warning'>You feel a wetness spread on your belly as juice leaks out of your belly button!</span>"
 #define BLUEBERRY_SPILL_PENIS "<span class='warning'>You feel your cock tingle as it leaks out juice!</span>"
@@ -62,6 +62,10 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 	"<span class='danger'>Too much! I'm gonna pop!</span>",
 	"<span class='danger'>The juice... it's getting...</span>"
 	))
+
+/mob/living/carbon
+	/// How many times have we bursted?
+	var/times_blueberry_bursted = 0
 
 /datum/reagent/blueberry_juice
 	name = "Blueberry Juice"
@@ -154,9 +158,10 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 			if (SPT_PROB(5, seconds_per_tick))
 				splatter_juice(berry, TRUE)
 
-	if (HAS_TRAIT(berry, ABOUT_TO_BURST_TRAIT)) // Skip burst stuff if it already triggered
+	if(HAS_TRAIT(berry, TRAIT_ABOUT_TO_BURST) || HAS_TRAIT(berry, TRAIT_NO_BURST)) // Skip burst stuff if it already triggered or if the berry can't burst
 		return
-	var/relative_fullness = berry.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/berry?.client?.prefs?.read_preference(/datum/preference/numeric/helplessness/blueberry_max_before_burst)
+
+	var/relative_fullness = berry.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/max_before_burst
 	if(relative_fullness > 1)
 		if (SPT_PROB(relative_fullness * 15, seconds_per_tick)) // When you're at your limit, you have a chance of bursting every second, increading with how far over capacity you are.
 			if (!berry.check_prefs_in_view(/datum/preference/toggle/see_bursting, berry.loc))
@@ -227,8 +232,12 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
  * Initiates the burst popup. Giving the player the choice between bursting or delaying.
  */
 /mob/living/carbon/proc/trigger_burst()
-	ADD_TRAIT(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT)
-	addtimer(TRAIT_CALLBACK_REMOVE(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT), BURST_DELAY_SECONDS SECONDS)
+	if(client?.prefs?.read_preference(/datum/preference/toggle/automatic_burst)) // This is on you.
+		burst()
+		return
+
+	ADD_TRAIT(src, TRAIT_ABOUT_TO_BURST, TRAUMA_TRAIT)
+	addtimer(TRAIT_CALLBACK_REMOVE(src, TRAIT_ABOUT_TO_BURST, TRAUMA_TRAIT), BURST_DELAY_SECONDS SECONDS)
 	var/list/buttons = list(BURST_DELAY, BURST_IMMEDIATELY)
 	var/burst_choice = tgui_alert(src, "Choose if you want to burst now, or if you want to delay. If you click on the burst now option, you will have 7 seconds before you burst. If you click on the delay option, nothing will happen and you will get the option to burst again in 5 minutes if you're still at your limit.", "You feel ready to pop!", buttons)
 	visible_message("<span class='warning'>[src]'s body wobbles violently, they look ready to burst!</span>", pick(GLOB.blueberry_about_to_blow_flavour))
@@ -251,10 +260,9 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
  * Burst the carbon. Depending on the players prefs, this will cause the character to also Gib and die.
  */
 /mob/living/carbon/proc/burst()
-	var/safe_popping = client?.prefs?.read_preference(/datum/preference/toggle/safe_bursting)
 	playsound(loc, pick(GLOB.blueberry_burst), BLUEBERRY_INFLATION_VOLUME, 1, 1, 1.2, ignore_walls = TRUE)
 
-	if (!do_after(src, 7 SECONDS, src))
+	if(!do_after(src, BURST_TIME_TO_BURST, src))
 		return
 	// Make a puddle of the late berries contents
 	var/liquid_to_spill = reagents.get_reagent_amount(/datum/reagent/blueberry_juice)
@@ -268,9 +276,47 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 	smoke.start()
 	playsound(loc, BLUEBBERY_BURST_SOUND, BLUEBERRY_INFLATION_VOLUME * 1.5, 1, 1, 1.2, ignore_walls = TRUE)
 	qdel(smoke)
+	var/safe_popping = client?.prefs?.read_preference(/datum/preference/toggle/safe_bursting)
+	var/safe_bursts_allowed = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/blueberry_lives)
+	var/bursts_left = safe_bursts_allowed - times_blueberry_bursted
 
-	if(!safe_popping)
-		gib(DROP_ALL_REMAINS)
+	if(safe_popping || (safe_bursts_allowed && bursts_left))
+		if(bursts_left == 1)
+			to_chat(span_boldwarning("You can't keep this up. Next time you burst, you are done for!")) // Warn them of what might happen if they aren't careful.
+
+		times_blueberry_bursted += 1
+		return
+
+	var/leave_gibs = client?.prefs?.read_preference(/datum/preference/toggle/bursting_leave_gibs)
+	blueberry_gib(leave_gibs)
+
+/// Modified version of the gib proc that doesn't give the same mood debuff and also removes them from the round.
+/mob/living/carbon/proc/blueberry_gib(leave_remains)
+	ghostize(FALSE) // We want them out of the body before anything else.
+
+	for(var/obj/item/dropped_item in src) // Need to do this, otherwise the items will be sent to cryo.
+		if(dropItemToGround(dropped_item))
+			if(prob(50))
+				step(dropped_item, pick(GLOB.alldirs))
+
+	var/atom/our_drop_location = drop_location()
+	for(var/mob/dropped_mob in src)
+		dropped_mob.forceMove(our_drop_location)
+		visible_message(span_danger("[dropped_mob] bursts out of [src]!"))
+
+	// Having a custom animation for bursting would be cool.
+	var/prev_lying = lying_angle
+	if(!prev_lying && leave_remains)
+		gib_animation()
+
+	if(leave_remains)
+		spill_organs(DROP_ALL_REMAINS)
+		spawn_gibs(DROP_ALL_REMAINS)
+		spread_bodyparts(DROP_ALL_REMAINS)
+
+	// We are stuffing them in the fucking vore cryopod.
+	remove_player_from_round_safely(src)
+
 
 /**
  * Spawn a streak or puddle of juice on the floor of a carbon.

@@ -115,15 +115,15 @@
 	var/obj/item/organ/genital/G
 	for(G in genitals_list)
 		if(istype(G, /obj/item/organ/genital/belly))
-			add_modular_overlay(U, mod_belly_rec, MODULAR_BELLY_LAYER, greyscale_colors)
-			add_modular_overlay(U, "[mod_belly_rec]_SOUTH", BELLY_FRONT_LAYER, greyscale_colors)
+			add_modular_overlay(U, mod_belly_rec, MODULAR_BELLY_LAYER, greyscale_colors, ORGAN_SLOT_BELLY)
+			add_modular_overlay(U, "[mod_belly_rec]_SOUTH", BELLY_FRONT_LAYER, greyscale_colors, ORGAN_SLOT_BELLY)
 		if(istype(G, /obj/item/organ/genital/butt))
-			add_modular_overlay(U, mod_butt_rec, MODULAR_BUTT_LAYER, greyscale_colors)
-			add_modular_overlay(U, "[mod_butt_rec]_NORTH", BUTT_BEHIND_LAYER, greyscale_colors)
+			add_modular_overlay(U, mod_butt_rec, MODULAR_BUTT_LAYER, greyscale_colors, ORGAN_SLOT_BUTT)
+			add_modular_overlay(U, "[mod_butt_rec]_NORTH", BUTT_BEHIND_LAYER, greyscale_colors, ORGAN_SLOT_BUTT)
 		if(istype(G, /obj/item/organ/genital/breasts))
-			add_modular_overlay(U, mod_breasts_rec, MODULAR_BREASTS_LAYER, greyscale_colors)
-			add_modular_overlay(U, "[mod_breasts_rec]_NORTH", BREASTS_BEHIND_LAYER, greyscale_colors)
-			add_modular_overlay(U, "[mod_breasts_rec]_SOUTH", BREASTS_FRONT_LAYER, greyscale_colors)
+			add_modular_overlay(U, mod_breasts_rec, MODULAR_BREASTS_LAYER, greyscale_colors, ORGAN_SLOT_BREASTS)
+			add_modular_overlay(U, "[mod_breasts_rec]_NORTH", BREASTS_BEHIND_LAYER, greyscale_colors, ORGAN_SLOT_BREASTS)
+			add_modular_overlay(U, "[mod_breasts_rec]_SOUTH", BREASTS_FRONT_LAYER, greyscale_colors, ORGAN_SLOT_BREASTS)
 	U.update_body()
 
 //Remove the previously built modular sprite overlays and empty the list of tracked overlays
@@ -146,7 +146,7 @@
 // Why is the layer in mutable appearance entered as its negative version?
 // No. Damn. Clue. SS13, I don't question it further.
 //
-/obj/item/proc/add_modular_overlay(mob/living/carbon/U, modular_icon, modular_layer, sprite_color)
+/obj/item/proc/add_modular_overlay(mob/living/carbon/U, modular_icon, modular_layer, sprite_color, organ_slot)
 	var/mutable_appearance/mod_overlay = mutable_appearance(modular_icon_location, modular_icon, -(modular_layer))
 	mod_overlay.color = sprite_color
 	mod_overlays += mod_overlay

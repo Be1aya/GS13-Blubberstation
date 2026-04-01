@@ -539,12 +539,14 @@
 
 /datum/armor/wintercoat_engineering
 	fire = 20
-
+/* GS13 EDIT
+// these are bugged for now, and can only be fixed by BYOND fixing their shit.
+// as such, I am disabling them because FUCK THE FLOATIES ON THE CE'S WINTERCOAT
 /obj/item/clothing/suit/hooded/wintercoat/engineering/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	. = ..()
 	if(!isinhands)
 		. += emissive_appearance(icon_file, "[icon_state]-emissive", src, alpha = src.alpha, effect_type = EMISSIVE_SPECULAR)
-
+GS13 END EDIT */
 /obj/item/clothing/head/hooded/winterhood/engineering
 	desc = "A yellow winter coat hood. Definitely not a replacement for a hard hat."
 	icon_state = "hood_engineer"
@@ -553,11 +555,14 @@
 /datum/armor/winterhood_engineering
 	fire = 20
 
+/* GS13 EDIT
+// these are bugged for now, and can only be fixed by BYOND fixing their shit.
+// as such, I am disabling them because FUCK THE FLOATIES ON THE CE'S WINTERCOAT
 /obj/item/clothing/head/hooded/winterhood/engineering/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	. = ..()
 	if(!isinhands)
 		. += emissive_appearance(icon_file, "[icon_state]-emissive", src, alpha = src.alpha, effect_type = EMISSIVE_SPECULAR)
-
+GS13 END EDIT */
 // Chief Engineer
 /obj/item/clothing/suit/hooded/wintercoat/engineering/ce
 	name = "chief engineer's winter coat"

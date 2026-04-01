@@ -83,3 +83,8 @@
 #define TRAIT_DISTANT			"headpat_hater"
 #define TRAIT_CUM_PLUS			"cum_plus"
 #define TRAIT_TRANSFORMED 		"transformed"
+
+// Berry
+#define TRAIT_ABOUT_TO_BURST "about_to_burst"
+#define TRAIT_NO_BURST "trait_no_burst"
+#define TRAIT_WARNED_ABOUT_BURSTING "trait_burst_warning"

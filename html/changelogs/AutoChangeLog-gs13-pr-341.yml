@@ -1,5 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - balance: "the TEG has had it's power output uncapped"
-  - balance: "the calovoltaic generator MOD module now produces more power and uses up more fat."

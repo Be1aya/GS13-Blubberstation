@@ -1214,6 +1214,10 @@
 				outline_color = COLOR_THEME_TRASENKNOX
 			if("detective")
 				outline_color = COLOR_THEME_DETECTIVE
+			//GS13 EDIT
+			if("gato")
+				outline_color = COLOR_THEME_GATO
+			//GS13 EDIT END
 			else //this should never happen, hopefully
 				outline_color = COLOR_WHITE
 	if(color)

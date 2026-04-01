@@ -40,7 +40,8 @@ export const weight_gain_persistent: FeatureToggle = {
 
 export const weight_gain_permanent: FeatureToggle = {
   name: 'Permanent weight',
-  description: 'Toggle whether you want to be affected by permanent weight; a special type of fatness that is persistent and impossible to remove using normal means.',
+  description:
+    'Toggle whether you want to be affected by permanent weight; a special type of fatness that is persistent and impossible to remove using normal means.',
   component: CheckboxInput,
 };
 
@@ -54,7 +55,7 @@ export const severe_fatness_penalty: FeatureToggle = {
 export const safe_bursting: FeatureToggle = {
   name: 'Safe bursting',
   description:
-    'Toggle if you want your character to be unharmed after bursting. Basically putting them back into a non inflated state.',
+    'Toggle if you want your character to be unharmed after bursting. Basically putting them back into a non inflated state. If disabled, your character will be safely removed from the round upon bursting. (You are still able to rejoin, similar to vore.)',
   component: CheckboxInput,
 };
 
@@ -62,4 +63,25 @@ export const see_bursting: FeatureToggle = {
   name: 'See bursting',
   description: 'Toggle if you want to see people bursting by inflation.',
   component: CheckboxInput,
+};
+
+export const bursting_leave_gibs: FeatureToggle = {
+  name: 'Leave gibs on Bursting',
+  description:
+    'Toggle if you want to leave gibs on bursting. You will still leave items and berry juice regardless',
+  component: CheckboxInput,
+};
+
+export const automatic_bursting: FeatureToggle = {
+  name: 'Uncontrollable Bursting',
+  description:
+    'Toggles your control over bursting. If safe bursting is disabled, this can lead to accidental premature ends for RPs. Use with caution.',
+  component: CheckboxInput,
+};
+
+export const blueberry_lives: Feature<number> = {
+  name: 'Bursts before becoming unsafe.',
+  description:
+    'How many times will you burst safely before bursting unsafely? This is only used if safe bursting is disabled.',
+  component: FeatureNumberInput,
 };

@@ -110,6 +110,7 @@
 #define ORGAN_SLOT_SPINE "spine"
 #define ORGAN_SLOT_STOMACH "stomach"
 #define ORGAN_SLOT_STOMACH_AID "stomach_aid"
+#define ORGAN_SLOT_MOBILITY "organ_slot_mobility" //GS13 EDIT
 #define ORGAN_SLOT_THRUSTERS "thrusters"
 #define ORGAN_SLOT_TONGUE "tongue"
 #define ORGAN_SLOT_VOICE "vocal_cords"
@@ -164,6 +165,7 @@ GLOBAL_LIST_INIT(organ_process_order, list(
 	ORGAN_SLOT_RIGHT_ARM_MUSCLE,
 	ORGAN_SLOT_STOMACH,
 	ORGAN_SLOT_STOMACH_AID,
+	ORGAN_SLOT_MOBILITY, //GS13 EDIT
 	ORGAN_SLOT_BREATHING_TUBE,
 	ORGAN_SLOT_EARS,
 	ORGAN_SLOT_EYES,

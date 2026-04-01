@@ -257,6 +257,7 @@
 		/obj/item/clothing/accessory/bubber/acc_medal/neckpin = 5,
 		/obj/item/clothing/accessory/bubber/acc_medal/neckpin/centcom = 5,
 	)
+	build_gs13_access_list(access_lists) // GS13 EDIT modular outfits for command drobe
 
 
 

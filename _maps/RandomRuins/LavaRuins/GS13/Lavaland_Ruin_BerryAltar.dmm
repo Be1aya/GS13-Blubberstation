@@ -456,7 +456,7 @@
 /turf/open/water/jungle,
 /area/ruin/unpowered)
 "EA" = (
-/obj/item/clothing/under/color/dual_tone/security{
+/obj/item/clothing/under/dual_tone/security{
 	pixel_x = 10;
 	pixel_y = -15
 	},

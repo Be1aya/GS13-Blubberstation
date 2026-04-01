@@ -10545,17 +10545,17 @@
 /obj/machinery/door/window/survival_pod/left/directional/east{
 	req_access = list("syndicate")
 	},
-/obj/item/clothing/under/color/dual_tone/security/red{
+/obj/item/clothing/under/dual_tone/security/red{
 	name = "syndicate prisoner jumpsuit (modular)";
 	pixel_x = -1;
 	pixel_y = 18
 	},
-/obj/item/clothing/under/color/dual_tone/security/red{
+/obj/item/clothing/under/dual_tone/security/red{
 	name = "syndicate prisoner jumpsuit (modular)";
 	pixel_x = -1;
 	pixel_y = 14
 	},
-/obj/item/clothing/under/color/dual_tone/security/red{
+/obj/item/clothing/under/dual_tone/security/red{
 	name = "syndicate prisoner jumpsuit (modular)";
 	pixel_x = -1;
 	pixel_y = 10
@@ -18871,7 +18871,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/clothing/under/color/dual_tone/security/red{
+/obj/item/clothing/under/dual_tone/security/red{
 	name = "syndicate prisoner jumpsuit (modular)"
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -21313,7 +21313,7 @@
 	pixel_x = -32
 	},
 /obj/structure/dresser,
-/obj/item/clothing/under/color/dual_tone/security/red{
+/obj/item/clothing/under/dual_tone/security/red{
 	name = "syndicate prisoner jumpsuit (modular)"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{

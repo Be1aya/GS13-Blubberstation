@@ -13,6 +13,8 @@
 	var/synthesizing = 0
 	var/poison_amount = 5
 	slot = ORGAN_SLOT_STOMACH_AID
+	/// GS13 EDIT stop spam with nutri-pump turbo
+	var/send_messages = TRUE
 
 /obj/item/organ/cyberimp/chest/nutriment/on_life(seconds_per_tick, times_fired)
 	if(synthesizing)
@@ -20,7 +22,9 @@
 
 	if(owner.nutrition <= hunger_threshold)
 		synthesizing = TRUE
-		to_chat(owner, span_notice("You feel less hungry..."))
+		// GS13 EDIT stop spam with nutripump turbo
+		if(send_messages)
+			to_chat(owner, span_notice("You feel less hungry..."))
 		owner.adjust_nutrition(25 * seconds_per_tick)
 		addtimer(CALLBACK(src, PROC_REF(synth_cool)), 5 SECONDS)
 
