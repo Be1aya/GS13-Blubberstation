@@ -20062,6 +20062,15 @@
 /obj/effect/landmark/generic_maintenance_landmark,
 /turf/open/floor/plating,
 /area/station/maintenance/solars/port/fore)
+"fQW" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/smartfridge/hotbar,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "fRf" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -55078,6 +55087,7 @@
 	network = list("ss13","medbay")
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/medbay/lobby)
 "pRh" = (
@@ -71327,6 +71337,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
+"uDO" = (
+/obj/machinery/smartfridge/hotbar,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "uDQ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/smooth_large,
@@ -109184,7 +109198,7 @@ fkm
 btp
 btp
 bLL
-bgT
+fQW
 bLK
 kzR
 aWe
@@ -175488,7 +175502,7 @@ esH
 mmK
 kpV
 cru
-vAr
+uDO
 vAr
 btp
 cqF

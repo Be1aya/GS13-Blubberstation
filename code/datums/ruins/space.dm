@@ -180,7 +180,7 @@
 
 /datum/map_template/ruin/space/spacehotel
 	id = "spacehotel"
-	suffix = "spacehotel_skyrat.dmm"	// SKYRAT EDIT CHANGE - ORIGINAL: suffix = "spacehotel.dmm"
+	suffix = "spacehotel_gs.dmm"	// SKYRAT EDIT CHANGE - ORIGINAL: suffix = "spacehotel.dmm" //GS13 EDIT CHANGE - ORIGINAL: suffix = "spacehotel_skyrat.dmm"
 	name = "Space-Ruin The Twin-Nexus Hotel"
 	description = "An interstellar hotel, where the weary spaceman can rest their head and relax, assured that the residential staff will not murder them in their sleep. Probably."
 

@@ -30849,6 +30849,15 @@
 "jLf" = (
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
+"jLo" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Kitchen Counter Shutters";
+	id = "playerscantreadthis"
+	},
+/obj/machinery/smartfridge/hotbar,
+/turf/open/floor/iron/checker,
+/area/station/service/kitchen)
 "jLx" = (
 /obj/machinery/ai_slipper{
 	uses = 10
@@ -32308,12 +32317,12 @@
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "kiN" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/light/cold/directional/north,
+/obj/machinery/self_actualization_device,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "kiT" = (
@@ -49612,6 +49621,7 @@
 	pixel_y = 2
 	},
 /obj/item/reagent_containers/syringe,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "qgP" = (
@@ -169955,7 +169965,7 @@ omc
 shV
 omc
 mUL
-fhg
+spp
 mJG
 mHc
 hkB
@@ -171240,7 +171250,7 @@ uuB
 mdp
 mdp
 mUL
-spp
+jLo
 ngC
 mHc
 jbx

@@ -6787,13 +6787,12 @@
 	},
 /area/station/hallway/primary/central/fore)
 "aFf" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchen";
 	name = "Kitchen Shutters"
 	},
-/obj/item/storage/fancy/donut_box,
+/obj/machinery/smartfridge/hotbar,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
 "aFg" = (
@@ -85274,6 +85273,7 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/medical_kiosk,
 /obj/machinery/light/directional/north,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/medbay/lobby)
 "yjZ" = (

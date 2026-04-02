@@ -2310,6 +2310,7 @@
 	dir = 1
 	},
 /obj/item/storage/medkit/regular,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "aNZ" = (
@@ -3929,14 +3930,7 @@
 	},
 /area/station/service/chapel)
 "bpq" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 1;
 	id = "kitchen_counter";
@@ -3946,6 +3940,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/machinery/smartfridge/hotbar,
 /turf/open/floor/iron,
 /area/station/service/kitchen)
 "bpu" = (
@@ -43098,7 +43093,7 @@
 	pixel_y = -3
 	},
 /obj/effect/turf_decal/tile/green/fourcorners,
-/obj/machinery/door/window/elevator/right/directional/west,
+/obj/machinery/door/window/left/directional/west,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "oBO" = (
@@ -47609,6 +47604,9 @@
 "qcQ" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/tile/bar/diagonal_centre,
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -3
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/station/commons/lounge)
 "qdm" = (
@@ -67519,6 +67517,9 @@
 /obj/structure/cable,
 /obj/structure/table/wood,
 /obj/effect/turf_decal/tile/bar/diagonal_centre,
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 3
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/station/commons/lounge)
 "wCO" = (
@@ -68326,7 +68327,7 @@
 	pixel_y = 10
 	},
 /obj/effect/turf_decal/tile/green/fourcorners,
-/obj/machinery/door/window/elevator/right/directional/west,
+/obj/machinery/door/window/right/directional/west,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "wTp" = (

@@ -38498,6 +38498,7 @@
 /obj/item/storage/box/bandages,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/dark,
 /area/station/medical/medbay/lobby)
 "mlB" = (
@@ -48015,19 +48016,13 @@
 /turf/closed/wall/r_wall,
 /area/station/command/vault)
 "pvf" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "kitchenshutters";
 	name = "Kitchen Shutters"
 	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
-	},
+/obj/machinery/smartfridge/hotbar,
 /turf/open/floor/iron,
 /area/station/service/kitchen)
 "pvi" = (
@@ -108123,8 +108118,8 @@ jds
 ios
 sde
 hMf
-pvf
 bln
+pvf
 qUj
 bDr
 dvk

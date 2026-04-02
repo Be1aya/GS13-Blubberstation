@@ -125,7 +125,7 @@
 /turf/open/indestructible/chocolate,
 /area/ruin/unpowered)
 "z" = (
-/turf/closed/indestructible/rock,
+/turf/closed/mineral/random/volcanic,
 /area/lavaland/surface/outdoors)
 "A" = (
 /obj/item/food/chocolatebunny{

@@ -21489,7 +21489,6 @@
 /turf/open/floor/engine,
 /area/station/engineering/supermatter)
 "fNZ" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "kitchencounter";
@@ -21497,6 +21496,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/smartfridge/hotbar,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
 "fOl" = (
@@ -84417,6 +84417,7 @@
 	pixel_x = 1;
 	pixel_y = -4
 	},
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "xgI" = (

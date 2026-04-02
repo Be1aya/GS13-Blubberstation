@@ -3152,16 +3152,12 @@
 /turf/open/floor/grass,
 /area/station/security/prison/garden)
 "aFV" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets/donkpocketpizza{
-	pixel_y = 5
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchencounter";
 	name = "Kitchen Counter Shutters"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/smartfridge/hotbar,
 /turf/open/floor/iron/dark,
 /area/station/service/kitchen)
 "aFW" = (
@@ -20942,6 +20938,7 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/machinery/light/directional/west,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/white/side{
 	dir = 4
 	},
@@ -125263,6 +125260,19 @@
 	dir = 4
 	},
 /area/station/hallway/primary/port)
+"xHJ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "kitchencounter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/machinery/door/firedoor,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets/donkpocketpizza{
+	pixel_y = 5
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/kitchen)
 "xHN" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/computer/order_console/mining,
@@ -164380,7 +164390,7 @@ kMT
 laD
 lYH
 gpX
-pGi
+xHJ
 bZN
 cTZ
 nGY

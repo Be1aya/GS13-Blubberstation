@@ -124,6 +124,8 @@
 				/obj/item/reagent_containers/cup/beaker/blueberry_juice = 99,
 				/obj/item/reagent_containers/cup/beaker/cornoil = 99,
 				/obj/item/reagent_containers/cup/beaker/flatulose = 99,
+				/obj/item/seeds/lipoplant = 99,
+				/obj/item/food/grown/lipofruit = 99,
 				)
 
 	refill_canister = /obj/item/vending_refill/mealdor
