@@ -24,7 +24,7 @@
 /area/ruin/space/has_grav)
 "dF" = (
 /obj/structure/table/reinforced/titaniumglass,
-/obj/effect/spawner/random/food_or_drink/cake_ingredients,
+/obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/iron/colony,
 /area/ruin/space/has_grav)
 "fa" = (
@@ -35,6 +35,7 @@
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/three_course_meal,
 /obj/item/slime_cookie/calorite,
+/obj/structure/wall_torch/spawns_lit/directional/west,
 /turf/open/floor/iron/colony,
 /area/ruin/space/has_grav)
 "gK" = (
@@ -44,6 +45,10 @@
 	},
 /obj/structure/wall_torch/spawns_lit/directional/south,
 /turf/open/floor/sepia,
+/area/ruin/space/has_grav)
+"hE" = (
+/obj/structure/wall_torch/spawns_lit/directional/north,
+/turf/open/floor/carpet/orange,
 /area/ruin/space/has_grav)
 "iO" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
@@ -82,8 +87,9 @@
 /area/ruin/space/has_grav)
 "kv" = (
 /obj/structure/table/reinforced/titaniumglass,
-/obj/effect/spawner/random/food_or_drink/cake_ingredients,
 /obj/item/slime_cookie/calorite,
+/obj/structure/wall_torch/spawns_lit/directional/west,
+/obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/iron/colony,
 /area/ruin/space/has_grav)
 "kH" = (
@@ -94,6 +100,10 @@
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/pizzaparty,
 /turf/open/floor/iron/colony,
+/area/ruin/space/has_grav)
+"ll" = (
+/obj/item/flashlight/lantern/on,
+/turf/open/misc/asteroid,
 /area/ruin/space/has_grav)
 "lm" = (
 /turf/closed/indestructible/dungeon{
@@ -124,6 +134,10 @@
 /obj/structure/fans/tiny/forcefield,
 /turf/open/misc/asteroid,
 /area/ruin/space/has_grav)
+"mO" = (
+/obj/item/flashlight/lantern/on,
+/turf/open/floor/carpet/orange,
+/area/ruin/space/has_grav)
 "nE" = (
 /turf/closed/wall/mineral/calorite,
 /area/ruin/space/has_grav)
@@ -133,6 +147,7 @@
 	pixel_x = 15;
 	pixel_y = 8
 	},
+/obj/structure/wall_torch/spawns_lit/directional/north,
 /turf/open/floor/iron/colony,
 /area/ruin/space/has_grav)
 "oZ" = (
@@ -237,6 +252,11 @@
 /obj/item/stack/sheet/mineral/calorite/ten,
 /turf/open/floor/mineral/calorite/hide,
 /area/ruin/space/has_grav)
+"Gt" = (
+/obj/structure/table/reinforced/titaniumglass,
+/obj/item/flashlight/lantern/on,
+/turf/open/floor/iron/colony,
+/area/ruin/space/has_grav)
 "GO" = (
 /obj/structure/mineral_door/calorite,
 /obj/effect/turf_decal/tile/dark/opposingcorners,
@@ -292,7 +312,7 @@
 /area/ruin/space/has_grav)
 "NA" = (
 /obj/structure/table/reinforced/titaniumglass,
-/obj/effect/spawner/random/food_or_drink/cake_ingredients,
+/obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/iron/checker,
 /area/ruin/space/has_grav)
 "NM" = (
@@ -313,6 +333,12 @@
 	dir = 8
 	},
 /area/ruin/space/has_grav)
+"PD" = (
+/obj/structure/table/reinforced/titaniumglass,
+/obj/structure/wall_torch/spawns_lit/directional/south,
+/obj/effect/spawner/random/food_or_drink/dinner,
+/turf/open/floor/iron/colony,
+/area/ruin/space/has_grav)
 "PH" = (
 /obj/structure/trap/belch,
 /turf/open/floor/iron/checker,
@@ -322,6 +348,12 @@
 /mob/living/simple_animal/hostile/feed/chocolate_slime/creambeast,
 /turf/open/floor/iron/checker,
 /area/ruin/space/has_grav)
+"Rp" = (
+/obj/structure/table/reinforced/titaniumglass,
+/obj/effect/spawner/random/food_or_drink/pizzaparty,
+/obj/structure/wall_torch/spawns_lit/directional/south,
+/turf/open/floor/iron/colony,
+/area/ruin/space/has_grav)
 "Rv" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
 /obj/structure/trap/fattening,
@@ -329,6 +361,7 @@
 /area/ruin/space/has_grav)
 "Rz" = (
 /obj/structure/sign/poster/official/calorite/directional/south,
+/obj/item/clothing/glasses/meson,
 /turf/open/misc/asteroid,
 /area/ruin/space/has_grav)
 "SJ" = (
@@ -337,6 +370,7 @@
 	pixel_x = 15;
 	pixel_y = 8
 	},
+/obj/structure/wall_torch/spawns_lit/directional/north,
 /turf/open/floor/iron/colony,
 /area/ruin/space/has_grav)
 "TR" = (
@@ -350,6 +384,10 @@
 "Vo" = (
 /turf/closed/mineral/asteroid,
 /area/ruin/space)
+"VF" = (
+/obj/structure/wall_torch/spawns_lit/directional/south,
+/turf/open/floor/carpet/orange,
+/area/ruin/space/has_grav)
 "ZD" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
 /mob/living/simple_animal/hostile/feed/chocolate_slime,
@@ -605,7 +643,7 @@ Ae
 dy
 fQ
 iY
-fQ
+Gt
 kv
 iY
 Ae
@@ -682,7 +720,7 @@ qD
 qD
 qD
 ug
-kX
+Rp
 Ae
 lm
 Vo
@@ -756,7 +794,7 @@ qD
 qD
 qD
 ug
-dF
+PD
 dy
 lm
 Vo
@@ -863,9 +901,9 @@ dn
 nE
 Ae
 Ae
+hE
 qD
-qD
-qD
+VF
 dy
 Ae
 Fj
@@ -975,7 +1013,7 @@ nE
 Ae
 oZ
 qD
-qD
+mO
 Ae
 Ae
 nE
@@ -990,7 +1028,7 @@ qC
 qC
 qC
 kH
-TR
+ll
 Rz
 rv
 Ae
