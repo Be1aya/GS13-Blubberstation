@@ -22,6 +22,9 @@
 	quirks_enabled = TRUE
 	random_appearance = FALSE
 	loadout_enabled = FALSE
+	//GS13 EDIT
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_SPECIES //bring icewalker in line with ashwalker. custom icewalkers!
+	//GS13 EDIT END
 	uses = 9
 	deletes_on_zero_uses_left = FALSE
 
