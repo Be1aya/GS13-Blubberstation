@@ -1,0 +1,4 @@
+author: "SeepingVisage"
+delete-after: True
+changes:
+  - rscadd: "Icewalker role now lets you spawn in as a custom character."
