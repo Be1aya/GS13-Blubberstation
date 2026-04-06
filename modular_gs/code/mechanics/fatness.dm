@@ -334,7 +334,7 @@
 /mob/living/carbon/proc/adjust_perma(adjustment_amount, type_of_fattening = FATTENING_TYPE_ITEM, ignore_rate = FALSE)
 	if(isnull(client))
 		return FALSE
-	if(!client.prefs.read_preference(/datum/preference/toggle/weight_gain_permanent))
+	if(type_of_fattening != FATTENING_TYPE_ALMIGHTY && !client.prefs.read_preference(/datum/preference/toggle/weight_gain_permanent))
 		return FALSE
 
 	if(!adjustment_amount || !type_of_fattening)
