@@ -1,0 +1,6 @@
+author: "SeepingVisage"
+delete-after: True
+changes:
+  - rscadd: "digestive_noises numeric pref"
+  - refactor: "farting_noises and burping_noises are now numeric preferences,"
+  - rscdel: "removed references and uses of playsound_prefed proc"
