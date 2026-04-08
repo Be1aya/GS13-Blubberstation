@@ -15,12 +15,12 @@
 	antag_divisor = 5
 	storyteller_type = STORYTELLER_TYPE_INTENSE
 
+// GS13 EDIT
+// original values: 1200, 1300, 4000, 2000, 4800
 /datum/storyteller_data/tracks/gamer
 	threshold_mundane = 60
 	threshold_moderate = 90
 	threshold_major = 150
 	threshold_crewset = 480
 	threshold_ghostset = 240
-// GS13 EDIT
-// original values: 1200, 1300, 4000, 2000, 4800
 // GS13 END EDIT

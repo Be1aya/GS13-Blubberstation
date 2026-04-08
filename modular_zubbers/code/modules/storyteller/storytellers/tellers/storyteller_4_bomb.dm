@@ -11,10 +11,10 @@
 	antag_divisor = 10
 	storyteller_type = STORYTELLER_TYPE_INTENSE
 
+// GS13 EDIT
+// original values: 1800, 1400, 5500
 /datum/storyteller_data/tracks/bomb
 	threshold_mundane = 30
 	threshold_moderate = 60
 	threshold_major = 180
-// GS13 EDIT
-// original values: 1800, 1400, 5500
 // GS13 END EDIT

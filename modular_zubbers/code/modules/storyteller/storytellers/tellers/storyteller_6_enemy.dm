@@ -26,12 +26,12 @@
 
 	event_repetition_multiplier = 1 //Set from default 0.6 so that the round just doesn't throw every antag type possible at the crew.
 
+// GS13 EDIT
+// original values: 1200, 1800, 8000, 1950, 6500
 /datum/storyteller_data/tracks/enemy
 	threshold_mundane = 90
 	threshold_moderate = 120
 	threshold_major = 180
 	threshold_crewset = 240
 	threshold_ghostset = 480
-// GS13 EDIT
-// original values: 1200, 1800, 8000, 1950, 6500
 // GS13 END EDIT
