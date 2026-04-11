@@ -1,0 +1,532 @@
+[
+	{
+		"name": "Moff squeak",
+		"id": "moffsqueak",
+		"files": ["voice/bloopers/mothsqueak.ogg"]
+	},
+	{
+		"name": "Meow",
+		"id": "meow",
+		"files": ["voice/bloopers/meow1.ogg"],
+		"min_speed": 5,
+		"max_speed": 11
+	},
+	{
+		"name": "chirp",
+		"id": "chirp",
+		"files": ["voice/bloopers/caw.ogg"]
+	},
+	{
+		"name": "Meow",
+		"id": "meow",
+		"files": ["voice/bloopers/meow1.ogg"]
+	},
+	{
+		"name": "Alphys",
+		"id": "alphys",
+		"files": ["voice/bloopers/undertale/voice_alphys.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Asgore",
+		"id": "asgore",
+		"files": ["voice/bloopers/undertale/voice_asgore.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Flowey (normal)",
+		"id": "flowey1",
+		"files": ["voice/bloopers/undertale/voice_flowey_1.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Flowey (evil)",
+		"id": "flowey2",
+		"files": ["voice/bloopers/undertale/voice_flowey_2.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Papyrus",
+		"id": "papyrus",
+		"files": ["voice/bloopers/undertale/voice_papyrus.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Ralsei",
+		"id": "ralsei",
+		"files": ["voice/bloopers/undertale/voice_ralsei.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Sans",
+		"id": "sans",
+		"files": ["voice/bloopers/undertale/voice_sans.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Toriel",
+		"id": "toriel",
+		"files": ["voice/bloopers/undertale/voice_toriel.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Undyne",
+		"id": "undyne",
+		"files": ["voice/bloopers/undertale/voice_undyne.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Temmie",
+		"id": "temmie",
+		"files": ["voice/bloopers/undertale/voice_temmie.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Susie",
+		"id": "susie",
+		"files": ["voice/bloopers/undertale/voice_susie.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Gaster",
+		"id": "gaster",
+		"files": ["voice/bloopers/undertale/voice_gaster_1.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Mettaton",
+		"id": "mettaton",
+		"files": ["voice/bloopers/undertale/voice_metta_1.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Generic Monster 1",
+		"id": "gen_monster_1",
+		"files": ["voice/bloopers/undertale/voice_monster1.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Generic Monster 2",
+		"id": "gen_monster_2",
+		"files": ["voice/bloopers/undertale/voice_monster2.ogg"],
+		"min_vary": 0
+	},
+	{
+		"name": "Wilson",
+		"id": "wilson",
+		"files": ["voice/bloopers/dont_starve/wilson_blooper.ogg"]
+	},
+	{
+		"name": "Wolfgang",
+		"id": "wolfgang",
+		"files": ["voice/bloopers/dont_starve/wolfgang_blooper.ogg"],
+		"min_speed": 4,
+		"max_speed": 10
+	},
+	{
+		"name": "Woodie",
+		"id": "woodie",
+		"files": ["voice/bloopers/dont_starve/woodie_blooper.ogg"],
+		"min_speed": 4,
+		"max_speed": 10
+	},
+	{
+		"name": "Wurt",
+		"id": "wurt",
+		"files": ["voice/bloopers/dont_starve/wurt_blooper.ogg"]
+	},
+	{
+		"name": "wx78",
+		"id": "wx78",
+		"files": ["voice/bloopers/dont_starve/wx78_blooper.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Whistle 1",
+		"id": "whistle1",
+		"files": ["voice/bloopers/kazooie/birdwhistle.ogg"]
+	},
+	{
+		"name": "Whistle 2",
+		"id": "whistle2",
+		"files": ["voice/bloopers/kazooie/birdwhistle2.ogg"]
+	},
+	{
+		"name": "Caw 1",
+		"id": "caw1",
+		"files": ["voice/bloopers/kazooie/caw.ogg"],
+		"min_speed": 4,
+		"max_speed": 9
+	},
+	{
+		"name": "Caw 2",
+		"id": "caw2",
+		"files": ["voice/bloopers/kazooie/caw2.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Caw 3",
+		"id": "caw3",
+		"files": ["voice/bloopers/kazooie/caw3.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Ehh 1",
+		"id": "ehh1",
+		"files": ["voice/bloopers/kazooie/ehh.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Ehh 2",
+		"id": "ehh2",
+		"files": ["voice/bloopers/kazooie/ehh2.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Ehh 3",
+		"id": "ehh3",
+		"files": ["voice/bloopers/kazooie/ehh3.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Ehh 4",
+		"id": "ehh4",
+		"files": ["voice/bloopers/kazooie/ehh4.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Ehh 5",
+		"id": "ehh5",
+		"files": ["voice/bloopers/kazooie/ehh5.ogg"],
+		"min_speed": 3,
+		"max_speed": 9
+	},
+	{
+		"name": "Faucet 1",
+		"id": "faucet1",
+		"files": ["voice/bloopers/kazooie/faucet.ogg"]
+	},
+	{
+		"name": "Faucet 2",
+		"id": "faucet2",
+		"files": ["voice/bloopers/kazooie/faucet2.ogg"]
+	},
+	{
+		"name": "Ribbit",
+		"id": "ribbit",
+		"files": ["voice/bloopers/kazooie/ribbit.ogg"]
+	},
+	{
+		"name": "Hoot",
+		"id": "hoot",
+		"files": ["voice/bloopers/kazooie/hoot.ogg"]
+	},
+	{
+		"name": "Tweet",
+		"id": "tweet",
+		"files": ["voice/bloopers/kazooie/tweet.ogg"]
+	},
+	{
+		"name": "Dwoop",
+		"id": "dwoop",
+		"files": ["voice/bloopers/kazooie/dwoop.ogg"]
+	},
+	{
+		"name": "Uhm",
+		"id": "uhm",
+		"files": ["voice/bloopers/kazooie/uhm.ogg"]
+	},
+	{
+		"name": "Wurble",
+		"id": "wurble",
+		"files": ["voice/bloopers/kazooie/wurble1.ogg"]
+	},
+	{
+		"name": "Chittery",
+		"id": "chitter",
+		"files": ["voice/bloopers/chitter.ogg"],
+		"min_speed": 4
+	},
+	{
+		"name": "Chittery Alt",
+		"id": "chitter2",
+		"files": ["voice/bloopers/moth/mothchitter2.ogg"]
+	},
+	{
+		"name": "Chittery Alt 2",
+		"id": "chitter3",
+		"files": ["voice/bloopers/kazooie/chitter1.ogg"]
+	},
+	{
+		"name": "Xenohiss",
+		"id": "Xenohiss",
+		"files": ["voice/bloopers/Xenohiss.ogg"]
+	},
+        {
+        "name": "Blub",
+        "id": "blub",
+        "files": ["voice/bloopers/blub.ogg"]
+	},
+    {
+        "name": "Bot Talk 1",
+        "id": "bottalk_1",
+        "files": ["voice/bloopers/bottalk_1.ogg"]
+	},
+    {
+        "name": "Bot Talk 2",
+        "id": "bottalk_2",
+        "files": ["voice/bloopers/bottalk_2.ogg"]
+	},
+    {
+        "name": "Bot Talk 3",
+        "id": "bottalk_3",
+        "files": ["voice/bloopers/bottalk_3.ogg"]
+	},
+    {
+        "name": "Bot Talk 4",
+        "id": "bottalk_4",
+        "files": ["voice/bloopers/bottalk_4.ogg"]
+	},
+    {
+        "name": "Buwoo",
+        "id": "buwoo",
+        "files": ["voice/bloopers/buwoo.ogg"]
+	},
+    {
+        "name": "Cow",
+        "id": "cow",
+        "files": ["voice/bloopers/cow.ogg"]
+	},
+    {
+        "name": "Lizard",
+        "id": "lizard",
+        "files": ["voice/bloopers/lizard.ogg"]
+	},
+    {
+        "name": "Pug",
+        "id": "pug",
+        "files": ["voice/bloopers/pug.ogg"]
+	},
+    {
+        "name": "Pugg",
+        "id": "pugg",
+        "files": ["voice/bloopers/pugg.ogg"]
+	},
+    {
+        "name": "Radio",
+        "id": "radio",
+        "files": ["voice/bloopers/radio.ogg"]
+	},
+    {
+        "name": "Radio2",
+        "id": "radio2",
+        "files": ["voice/bloopers/radio2.ogg"]
+	},
+    {
+        "name": "Radio (AI)",
+        "id": "radio_ai",
+        "files": ["voice/bloopers/radio_ai.ogg"]
+	},
+    {
+        "name": "Roach",
+        "id": "roach",
+        "files": ["voice/bloopers/roach.ogg"]
+	},
+    {
+        "name": "Skelly",
+        "id": "skelly",
+        "files": ["voice/bloopers/skelly.ogg"]
+	},
+    {
+        "name": "Speak 1",
+        "id": "speak_1",
+        "files": ["voice/bloopers/speak_1.ogg"]
+	},
+    {
+        "name": "Speak 2",
+        "id": "speak_2",
+        "files": ["voice/bloopers/speak_2.ogg"]
+	},
+    {
+        "name": "Speak 3",
+        "id": "speak_3",
+        "files": ["voice/bloopers/speak_3.ogg"]
+	},
+    {
+        "name": "Speak 4",
+        "id": "speak_4",
+        "files": ["voice/bloopers/speak_4.ogg"]
+	},
+	{
+		"name": "Angela",
+		"id": "angela",
+		"files": ["voice/bloopers/atlyss/voice_angela.ogg"]
+	},
+	{
+		"name": "Enok",
+		"id": "enok",
+		"files": ["voice/bloopers/atlyss/voice_enok_1.ogg"]
+	},
+	{
+		"name": "Enok (Alt.)",
+		"id": "enok_alt",
+		"files": ["voice/bloopers/atlyss/voice_enok_2.ogg"]
+	},
+	{
+		"name": "Sally",
+		"id": "sally",
+		"files": ["voice/bloopers/atlyss/voice_sally.ogg"]
+	},
+	{
+		"name": "Skrit",
+		"id": "skrit",
+		"files": ["voice/bloopers/atlyss/voice_skrit.ogg"]
+	},
+	{
+		"name": "Spike",
+		"id": "spike",
+		"files": ["voice/bloopers/atlyss/voice_spike.ogg"]
+	},
+	{
+		"name": "Vivian",
+		"id": "vivian",
+		"files": ["voice/bloopers/atlyss/voice_vivian_1.ogg"]
+	},
+	{
+		"name": "Vivian (Alt.)",
+		"id": "vivian_alt",
+		"files": ["voice/bloopers/atlyss/voice_vivian_2.ogg"]
+	},
+	{
+		"name": "Berdly",
+		"id": "berdly",
+		"files": ["voice/bloopers/deltarune/voice_berdly.ogg"]
+	},
+	{
+		"name": "Carol",
+		"id": "carol",
+		"files": ["voice/bloopers/deltarune/voice_carol.ogg"]
+	},
+	{
+		"name": "Gerson",
+		"id": "gerson",
+		"files": ["voice/bloopers/deltarune/voice_gerson.ogg"]
+	},
+	{
+		"name": "Jackenstein",
+		"id": "jackenstein",
+		"files": ["voice/bloopers/deltarune/voice_jackenstein_1.ogg"]
+	},
+	{
+		"name": "Jackenstein (Cute)",
+		"id": "jackenstein_alt",
+		"files": ["voice/bloopers/deltarune/voice_jackenstein_2.ogg"]
+	},
+	{
+		"name": "Jevil",
+		"id": "jevil",
+		"files": ["voice/bloopers/deltarune/voice_jevil.ogg"]
+	},
+	{
+		"name": "Lancer",
+		"id": "lancer",
+		"files": ["voice/bloopers/deltarune/voice_lancer.ogg"]
+	},
+	{
+		"name": "Noelle",
+		"id": "noelle",
+		"files": ["voice/bloopers/deltarune/voice_noelle.ogg"]
+	},
+	{
+		"name": "Queen",
+		"id": "queen",
+		"files": ["voice/bloopers/deltarune/voice_queen.ogg"]
+	},
+	{
+		"name": "Rudy",
+		"id": "rudy",
+		"files": ["voice/bloopers/deltarune/voice_berdly.ogg"]
+	},
+	{
+		"name": "Spade King",
+		"id": "spade_king",
+		"files": ["voice/bloopers/deltarune/voice_spade_king.ogg"]
+	},
+	{
+		"name": "Spamton",
+		"id": "spamton",
+		"files": ["voice/bloopers/deltarune/voice_spamton.ogg"]
+	},
+	{
+		"name": "Tenna",
+		"id": "tenna",
+		"files": ["voice/bloopers/deltarune/voice_tenna_1.ogg"]
+	},
+	{
+		"name": "Tenna (Alt.)",
+		"id": "tenna_alt",
+		"files": ["voice/bloopers/deltarune/voice_tenna_2.ogg"]
+	},
+	{
+		"name": "Bee",
+		"id": "bee",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_bee.ogg"]
+	},
+	{
+		"name": "Hookgwaegh",
+		"id": "hookgwaegh",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_hookgwaegh.ogg"]
+	},
+	{
+		"name": "Kobold",
+		"id": "kobold",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_kobold.ogg"]
+	},
+	{
+		"name": "Transponder",
+		"id": "transponder",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_transponder.ogg"]
+	},
+	{
+		"name": "Typewriter",
+		"id": "typerwriter",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_typewriter.ogg"]
+	},
+	{
+		"name": "Vox (Deep)",
+		"id": "vox_deep",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_vox_deep_1.ogg"]
+	},
+	{
+		"name": "Vox (Deep, Alt.)",
+		"id": "vox_deep_alt",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_vox_deep_2.ogg"]
+	},
+	{
+		"name": "Vox (Fast)",
+		"id": "vox_fast",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_vox_fast.ogg"]
+	},
+	{
+		"name": "Vox (Melodic)",
+		"id": "vox_melodic",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_vox_melodic.ogg"]
+	},
+	{
+		"name": "Vox (Slow)",
+		"id": "vox_slow",
+		"files": ["voice/bloopers/donuts_for_deerteeth/voice_vox_slow.ogg"]
+	},
+	{
+		"name": "Meow (Alt)",
+		"id": "meow_alt",
+		"files": ["voice/bloopers/meow2.ogg"]
+	}
+]
