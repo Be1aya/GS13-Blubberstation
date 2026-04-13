@@ -17,12 +17,12 @@
 	icon = 'modular_gs/icons/obj/starshine.dmi'
 	icon_state = "starshine_r"
 
-/datum/reagent/consumable/starshine/fresh
+/datum/reagent/consumable/starshine
 	nutriment_factor = 5
 	quality = DRINK_VERYGOOD
 
 /datum/chemical_reaction/drink/starshine
-	results = list(/datum/reagent/consumable/starshine/fresh = 3)
+	results = list(/datum/reagent/consumable/starshine = 3)
 	required_reagents = list(/datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/sodawater = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/reagent/consumable/starshine/on_mob_metabolize(mob/living/drinker)
@@ -57,12 +57,12 @@
 	icon = 'modular_gs/icons/obj/starshine.dmi'
 	icon_state = "starshine_y"
 
-/datum/reagent/consumable/starshine/yellow/fresh
+/datum/reagent/consumable/starshine/yellow
 	nutriment_factor = 5
 	quality = DRINK_VERYGOOD
 
 /datum/chemical_reaction/drink/starshine_yellow
-	results = list(/datum/reagent/consumable/starshine/yellow/fresh = 3)
+	results = list(/datum/reagent/consumable/starshine/yellow = 3)
 	required_reagents = list(/datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/sodawater = 1, /datum/reagent/consumable/sugar = 1)
 
 
@@ -79,19 +79,15 @@
 	icon = 'modular_gs/icons/obj/starshine.dmi'
 	icon_state = "starshine_o"
 
-/datum/reagent/consumable/starshine/orange/fresh
-	nutriment_factor = 5
-	quality = DRINK_VERYGOOD
-
 /datum/chemical_reaction/drink/starshine_orange
-	results = list(/datum/reagent/consumable/starshine/orange/fresh = 3)
+	results = list(/datum/reagent/consumable/starshine/orange = 3)
 	required_reagents = list(/datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/sodawater = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/reagent/consumable/starshine/blue
 	name = "Starshine Neutron"
 	description = "A new horizon of Starshine flavor with neutron."
 	color = "#6EFFFF"
-	quality = DRINK_VERYGOOD
+	quality = DRINK_FANTASTIC
 	glass_price = DRINK_PRICE_HIGH
 	nutriment_factor = 5
 	overdose_threshold = 100
@@ -108,13 +104,8 @@
 	icon = 'modular_gs/icons/obj/starshine.dmi'
 	icon_state = "starshine_b"
 
-/datum/reagent/consumable/starshine/blue/fresh
-	nutriment_factor = 8
-	quality = DRINK_FANTASTIC
-	addiction_types = list(/datum/addiction/starshine_blue = 10)
-
 /datum/chemical_reaction/drink/starshine_blue
-	results = list(/datum/reagent/consumable/starshine/blue/fresh = 3)
+	results = list(/datum/reagent/consumable/starshine/blue = 3)
 	required_reagents = list(/datum/reagent/bluespace = 1, /datum/reagent/consumable/sodawater = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/reagent/consumable/starshine/blue/proc/fat_hide()
