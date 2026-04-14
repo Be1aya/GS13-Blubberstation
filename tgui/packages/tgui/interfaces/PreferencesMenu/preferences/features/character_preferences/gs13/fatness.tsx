@@ -101,9 +101,9 @@ export const glutton_fatness_before_burst: Feature<number> = {
 };
 
 export const glutton_bursting_type: FeatureChoiced = {
-  name: 'Bursting Type',
+  name: 'Bursting type',
   description: 'Options for changing your bursting type, Disabled turns off the ability to burst, safe will reset your weight, fatal will kill you and you\'ll be able to respawn as the same character, permanent fatal will kill you and you\'ll need to be revived.',
-  component: FeatureDropdownInput
+  component: FeatureDropdownInput,
 }
 
 export const glutton_see_bursting: FeatureToggle = {
@@ -113,7 +113,19 @@ export const glutton_see_bursting: FeatureToggle = {
 };
 
 export const glutton_leave_gibs: FeatureToggle = {
-  name: 'Leave gibs on Bursting',
+  name: 'Leave gibs on bursting',
   description: 'Toggle if you want to leave gibs on bursting, using perma-fatal bursting will still drop gibs. You will still leave items regardless',
+  component: CheckboxInput,
+};
+
+export const glutton_enable_messages: FeatureToggle = {
+  name: 'Enable flavor messages',
+  description: 'Toggle if you would like the flavor messages to display',
+  component: CheckboxInput,
+};
+
+export const glutton_enable_sounds: FeatureToggle = {
+  name: 'Enable sounds',
+  description: 'Toggle if you would like the sounds to play',
   component: CheckboxInput,
 };

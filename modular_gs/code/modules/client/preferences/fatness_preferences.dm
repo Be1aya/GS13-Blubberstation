@@ -180,3 +180,21 @@
 
 /datum/preference/toggle/glutton_leave_gibs/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
+
+/datum/preference/toggle/glutton_enable_messages
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_enable_messages"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_enable_messages/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/glutton_enable_sounds
+	category = GLUTTON_BURSTING_PREFRENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "glutton_enable_sounds"
+	default_value = FALSE
+
+/datum/preference/toggle/glutton_enable_sounds/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
