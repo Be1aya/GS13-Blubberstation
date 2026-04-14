@@ -127,14 +127,17 @@
 	if(!isliving(user))
 		to_chat(user, span_warning("You can't do that!"))
 		return
-	if(!ishuman(target))
+		
+	if(!iscarbon(target))
 		to_chat(user, span_warning("This machine only works on humanoids!"))
 		return
+		
 	if(attachment)
 		if(attachment.attached_to == target)
 			visible_message(span_warning("[attachment.attached_to] is detached from [src]."))
 			detach_iv()
 			return
+			
 		visible_message(span_warning("[attachment.attached_to] is detached from [src]."))
 		detach_iv()
 	user.visible_message(span_warning("[user] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
