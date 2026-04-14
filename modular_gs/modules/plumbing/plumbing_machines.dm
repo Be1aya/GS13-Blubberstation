@@ -393,8 +393,6 @@
 
 	SEND_SIGNAL(src, COMSIG_IV_ATTACH, target)
 
-
-
 /datum/iv_drip_attachment/milker
 /datum/iv_drip_attachment/milker/New(
 	obj/machinery/iv_drip/iv_drip,
