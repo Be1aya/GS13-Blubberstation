@@ -194,6 +194,7 @@
 			to_chat(attached_to, span_userdanger("The feeding hose drops to the floor."))
 		else
 			visible_message(span_warning("[attached_to] is detached from [src]."))
+			
 		detach_iv()
 		return PROCESS_KILL
 
