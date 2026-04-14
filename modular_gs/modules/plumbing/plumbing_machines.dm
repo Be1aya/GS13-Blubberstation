@@ -94,9 +94,6 @@
 	drip.reagents.trans_to(target.recipient_reagents_holder, amount, target_id = reagent, methods = INGEST)
 
 
-
-
-
 /obj/machinery/iv_drip/plumbing_feeder
 	name = "automated feeder"
 	desc = "A streamlined pluming machine whose sole function is to take all chemicals inside the connected ducts and feed them to whoever is attached to the other end."
