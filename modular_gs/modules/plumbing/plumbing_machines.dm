@@ -81,6 +81,7 @@
 		for(var/datum/reagent/contained_reagent as anything in drip.reagents.reagent_list)
 			if(contained_reagent.type == reagent)
 				return TRUE
+				
 	else if(drip.reagents.total_volume) //take whatever
 		return TRUE
 
