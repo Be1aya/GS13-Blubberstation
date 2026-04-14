@@ -336,7 +336,6 @@
 	var/datum/reagents/drip_reagents = get_reagents()
 	if(!drip_reagents)
 		return PROCESS_KILL
-
 	if(!transfer_rate)
 		return
 
