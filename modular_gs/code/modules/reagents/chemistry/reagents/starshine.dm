@@ -65,8 +65,6 @@
 	results = list(/datum/reagent/consumable/starshine/yellow = 3)
 	required_reagents = list(/datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/sodawater = 1, /datum/reagent/consumable/sugar = 1)
 
-
-
 /datum/reagent/consumable/starshine/orange
 	name = "Starshine Orange Giant"
 	description = "Expand your taste buds with this orange-flavored Starshine."
