@@ -171,6 +171,7 @@
 		begin_processing()
 	else
 		end_processing()
+		
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/iv_drip/plumbing_feeder/plunger_act(obj/item/plunger/attacking_plunger, mob/living/user, reinforced)
