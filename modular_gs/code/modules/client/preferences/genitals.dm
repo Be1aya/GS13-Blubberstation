@@ -151,6 +151,7 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	"succubus milk" = /datum/reagent/drug/aphrodisiac/succubus_milk,
 	"incubus draft" = /datum/reagent/drug/aphrodisiac/incubus_draft,
 	"cream" = /datum/reagent/consumable/cream,
+	"starshine neutron" = /datum/reagent/consumable/starshine/blue,
 	))
 
 /datum/preference/numeric/max_belly_size
