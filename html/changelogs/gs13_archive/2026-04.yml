@@ -1,0 +1,41 @@
+2026-04-16:
+  Alphas00:
+  - rscadd: Added Starshine Vending Machine and its associated restocking unit in
+      Cargo
+  - rscadd: Added 4 Starshine drinks that make you glow while in your body. Neutron
+      uniquely offers body-changing effects once OD
+  - rscadd: Added automated feeder. A plumbing machine that feeds the chemicals in
+      the connected ducts to the attached character.
+  - rscadd: Added automated milker. A plumbing machine that drains your body and exposed
+      breasts and genitals of chemicals
+  - image: All sprites made by @Cowlicke
+  Bylion64:
+  - bugfix: Moved bloopers into new folder and finally made them work
+  Icepick200:
+  - map: added a candy maze to the space ruin pool.
+  SeepingVisage:
+  - rscadd: Icewalker role now lets you spawn in as a custom character.
+  - rscadd: digestive_noises numeric pref
+  - refactor: farting_noises and burping_noises are now numeric preferences,
+  - rscdel: removed references and uses of playsound_prefed proc
+  aliden1z:
+  - bugfix: Fixed a math bug in the Adipoelectric Transformer's power scaling.
+  evilew:
+  - rscadd: Dietician - an alternative variant of Psychologist role, comes with an
+      alt title and you can now choose what kind of pills you wanna get for the role
+  - map: gave Twin Nexus Hotel ghost role a facelift, making it into our own map variant
+  - map: fixed more asteroid turfs on Xenoarch
+  - map: fixed one of the Lavaland candyland ruins having an inaccessible entrance
+  - map: fixed numerous mapping errors (like broken pipes, cables, windows, all the
+      issues tied to this PR)
+  - map: redid telecomms on Biodome a lil bit, also added a buffet to the service
+      section (it's above the theatre)
+  - map: added SAD machine to tram medbay
+  - map: added the hotbar to BoxStation kitchen
+  - rscadd: 'Macarenic Mace and Lipolicide mace: they''re currently non-functional
+      sadly, sprites by @softiemarshmellow'
+  - bugfix: reorganized fatty melee weapons so they're in one file
+  - rscadd: added a second variant of Mootant ears
+  - rscadd: added Liponuts & Liposeeds to Fatwankus vendor
+  - map: gave all medbay foyers 10k cells to ensure all placed SADs can operate properly
+  - map: added hotbars to all kitchens
