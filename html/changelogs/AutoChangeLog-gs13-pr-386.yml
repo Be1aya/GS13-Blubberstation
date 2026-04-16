@@ -1,8 +1,0 @@
-author: "Alphas00"
-delete-after: True
-changes:
-  - rscadd: "Added Starshine Vending Machine and its associated restocking unit in Cargo"
-  - rscadd: "Added 4 Starshine drinks that make you glow while in your body. Neutron uniquely offers body-changing effects once OD"
-  - rscadd: "Added automated feeder. A plumbing machine that feeds the chemicals in the connected ducts to the attached character."
-  - rscadd: "Added automated milker. A plumbing machine that drains your body and exposed breasts and genitals of chemicals"
-  - image: "All sprites made by @Cowlicke"
