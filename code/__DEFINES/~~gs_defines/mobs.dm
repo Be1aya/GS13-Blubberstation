@@ -1,7 +1,9 @@
 // extends NUTRITION_LEVELs from code/__DEFINES/mobs.dm
-#define FULLNESS_LEVEL_NOMOREPLZ 1700
-#define FULLNESS_LEVEL_BEEG 1300
-#define FULLNESS_LEVEL_BLOATED 900
+/// the maximum default fullness
+#define FULLNESS_MAX 2000
+#define FULLNESS_LEVEL_NOMOREPLZ 1350
+#define FULLNESS_LEVEL_BEEG 1050
+#define FULLNESS_LEVEL_BLOATED 750
 
 //Fullness emote cooldown
 #define FULLNESS_REDUCTION_COOLDOWN 50
