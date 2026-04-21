@@ -1,8 +1,3 @@
-
-// see code/module/crafting/table.dm
-
-////////////////////////////////////////////////PIZZA!!!////////////////////////////////////////////////
-
 // this has been ported from CHOMP/Virgo, but I've decided to adjust the recipe a bit
 
 // ourgh I need a big pizzuh...
