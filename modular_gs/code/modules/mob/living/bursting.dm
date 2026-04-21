@@ -126,22 +126,22 @@
 ///Returns true if the capacity percentage is above a certain percentage of the other
 #define BURSTING_MACRO_CHECK_THRESHOLD(percentageA, percentageB) (percentageA > percentageB * BURSTING_SOUND_RATIO)
 
-///Gets the players bursting type pref, returns a number coresponding to said pref, adjusting the types here requires ensuring they match in fatness_prefrences.dm
+///Gets the players bursting type pref, returns a number coresponding to said pref
 /mob/living/carbon/human/proc/get_bursting_pref()
 	switch(client?.prefs?.read_preference(/datum/preference/choiced/glutton_bursting_type))
-		if ("Safe")
+		if (BURSTING_TYPE_PREF_SAFE)
 			return BURSTING_PREF_SAFE
 
-		if ("Injure")
+		if (BURSTING_TYPE_PREF_INJURE)
 			return BURSTING_PREF_INJURE
 
-		if ("Crit")
+		if (BURSTING_TYPE_PREF_CRIT)
 			return BURSTING_PREF_CRIT
 
-		if ("Fatal gib and cryo")
+		if (BURSTING_TYPE_PREF_FATAL)
 			return BURSTING_PREF_FATAL
 
-		if ("Permanent fatal and drop head")
+		if (BURSTING_TYPE_PREF_PERMA_FATAL)
 			return BURSTING_PREF_PERMA_FATAL
 
 		else
@@ -154,9 +154,6 @@
 
 ///Handles bursting for either eating too much or too high of a BFI, returns a bool for whether or not the character burst or is in the process of doing so
 /mob/living/carbon/human/proc/handle_bursting()
-
-	if (!client?.prefs?.read_preference(/datum/preference/toggle/glutton_see_bursting)) //Check if the person can even see bursting, no sense in running any of this if that's the case
-		return FALSE
 
 	//Get prefs
 	var/fullness_bursting_pref = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/glutton_fullness_before_burst)
@@ -217,14 +214,20 @@
 			if ((bursting_capacity_fatness > bursting_capacity_fullness * BURSTING_SOUND_RATIO)) //Do fatness sounds
 				playsound(src.loc, pick(BURSTING_FAT_SLOSH_SOUNDS), BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
 
-	//Trigger the burst, can disable bursting if they wish to just have sounds and messages
-	if (bursting_type_pref != BURSTING_PREF_DISABLED)
-		if (bursting_capacity_percentage > 1)
-			if (!HAS_TRAIT(src, BURSTING_ABOUT_TO_BURST))
-				trigger_glutton_burst(burst_type_fullness, bursting_type_pref)
-				return TRUE
+	if (!client?.prefs?.read_preference(/datum/preference/toggle/glutton_see_bursting))
+		return FALSE
 
-	return FALSE
+	if (bursting_type_pref == BURSTING_PREF_DISABLED)
+		return FALSE
+
+	if (bursting_capacity_percentage < 1)
+		return FALSE
+
+	if (HAS_TRAIT(src, BURSTING_ABOUT_TO_BURST))
+		return FALSE
+
+	trigger_glutton_burst(burst_type_fullness, bursting_type_pref)
+	return TRUE
 
 ///Opens the tgui popup for deciding wether to burst or delay
 /mob/living/carbon/human/proc/trigger_glutton_burst(burst_type, bursting_type_pref)
