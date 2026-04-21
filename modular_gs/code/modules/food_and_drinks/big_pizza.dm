@@ -18,6 +18,7 @@
 	inhand_y_dimension = 64
 	food_reagents = list(/datum/reagent/consumable/nutriment = 200, /datum/reagent/consumable/tomatojuice = 6, /datum/reagent/consumable/nutriment/vitamin = 20)
 	max_volume = 500
+	bite_consumption = 5
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "meat" = 1, "overwhelming surge of calories" = 10)
 	foodtypes = MEAT | VEGETABLES | RAW | GRAIN | FRUIT | DAIRY | PINEAPPLE
 	boxtag = "The One Pizza"
