@@ -19980,11 +19980,6 @@
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
 "fHf" = (
-/obj/structure/bed/medical/emergency,
-/obj/item/emergency_bed{
-	pixel_x = -5;
-	pixel_y = 15
-	},
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
@@ -19992,6 +19987,7 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_y = -28
 	},
+/obj/machinery/self_actualization_device,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "fHg" = (
@@ -22532,6 +22528,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "gpI" = (
@@ -59241,6 +59238,21 @@
 "qHg" = (
 /turf/open/floor/iron/stairs,
 /area/station/service/library)
+"qHm" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/blue{
+	color = "#8ab4cb";
+	dir = 4
+	},
+/obj/structure/bed/medical/emergency,
+/obj/item/emergency_bed{
+	pixel_x = -5;
+	pixel_y = 15
+	},
+/turf/open/floor/iron/white/textured_large,
+/area/station/medical/medbay/central)
 "qHo" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -81606,6 +81618,15 @@
 /obj/item/bedsheet/ce,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/ce)
+"xea" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/machinery/smartfridge/hotbar,
+/turf/open/floor/wood/large,
+/area/station/service/kitchen)
 "xeb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -113687,7 +113708,7 @@ hRX
 iLq
 wgH
 pyj
-jLV
+xea
 gid
 cRj
 cVU
@@ -113944,7 +113965,7 @@ hRX
 tvz
 sKB
 yaJ
-jLV
+xea
 ssy
 xfU
 hCH
@@ -116296,7 +116317,7 @@ rsU
 xeM
 fHf
 rde
-hNj
+qHm
 pMi
 tbu
 oJe

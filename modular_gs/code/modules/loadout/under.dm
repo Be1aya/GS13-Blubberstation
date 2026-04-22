@@ -158,3 +158,9 @@
 /datum/loadout_item/uniform/jumpsuit/gs13/white_dual_tone/security/detective
 	name = "Detective's dual tone jumpsuit (Modular)"
 	item_path = /obj/item/clothing/under/dual_tone/security/detective
+
+/*	BUTTON UPS */
+
+/datum/loadout_item/uniform/jumpsuit/gs13/button_up
+	name = "Button up shirt (Modular)"
+	item_path = /obj/item/clothing/under/dual_tone/button_up

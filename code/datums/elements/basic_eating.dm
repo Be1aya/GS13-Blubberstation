@@ -120,9 +120,11 @@
 /datum/element/basic_eating/proc/finish_eating(mob/living/eater, atom/target, mob/living/feeder, to_heal)
 	set waitfor = FALSE
 	if(drinking)
-		playsound(eater.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
+		//GS13 EDIT
+		playsound(eater.loc,'sound/items/drink.ogg', rand(10,50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
 	else
-		playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE)
+		playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
+		//GS13 EDIT END
 	var/atom/final_target = target
 	if(SEND_SIGNAL(eater, COMSIG_MOB_ATE, final_target, feeder) & COMSIG_MOB_TERMINATE_EAT)
 		return

@@ -4,14 +4,20 @@
 	message = "'s belly gurgles"
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/gurgle/get_sound()
+/datum/emote/living/gurgle/proc/get_sound_gs13()
 	return pick('modular_gs/sound/voice/gurgle1.ogg', 'modular_gs/sound/voice/gurgle2.ogg',
 				'modular_gs/sound/voice/gurgle3.ogg') // Lets get any of the gurgle sounds we have set.
+
+/datum/emote/living/gurgle/run_emote(mob/living/user, params)
+	. = ..()
+	var/tmp_sound = get_sound_gs13()
+	playsound(source = user,soundin = tmp_sound, vol = 50, vary = FALSE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
+	//playsound_prefed(user, tmp_sound, /datum/preference/toggle/digestive_noises, 100, TRUE, -4)
 
 /datum/emote/living/burp
 	var/reduction_min = 4
 	var/reduction_max = 8
-	var/noise_pref = /datum/preference/toggle/burping_noises
+	var/noise_pref = /datum/preference/numeric/volume/burping_noises
 
 /datum/emote/living/burp/proc/get_sound_gs13()
 	return pick('modular_gs/sound/voice/burp1.ogg')
@@ -21,7 +27,8 @@
 //	if(!.)
 //		return FALSE
 	var/tmp_sound = get_sound_gs13()
-	playsound_prefed(user, tmp_sound, noise_pref, 100, TRUE, -4)
+	playsound(source = user,soundin = tmp_sound, vol = 50, vary = TRUE, extrarange = -4, volume_preference = noise_pref)
+	//playsound_prefed(user, tmp_sound, noise_pref, 100, TRUE, -4)
 
 	var/mob/living/carbon/carbon_user = user
 	carbon_user.reduce_fullness(rand(reduction_min,reduction_max))
@@ -31,7 +38,7 @@
 	key_third_person = "farts"
 	message = "farts."
 	emote_type = EMOTE_AUDIBLE //because you cant see a fart
-	noise_pref = /datum/preference/toggle/farting_noises
+	noise_pref = /datum/preference/numeric/volume/farting_noises
 
 /datum/emote/living/burp/fart/get_sound_gs13()
 	return pick('modular_gs/sound/voice/fart1.ogg', 'modular_gs/sound/voice/fart2.ogg',

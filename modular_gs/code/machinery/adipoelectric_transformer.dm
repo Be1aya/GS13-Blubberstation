@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 #define MEGA_WATT *1000000
 /// the base amount of power needed to bwomph someone up by one BFI.
 /// Also decides the point at which the scaling slows down.
-#define WATTS_PER_BFI	500 KILO_WATT
+#define WATTS_PER_BFI	(500 KILO_WATT)
 
 /obj/machinery/power/adipoelectric_transformer
 	name = "adipoelectric transformer"

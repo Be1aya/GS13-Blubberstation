@@ -411,6 +411,7 @@
 		"Psychiatrist",
 		"Therapist",
 		"Shrink",
+		"Dietician", //GS13 ADDITION - PSYCHOLOGIST DIETICIAN ROLE FLAVORING
 	)
 
 /datum/job/quartermaster

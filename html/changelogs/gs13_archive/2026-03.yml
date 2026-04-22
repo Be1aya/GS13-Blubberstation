@@ -23,3 +23,37 @@
   - rscadd: Muscle will now be digested and added to predators as fat.
   - code_imp: Added in a few helper procs.
   - code_imp: Refactored the code for adding weight gain from digesting prey.
+2026-03-31:
+  FFSoul64:
+  - bugfix: Flaky error with Icebox
+  - map: Map tweaks/fixes
+  Icepick200:
+  - map: added a space calorite forge ruin
+  SeepingVisage:
+  - bugfix: fixed the tauric weight multiplier not being rounded
+  - rscadd: Pink, GATO-themed HUD option
+  - bugfix: fixed missing elements of GATO HUD
+  Swan:
+  - code_imp: Updates the codebase to be up to date with Bubber
+  - balance: the TEG has had it's power output uncapped
+  - balance: the calovoltaic generator MOD module now produces more power and uses
+      up more fat.
+  - bugfix: Brings back the hilbert hotel
+  - map: added speed dating hotel into the files
+  - rscadd: makes re-colorable modular clothing is now available in the clothesmate
+  - bugfix: fixes dual tone outfits not being recolorable in the loadout menu
+  Swan and Clumpy:
+  - rscadd: Recolorable modular button up suit
+  - rscdel: removes the emissive elements from the engineering wintercoats, since
+      they cannot be fixed without BYOND fixing their shit
+  - code_imp: dual tone suits are no longer inheriting from `/color`, as it was doing
+      nothing for us
+  - code_imp: '`add_modular_overlay` proc now knows which organ it is working on'
+  sheepishgoat:
+  - rscadd: Adds new prefs for berry bursting
+  - rscadd: Adds in the WT field generator collar. Accessible through the Nutri-Tech
+      node, this collar prevents berries from bursting while active.
+  - qol: People are now removed from the round through cryo when lethally bursting,
+      freeing up the job slot and allowing for respawning.
+  - rscadd: The Nutri-Pump Turbo and the Mobility Nanite Core are both re-enabled
+      and accessible through the Nutr-Tech node.

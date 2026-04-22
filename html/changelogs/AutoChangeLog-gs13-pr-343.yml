@@ -1,5 +1,0 @@
-author: "FFSoul64"
-delete-after: True
-changes:
-  - bugfix: "Flaky error with Icebox"
-  - map: "Map tweaks/fixes"

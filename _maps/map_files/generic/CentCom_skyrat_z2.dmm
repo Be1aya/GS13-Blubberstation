@@ -379,14 +379,12 @@
 /turf/open/misc/grass/planet,
 /area/centcom/holding/cafe/park)
 "ahK" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
+/obj/structure/table/wood,
+/obj/machinery/plantgenes{
+	pixel_y = 8
 	},
 /turf/open/indestructible/hoteltile{
-	icon_state = "floor"
+	icon_state = "darkfull"
 	},
 /area/centcom/holding/cafe)
 "ahP" = (
@@ -490,10 +488,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/corner,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -765,6 +760,12 @@
 /obj/item/watertank,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/structure/closet,
+/obj/item/storage/box/disks_plantgene{
+	pixel_x = 0;
+	pixel_y = 1
+	},
+/obj/item/storage/box/disks_plantgene,
+/obj/item/storage/box/disks_plantgene,
 /turf/open/indestructible/hoteltile{
 	icon_state = "darkfull"
 	},
@@ -1453,9 +1454,7 @@
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 1
 	},
-/obj/machinery/vending/clothing{
-	shut_up = 1
-	},
+/obj/machinery/vending/mealdor,
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -1886,7 +1885,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/vending/games{
+/obj/machinery/vending/clothing{
 	shut_up = 1
 	},
 /turf/open/indestructible/hoteltile{
@@ -2659,13 +2658,7 @@
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 5
 	},
-/obj/machinery/vending/cigarette/syndicate{
-	default_price = 0;
-	extended_inventory = 1;
-	extra_price = 0;
-	fair_market_price = 0;
-	shut_up = 1
-	},
+/obj/machinery/vending/fatty_items,
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -3084,22 +3077,25 @@
 /turf/open/floor/iron/diagonal,
 /area/centcom/holding/cafe/park)
 "aMw" = (
-/obj/effect/turf_decal/tile/green,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
+/obj/item/seeds/lipoplant{
+	pixel_x = 11;
+	pixel_y = -4
 	},
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
+/obj/item/seeds/lipoplant{
+	pixel_x = 11;
+	pixel_y = -1
 	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
+/obj/item/seeds/lipoplant{
+	pixel_x = 11;
+	pixel_y = 2
 	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
+/obj/structure/table/wood,
+/obj/machinery/smartfridge/disks{
+	pixel_x = -5;
+	pixel_y = 1
 	},
 /turf/open/indestructible/hoteltile{
-	icon_state = "floor"
+	icon_state = "darkfull"
 	},
 /area/centcom/holding/cafe)
 "aME" = (
@@ -14089,7 +14085,13 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/vending/mealdor,
+/obj/machinery/vending/cigarette/syndicate{
+	default_price = 0;
+	extended_inventory = 1;
+	extra_price = 0;
+	fair_market_price = 0;
+	shut_up = 1
+	},
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -69173,7 +69175,7 @@ wDG
 aUo
 aUo
 aTb
-auj
+apA
 agQ
 uqv
 aur
@@ -69672,9 +69674,9 @@ vTT
 aqf
 asp
 aiV
-ahK
-ahK
 aMw
+ahK
+aeW
 asp
 aqf
 aAL
@@ -70972,7 +70974,7 @@ aUo
 aUo
 oTD
 aTb
-apA
+auj
 aOI
 aOI
 mGi

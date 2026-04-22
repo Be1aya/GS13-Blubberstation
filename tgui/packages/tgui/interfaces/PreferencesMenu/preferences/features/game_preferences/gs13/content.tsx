@@ -1,4 +1,4 @@
-import { CheckboxInput, type FeatureToggle } from '../../base';
+import { CheckboxInput, type FeatureToggle, type Feature, FeatureSliderInput } from '../../base';
 
 export const weight_gain_food: FeatureToggle = {
   name: 'Weight gain from food',
@@ -88,14 +88,23 @@ export const muscle_gain: FeatureToggle = {
   component: CheckboxInput,
 };
 
-export const burping_noises: FeatureToggle = {
+export const burping_noises: Feature<number> = {
   name: 'Enable burping noises',
   category: 'SOUND',
-  component: CheckboxInput,
+  description: 'Volume of burping noises.',
+  component: FeatureSliderInput,
 };
 
-export const farting_noises: FeatureToggle = {
+export const farting_noises: Feature<number> = {
   name: 'Enable farting noises',
   category: 'SOUND',
-  component: CheckboxInput,
+  description: 'Volume of farting noises.',
+  component: FeatureSliderInput,
+};
+
+export const sound_digestive: Feature<number> = {
+  name: 'Digestive sound volume',
+  category: 'SOUND',
+  description: 'Volume of eating, drinking, and gurgling.',
+  component: FeatureSliderInput,
 };

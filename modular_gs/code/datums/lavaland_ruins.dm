@@ -60,3 +60,21 @@
 	suffix = "Lavaland_Ruin_ChocoPocket.dmm"
 	cost = 2
 	allow_duplicates = TRUE
+
+/datum/map_template/ruin/space/spacecaloriteforge
+	name = "Abandoned Calorite Forge"
+	id = "spacecaloriteforge"
+	description = "A long since abandoned forge, recently unearthed by one unlucky scientist."
+	prefix = "_maps/RandomRuins/SpaceRuins/GS13/"
+	suffix = "SpaceCaloriteForge.dmm"
+	cost = 2
+	allow_duplicates = TRUE
+
+/datum/map_template/ruin/space/SpaceCandyMaze
+	name = "Candy Maze"
+	id = "spacecandymaze"
+	description = "A hidden maze of sweets and wonder, filled to the brim with beasts."
+	prefix = "_maps/RandomRuins/SpaceRuins/GS13/"
+	suffix = "SpaceCandyMaze.dmm"
+	cost = 2
+	allow_duplicates = TRUE

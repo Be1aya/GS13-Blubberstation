@@ -111,7 +111,9 @@
 		// All code below up until the GS13 END EDIT tag is original code, just indented.
 		reagents.trans_to(target_mob, gulp_size, transferred_by = user, methods = reagent_consumption_method)
 		checkLiked(fraction, target_mob)
-		playsound(target_mob.loc, consumption_sound, rand(10,50), TRUE)
+		//GS13 EDIT
+		playsound(target_mob.loc, consumption_sound, rand(10,50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
+		//GS13 EDIT END
 		if(!iscarbon(target_mob))
 			return .
 		var/mob/living/carbon/carbon_drinker = target_mob

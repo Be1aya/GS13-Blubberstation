@@ -1,7 +1,0 @@
-author: "Swan and Clumpy"
-delete-after: True
-changes:
-  - rscadd: "Recolorable modular button up suit"
-  - rscdel: "removes the emissive elements from the engineering wintercoats, since they cannot be fixed without BYOND fixing their shit"
-  - code_imp: "dual tone suits are no longer inheriting from `/color`, as it was doing nothing for us"
-  - code_imp: "`add_modular_overlay` proc now knows which organ it is working on"

@@ -45,6 +45,16 @@
 	icon_state = "mootant"
 	icon = 'modular_gs/icons/mob/markings/mam_ears.dmi'
 
+/datum/sprite_accessory/ears/mootant_larger
+	name = "Mootant (Larger)"
+	icon_state = "mootant_larger"
+	icon = 'modular_gs/icons/mob/markings/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/human/mootant_larger
+	name = "Mootant (Larger)"
+	icon_state = "mootant_larger"
+	icon = 'modular_gs/icons/mob/markings/mam_ears.dmi'
+
 //tails
 /datum/sprite_accessory/tails/human/mootant
 	name = "Mootant"

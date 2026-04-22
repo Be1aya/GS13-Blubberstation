@@ -1,7 +1,0 @@
-author: "sheepishgoat"
-delete-after: True
-changes:
-  - rscadd: "Adds new prefs for berry bursting"
-  - rscadd: "Adds in the WT field generator collar. Accessible through the Nutri-Tech node, this collar prevents berries from bursting while active."
-  - qol: "People are now removed from the round through cryo when lethally bursting, freeing up the job slot and allowing for respawning."
-  - rscadd: "The Nutri-Pump Turbo and the Mobility Nanite Core are both re-enabled and accessible through the Nutr-Tech node."
