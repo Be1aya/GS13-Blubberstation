@@ -7100,6 +7100,7 @@
 #include "modular_gs\code\modules\mapping\map_templates.dm"
 #include "modular_gs\code\modules\mob\dead\new_player\sprite_accessories\ears.dm"
 #include "modular_gs\code\modules\mob\dead\new_player\sprite_accessories\legs_and_taurs.dm"
+#include "modular_gs\code\modules\mob\living\bursting.dm"
 #include "modular_gs\code\modules\mob\living\emote.dm"
 #include "modular_gs\code\modules\mob\living\fullness.dm"
 #include "modular_gs\code\modules\mob\living\genital_sprite_accessories.dm"
