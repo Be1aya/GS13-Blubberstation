@@ -8,7 +8,7 @@
 		TAG_CHAOTIC = 0.1, //*look inside high chaos storyteller* *no chaos*
 		TAG_CREW_ANTAG = 2,
 	)
-	population_min = 25 // GS13 EDIT: 35
+	population_min = 15 // GS13 EDIT: 35
 	antag_divisor = 5
 	storyteller_type = STORYTELLER_TYPE_INTENSE
 

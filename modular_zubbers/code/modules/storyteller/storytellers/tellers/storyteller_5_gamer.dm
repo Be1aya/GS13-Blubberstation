@@ -11,7 +11,7 @@
 		TAG_DESTRUCTIVE = 0.7,
 		TAG_CHAOTIC = 1.3
 	)
-	population_min = 25 // GS13 EDIT: 35
+	population_min = 15 // GS13 EDIT: 35
 	antag_divisor = 5
 	storyteller_type = STORYTELLER_TYPE_INTENSE
 
