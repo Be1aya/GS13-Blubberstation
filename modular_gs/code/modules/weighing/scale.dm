@@ -8,21 +8,21 @@
 	max_integrity = 250
 	integrity_failure = 25
 	layer = OBJ_LAYER
-	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 10)
-
-	var/buildstacktype = /obj/item/stack/sheet/iron
-	var/buildstackamount = 3
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3)
 	//stores the weight of the last person to step on in Lbs
 	var/lastreading = 0
 	/// What datum are we using to track weight?
 	var/datum/component/weigh_out/weight_component
 
-/obj/structure/scale/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WRENCH && !(flags_1 & NO_DEBRIS_AFTER_DECONSTRUCTION))
-		W.play_tool_sound(src)
-		deconstruct()
+/obj/structure/scale/wrench_act_secondary(mob/living/user, obj/item/tool)
+	..()
+	tool.play_tool_sound(src)
+	deconstruct(disassembled = TRUE)
+	return TRUE
 
-	return ..()
+/obj/structure/scale/atom_deconstruct(disassembled)
+	for(var/datum/material/mat as anything in custom_materials)
+		new mat.sheet_type(loc, FLOOR(custom_materials[mat] / SHEET_MATERIAL_AMOUNT, 1))
 
 /obj/structure/scale/Initialize(mapload)
 	. = ..()
