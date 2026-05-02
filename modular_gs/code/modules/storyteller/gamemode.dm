@@ -1,7 +1,12 @@
 /datum/controller/subsystem/gamemode/proc/cap_storyteller_thresholds()
-	var/datum/storyteller_data/tracks/track_data = storyteller.track_data
-	event_track_points[EVENT_TRACK_MUNDANE] = min(event_track_points[EVENT_TRACK_MUNDANE], track_data.threshold_mundane)
-	event_track_points[EVENT_TRACK_MODERATE] = min(event_track_points[EVENT_TRACK_MODERATE], track_data.threshold_mundane)
-	event_track_points[EVENT_TRACK_MAJOR] = min(event_track_points[EVENT_TRACK_MAJOR], track_data.threshold_major)
-	event_track_points[EVENT_TRACK_CREWSET] = min(event_track_points[EVENT_TRACK_CREWSET], track_data.threshold_crewset)
-	event_track_points[EVENT_TRACK_GHOSTSET] = min(event_track_points[EVENT_TRACK_GHOSTSET], track_data.threshold_ghostset)
+	var/list/old_vote_tallies = event_track_points.Copy()
+	event_track_points[EVENT_TRACK_MUNDANE] = min(event_track_points[EVENT_TRACK_MUNDANE], point_thresholds[EVENT_TRACK_MUNDANE])
+	event_track_points[EVENT_TRACK_MODERATE] = min(event_track_points[EVENT_TRACK_MODERATE], point_thresholds[EVENT_TRACK_MODERATE])
+	event_track_points[EVENT_TRACK_MAJOR] = min(event_track_points[EVENT_TRACK_MAJOR], point_thresholds[EVENT_TRACK_MAJOR])
+	event_track_points[EVENT_TRACK_CREWSET] = min(event_track_points[EVENT_TRACK_CREWSET], point_thresholds[EVENT_TRACK_CREWSET])
+	event_track_points[EVENT_TRACK_GHOSTSET] = min(event_track_points[EVENT_TRACK_GHOSTSET], point_thresholds[EVENT_TRACK_GHOSTSET])
+	var/list/log_data = list(
+		"points before switch" = old_vote_tallies,
+		"points after switch" = event_track_points,
+	)
+	log_admin("Storyteller changed from the instant storyteller vote.", log_data)
