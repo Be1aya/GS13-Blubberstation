@@ -16,5 +16,5 @@
 /datum/storyteller_data/tracks/bomb
 	threshold_mundane = 30
 	threshold_moderate = 60
-	threshold_major = 180
+	threshold_major = 120
 // GS13 END EDIT

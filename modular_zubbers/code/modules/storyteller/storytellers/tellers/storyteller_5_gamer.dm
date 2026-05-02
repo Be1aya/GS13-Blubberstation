@@ -21,6 +21,6 @@
 	threshold_mundane = 60
 	threshold_moderate = 90
 	threshold_major = 150
-	threshold_crewset = 480
-	threshold_ghostset = 240
+	threshold_crewset = 240
+	threshold_ghostset = 120
 // GS13 END EDIT

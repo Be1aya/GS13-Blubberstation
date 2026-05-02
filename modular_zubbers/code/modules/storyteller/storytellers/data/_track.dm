@@ -11,6 +11,6 @@
 	var/threshold_mundane = 45
 	var/threshold_moderate = 75
 	var/threshold_major = 300
-	var/threshold_crewset = 600
-	var/threshold_ghostset = 300
+	var/threshold_crewset = 300
+	var/threshold_ghostset = 150
 // GS13 END EDIT
