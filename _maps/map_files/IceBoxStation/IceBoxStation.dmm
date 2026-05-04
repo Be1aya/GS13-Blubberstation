@@ -20448,6 +20448,7 @@
 /area/station/engineering/supermatter/room)
 "fyZ" = (
 /obj/machinery/status_display/evac/directional/north,
+/obj/machinery/vending/starshine,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "fza" = (
@@ -57625,6 +57626,10 @@
 	pixel_x = 2;
 	pixel_y = 0
 	},
+/obj/machinery/vending/starshine{
+	pixel_x = -20;
+	pixel_y = 0
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "pJc" = (
@@ -84045,10 +84050,6 @@
 /obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 32
-	},
-/obj/machinery/vending/starshine{
-	pixel_x = 12;
-	pixel_y = 0
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)

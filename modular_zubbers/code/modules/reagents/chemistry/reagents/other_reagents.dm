@@ -315,32 +315,6 @@
 		"Your nose is wet." = MUT_MSG_EXTENDED,
 		"You feel very fuzzy." = MUT_MSG_ABOUT2TURN)
 
-/datum/reagent/mutationtoxin/tajaran/on_mob_life(mob/living/carbon/human/affected_mob, seconds_per_tick, times_fired)
-	. = ..()
-
-	affected_mob.dna.mutant_bodyparts[FEATURE_TAIL_GENERIC] = list(MUTANT_INDEX_NAME = "Smooth", MUTANT_INDEX_COLOR_LIST = list("#886600", "#886600", "#886600")) // BUBBER EDIT CHANGE - ORIGINAL: ling.dna.features[FEATURE_TAIL_LIZARD] = "Smooth"
-	affected_mob.dna.mutant_bodyparts[FEATURE_SNOUT] = list(MUTANT_INDEX_NAME = "Sharp + Light", MUTANT_INDEX_COLOR_LIST = list("#886600", "#886600", "#886600")) // BUBBER EDIT CHANGE - ORIGINAL: ling.dna.features[FEATURE_SNOUT] = "Sharp + Light"
-	affected_mob.dna.mutant_bodyparts[FEATURE_HORNS] = list(MUTANT_INDEX_NAME = "Curled", MUTANT_INDEX_COLOR_LIST = list("#292826", "#292826", "#292826")) // BUBBER EDIT CHANGE - ORIGINAL: ling.dna.features[FEATURE_HORNS] = "Curled"
-	affected_mob.update_body()
-
-	if(SPT_PROB(12, seconds_per_tick))
-		var/list/pick_ur_fav = list()
-		var/filter = NONE
-		if(current_cycle <= CYCLES_MSG_IMMEDIATE)
-			filter = MUT_MSG_IMMEDIATE
-		else if(current_cycle <= CYCLES_MSG_EXTENDED)
-			filter = MUT_MSG_EXTENDED
-		else
-			filter = MUT_MSG_ABOUT2TURN
-
-		for(var/i in mutationtexts)
-			if(mutationtexts[i] == filter)
-				pick_ur_fav += i
-		to_chat(affected_mob, span_warning("[pick(pick_ur_fav)]"))
-
-
-
-
 /datum/reagent/mutationtoxin/teshari
 	name = "Teshari Mutation Toxin"
 	description = "A teshari toxin."

@@ -195,9 +195,9 @@
 	name = "Welcome to GATO Industrial Concern!"
 	icon = 'modular_gs/icons/obj/library.dmi'
 	icon_state = "bookwelcometogato"
-	desc = "A book stamped with GATO's feline logo. It serves the purpose of introducing employees to their new workplace."
+	desc = "A book stamped with GATO's feline logo. It serves the purpose of introducing employees to their current accommostarting_contentions"
 	starting_author = "A. Tenebrae"
-	starting_title = "Welcome to GATO Industrial Concern!"
+	starting_title = "Welcome to Gato Industrial Concern!"
 	starting_content = {"<html>
 				<head>
 				<style>
@@ -226,10 +226,10 @@
 				<h1><u>Chapter 1</u></h1>
 				<h2>What is GATO? </h2>
 				<p>
-				GATO Industrial Concern is a corporation that operates in a wide range of sectors: Agriculture, luxurious goods, R&D, logistics, supplies, gastronomy, pharmaceuticals- you cannot miss our products! Your current employment is upon: <p>
-				<b>GENERAL STATION 13</b>
+				GATO Industrial Concern is a corporation that operates in every sector known to all sapients. Agriculture, luxurious goods, R&D, pharmaceuticals- if it exists, we make it! Your current employment is upon a....: <p>
+				GENERAL STATION
 				<p>
-				Lucky you! A General Station is one that does not specialize in any particular type of production, and profits off of whatever it can manage to export. So long as the crew can attain profitable goods and ship it off to Central Command, you're doing your job!
+				Lucky you! A General Station is one that does not specialize in any particular type of production, and profits off of whatever it can manage to export. You've heard us! So long as the crew can attain profitable goods and ship it off to Central Command, you're doing your job! Here at Gato, we understand how autonomy for stations can improve both the conditions of workers and stimulate both creativity and innovation. As a result, we have permitted you to have nearly free reign over your activities, far from bureaucracy and regulation. That's much better than Nanotrasen, right?
 				<p>
 				<hr>
 				<h1><u>Chapter 2</u></h1>

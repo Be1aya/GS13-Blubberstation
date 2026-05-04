@@ -58,14 +58,6 @@
 			to_chat(eyes_owner, span_danger("You feel as the shadows are gone but suddenly they return!"))
 			REMOVE_TRAIT(eyes_owner, TRAIT_NIGHT_VISION, QUIRK_TRAIT)
 
-/datum/species/tajaran/get_default_mutant_bodyparts()
-	return list(
-		"tail" = list("Cat (Big)", TRUE),
-		"snout" = list("Cat, normal", TRUE),
-		"ears" = list("Cat, normal", TRUE),
-		"legs" = list("Normal Legs", FALSE),
-	)
-
 /obj/item/organ/ears/cat/tajaran
 	name = "Tajaran ears"
 	desc = "These ears to seem to be from a feline of some type"
